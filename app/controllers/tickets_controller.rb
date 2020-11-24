@@ -1,5 +1,6 @@
 class TicketsController < ApplicationController
   def index
+
     @tickets = Ticket.where({status: ['en cours', 'en attente']})
   end
 
