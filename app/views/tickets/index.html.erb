@@ -1,0 +1,10 @@
+<div class="container">
+  <h1>All tickets</h1>
+  <% @tickets.each do |ticket| %>
+    <%= ticket.client_firstname %>
+    <%= ticket.status %>
+  <% end %>
+  <div>
+    <%= link_to 'Retour', root_path, :class => 'btn btn-primary' %>
+  </div>
+</div>
