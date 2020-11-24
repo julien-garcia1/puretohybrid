@@ -1,0 +1,17 @@
+<h1>Ticket en cours</h1>
+
+<table>
+  <th> Client</th>
+  <th> Status</th>
+  <th> Vendor</th>
+
+
+<% @tickets.each do |ticket| %>
+<td> <%= ticket.client_firstname %> </td>
+<td><%= ticket.status %></td>
+<td><%= ticket.user.nickname %></td>
+<% end %>
+</table>
+
+
+

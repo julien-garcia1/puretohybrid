@@ -8,9 +8,26 @@
 
 puts "DB seed start"
 
-user = User.create(email:"toto@gmail.com", password:"azerty")
+Product.destroy_all
+Ticket.destroy_all
+User.destroy_all
+Store.destroy_all
 
-# product = Product.create(name:"Vélo", price:12, description:"trop top", category: "VTT", sku:"2314FZE")
+store = Store.create(name:"Bron", address:"Lyon")
+
+user = User.create(store_id: 5, nickname: "Bob", email:"toto@gmail.com", password:"azerty")
+
+
+
+
+product = Product.create(store: store, name:"velo", price:12, description:"trop top", category: "VTT", sku:"2314FZE")
+product2 = Product.create(store: store, name:"chaussure", price:2, description:"incroyable", category: "running", sku:"2376FZE")
+product3 = Product.create(store: store,name:"tente", price:32, description:"génial", category: "camping", sku:"2314ERE")
+product4 = Product.create(store: store,name:"short", price:22, description:"nul", category: "fitness", sku:"2234FZE")
+
+
+
+
 puts user.errors.full_messages
 
 ticket = Ticket.create(user: user, status:"en cours", client_firstname:"tata")
