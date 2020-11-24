@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  devise_for :users
+
+  resources :products, only: [:show, :index]
+
+  resources :tickets, only: [:show, :index, :create, :new] do
+    get :accept, to: "tickets#accept", on: :member
+    get :closed, to: "tickets#closed", on: :member
+  end
+
   root to: 'pages#home'
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
