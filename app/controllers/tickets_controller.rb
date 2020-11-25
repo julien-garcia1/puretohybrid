@@ -1,7 +1,9 @@
 class TicketsController < ApplicationController
-  def index
+  skip_before_action :authenticate_user!, only: [:new, :create]
 
-    @tickets = Ticket.where({status: ['en cours', 'en attente']})
+  def index
+    @tickets_to_be_assign = Ticket.where(status: 'En attente')
+    @tickets_assigned = Ticket.where(status: 'En cours')
   end
 
   def show
@@ -13,19 +15,29 @@ class TicketsController < ApplicationController
   end
 
   def create
+    # @ticket = Ticket.new(user_id: 'toto', status: 'En attente')
     @ticket = Ticket.new(ticket_params)
-    @ticket = Ticket.new(user_id: 'toto', status: 'En attente')
+    @ticket.status = 'En attente'
     if @ticket.save
       redirect_to root_path, notice: 'Votre ticket a bien été créé, un vendeur est en chemin'
     else
-      render new
+      render :new
     end
   end
 
-  def accept
+  def assign
+    @ticket = Ticket.find(params[:id])
+    @ticket.user = current_user
+    @ticket.status = 'En cours'
+    @ticket.save
+    redirect_to tickets_path
   end
 
-  def close
+  def closed
+    @ticket = Ticket.find(params[:id])
+    @ticket.status = 'Terminé'
+    @ticket.save
+    redirect_to tickets_path
   end
 
   private
