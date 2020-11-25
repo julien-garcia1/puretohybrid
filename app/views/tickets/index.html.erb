@@ -1,9 +1,20 @@
-
 <div class="container">
-  <h1>All tickets</h1>
-  <% @tickets.each do |ticket| %>
+  <h1>Tickets en cours</h1>
+  <% @tickets_assigned.each do |ticket| %>
+  <div>
     <%= ticket.client_firstname %>
     <%= ticket.status %>
+    <%= ticket.user.nickname %>
+    <%= link_to 'Terminé', closed_ticket_path(ticket) %>
+  </div>
+  <% end %>
+
+  <h1>Tickets en attente</h1>
+  <% @tickets_to_be_assign.each do |ticket| %>
+    <div>
+      <%= ticket.client_firstname %>
+      <%= link_to 'Assigner', assign_ticket_path(ticket) %>
+    </div>
   <% end %>
   <div>
     <%= link_to 'Retour', root_path, :class => 'btn btn-primary' %>
