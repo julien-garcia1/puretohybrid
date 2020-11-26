@@ -1,0 +1,24 @@
+  <% if @ticket.status = 'En attente' %>
+    <div class="container ticket-response">
+      <div>
+        <h1>Votre ticket a bien été créé</h1>
+        <h4>Nous allons assigner un vendeur à votre ticket</h4>
+      </div>
+    </div>
+
+  <% elsif @ticket.status = 'En cours' %>
+    <div class="container ticket-response">
+      <div>
+        <h1>Un vendeur est en chemin</h1>
+        <h4>Notre expert vient à votre rescousse</h4>
+      </div>
+    </div>
+
+  <% else %>
+    <div class="container ticket-response">
+      <div>
+        <h1>Ticket terminé</h1>
+        <h4>Nous espérons que notre conseiller à répondu à vos interrogations</h4>
+      </div>
+    </div>
+  <% end %>

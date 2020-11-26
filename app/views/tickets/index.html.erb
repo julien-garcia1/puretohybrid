@@ -1,23 +1,45 @@
 <div class="container">
-  <h1>Tickets en cours</h1>
-  <% @tickets_assigned.each do |ticket| %>
-  <div>
-    <%= ticket.client_firstname %>
-    <%= ticket.status %>
-    <%= ticket.user.nickname %>
-    <%= link_to 'Terminé', closed_ticket_path(ticket) %>
-  </div>
-  <% end %>
+  <h1 style="text-align:center; padding-bottom:25px">Tickets en cours</h1>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Client</th>
+        <th>Statut du ticket</th>
+        <th>Vendeur associé</th>
+      </tr>
+    </thead>
 
-  <h1>Tickets en attente</h1>
-  <% @tickets_to_be_assign.each do |ticket| %>
-    <div>
-      <%= ticket.client_firstname %>
-      <%= link_to 'Assigner', assign_ticket_path(ticket) %>
-    </div>
-  <% end %>
-  <div>
-    <%= link_to 'Retour', root_path, :class => 'btn btn-primary' %>
-  </div>
+    <tbody>
+      <% @tickets_assigned.each do |ticket| %>
+      <tr>
+        <td><%= ticket.client_firstname %></td>
+        <td><%= ticket.status %></td>
+        <td><%= ticket.user.nickname %></td>
+        <td><%= link_to 'Clôturer le ticket', closed_ticket_path(ticket) %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <h1 style="text-align:center; padding-bottom:25px; padding-top:60px">Tickets en attente</h1>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Client</th>
+        <th>Statut du ticket</th>
+      </tr>
+    </thead>
+
+    <tbody>
+        <div id="tickets" data-store-id="<%= @store_id %>">
+          <% @tickets_to_be_assign.each do |ticket| %>
+            <tr>
+              <%= render 'tickets/ticket', ticket: ticket %>
+            </tr>
+          <% end %>
+        </div>
+    </tbody>
+  </table>
 </div>
 
