@@ -58,4 +58,3 @@ const quaggaScanner = () => {
   }
 };
 export { quaggaScanner }
-export { orderByOccurrence }

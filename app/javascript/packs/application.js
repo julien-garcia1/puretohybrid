@@ -29,12 +29,10 @@ import "bootstrap";
 // Internal imports:
 import { initStoreCable } from '../channels/store_channel';
 import { quaggaScanner } from '../components/barcode';
-import { orderByOccurrence } from '../components/barcode';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here:
   quaggaScanner();
-  orderByOccurrence();
   initStoreCable();
 });
 

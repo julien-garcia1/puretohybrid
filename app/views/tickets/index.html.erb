@@ -32,7 +32,7 @@
     </thead>
 
     <tbody>
-        <div id="tickets" data-store-id="<%= @store_id %>">
+        <div id="tickets" data-store-id="<%= current_user.store.id %>">
           <% @tickets_to_be_assign.each do |ticket| %>
             <tr>
               <%= render 'tickets/ticket', ticket: ticket %>

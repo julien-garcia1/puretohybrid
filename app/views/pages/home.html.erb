@@ -1,5 +1,11 @@
 <div class="container">
-  <h1>Pages#home</h1>
-  <p>Find me in app/views/pages/home.html.erb</p>
+  <h2 style="text-align:center">Scannez votre produit</h2>
+  <div class='scan-btn'>
+  <%= link_to barcode_path do %>
+    <i class="fas fa-barcode"></i>
+  <% end %>
+  </div>
+  <div class='scan-btn'>
     <%= link_to 'Appeler un vendeur', new_ticket_path, :class => 'btn btn-primary' %>
+  </div>
 </div>
