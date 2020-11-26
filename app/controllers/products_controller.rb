@@ -19,6 +19,13 @@ class ProductsController < ApplicationController
       @products = Product.all
     end
   end
+
+  def scan
+  end
+
+  def barcode
+  end
+
 end
 
 

@@ -15,11 +15,16 @@ class TicketsController < ApplicationController
   end
 
   def create
-    # @ticket = Ticket.new(user_id: 'toto', status: 'En attente')
     @ticket = Ticket.new(ticket_params)
+    # @store = Store.find(params[:store_id])
     @ticket.status = 'En attente'
+    # @ticket.user_id = User.nickname
     if @ticket.save
-      redirect_to root_path, notice: 'Votre ticket a bien été créé, un vendeur est en chemin'
+      redirect_to ticket_response_path, notice: 'Votre ticket a bien été créé, un vendeur est en chemin'
+      # StoreChannel.broadcast_to(
+      #   @store,
+      #   render_to_string(partial: "ticket", locals: { ticket: @ticket })
+      # )
     else
       render :new
     end
@@ -40,9 +45,14 @@ class TicketsController < ApplicationController
     redirect_to tickets_path
   end
 
+  def ticket_response
+    @ticket = Ticket.last
+  end
+
   private
 
   def ticket_params
     params.require(:ticket).permit(:client_firstname, :status, :user_id, :product_id)
   end
+
 end
