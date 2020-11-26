@@ -2,9 +2,9 @@ import consumer from "./consumer";
 const initStoreCable = () => {
   const ticketsContainer = document.querySelector('#tickets');
   if (ticketsContainer) {
-    consumer.subscriptions.create({ channel: "StoreChannel" }, {
+    consumer.subscriptions.create({ channel: "StoreChannel", id: ticketsContainer.dataset.storeId }, {
       received(data) {
-        // console.log('Hello')
+        console.log('hello')
         ticketsContainer.insertAdjacentHTML('beforeend', data);
       },
     });

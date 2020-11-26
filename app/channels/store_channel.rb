@@ -1,7 +1,6 @@
 class StoreChannel < ApplicationCable::Channel
   def subscribed
-    @store = Store.find(params[:id])
-    # @store = Store.find(params[:store_id])
+    store = Store.find(params[:id])
     stream_for store
   end
 

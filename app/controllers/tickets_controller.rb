@@ -1,5 +1,5 @@
 class TicketsController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:new, :create]
+  skip_before_action :authenticate_user!, only: [:new, :create, :ticket_response]
 
   def index
     @tickets_to_be_assign = Ticket.where(status: 'En attente')
@@ -16,15 +16,13 @@ class TicketsController < ApplicationController
 
   def create
     @ticket = Ticket.new(ticket_params)
-    # @store = Store.find(params[:store_id])
     @ticket.status = 'En attente'
-    # @ticket.user_id = User.nickname
     if @ticket.save
-      redirect_to ticket_response_path, notice: 'Votre ticket a bien été créé, un vendeur est en chemin'
-      # StoreChannel.broadcast_to(
-      #   @store,
-      #   render_to_string(partial: "ticket", locals: { ticket: @ticket })
-      # )
+      StoreChannel.broadcast_to(
+        Store.first.id,
+        render_to_string(partial: "ticket", locals: { ticket: @ticket })
+      )
+        redirect_to ticket_path(@ticket), notice: 'Votre ticket a bien été créé, un vendeur est en chemin'
     else
       render :new
     end

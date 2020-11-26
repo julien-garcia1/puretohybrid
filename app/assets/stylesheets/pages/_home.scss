@@ -1,1 +1,40 @@
 // Specific CSS for your home-page
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+@media (max-width: 767px) {
+  h1, h2, h3, h4 {
+    font-family: 'Roboto', sans-serif;
+    text-transform: uppercase;
+    font-size: 20px;
+    font-weight: 600;
+  }
+
+  .scan-btn {
+    display: flex;
+    justify-content: center;
+    background-color: #008bd2;
+    border-radius: 5px;
+    width: 200px;
+    height: 100px;
+    margin: 0 auto;
+  }
+
+  .btn-home {
+    display: flex;
+    justify-content: center;
+    padding-top: 65px;
+  }
+
+  .scan-btn img {
+    width: 70%;
+  }
+
+  .btn-primary {
+    background-color: #008bd2;
+  }
+
+  .fa-barcode {
+    font-size: 100px;
+    color: white;
+  }
+}

@@ -1,4 +1,4 @@
-  <% if @ticket.status = 'En attente' %>
+  <% if @ticket.status == 'En attente' %>
     <div class="container ticket-response">
       <div>
         <h1>Votre ticket a bien été créé</h1>
@@ -6,10 +6,10 @@
       </div>
     </div>
 
-  <% elsif @ticket.status = 'En cours' %>
+  <% elsif @ticket.status == 'En cours' %>
     <div class="container ticket-response">
       <div>
-        <h1>Un vendeur est en chemin</h1>
+        <h1><%= @ticket.user.nickname %> est en chemin</h1>
         <h4>Notre expert vient à votre rescousse</h4>
       </div>
     </div>
