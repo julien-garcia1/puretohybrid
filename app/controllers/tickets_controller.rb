@@ -1,5 +1,5 @@
 class TicketsController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:new, :create, :ticket_response]
+  skip_before_action :authenticate_user!, only: [:new, :create, :show]
 
   def index
     @tickets_to_be_assign = Ticket.where(status: 'En attente')
@@ -41,10 +41,6 @@ class TicketsController < ApplicationController
     @ticket.status = 'Terminé'
     @ticket.save
     redirect_to tickets_path
-  end
-
-  def ticket_response
-    @ticket = Ticket.last
   end
 
   private

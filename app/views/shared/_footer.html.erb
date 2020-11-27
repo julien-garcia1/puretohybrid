@@ -1,7 +1,17 @@
 <div class="alltricks-Footer">
+    <div class='scan-btn-footer'>
+  <%= link_to root_path do %>
+    <i class="fas fa-home fa-footer-home"></i>
+  <% end %>
+  </div>
   <div class='scan-btn-footer'>
   <%= link_to barcode_path do %>
     <i class="fas fa-barcode fa-footer"></i>
+  <% end %>
+  </div>
+  <div class='scan-btn-footer'>
+  <%= link_to new_ticket_path do %>
+    <i class="fas fa-question fa-help"></i>
   <% end %>
   </div>
 </div>

@@ -12,11 +12,11 @@
   .scan-btn {
     display: flex;
     justify-content: center;
-    background-color: #008bd2;
+    background-color: rgba(0, 139, 210, 0.8);
     border-radius: 5px;
     width: 200px;
     height: 100px;
-    margin:100px auto;
+    margin:20px auto;
   }
 
   .btn-home {
@@ -29,8 +29,14 @@
     width: 70%;
   }
 
+  .scan-btn .btn-primary {
+    background-color: rgba(0, 139, 210, 0);
+    border:none;
+  }
+
   .btn-primary {
-    background-color: #008bd2;
+     background-color: rgba(0, 139, 210, 0.8);
+     border:none;
   }
 
   .fa-barcode {
@@ -39,7 +45,7 @@
   }
 
   .scan-btn-footer {
-    display: flex;
+    position: center;
     justify-content: center;
     background-color: #008bd2;
     border-radius: 5px;
@@ -50,7 +56,23 @@
 
   .fa-footer {
     font-size: 50px;
+    color: white;
   }
 
+  .fa-footer-home {
+    font-size: 47px;
+    color: white;
+  }
+
+  .fa-help {
+    font-size: 45px;
+    color: white;
+  }
+
+  .background {
+    background-image: url("https://cdn.pixabay.com/photo/2019/09/28/08/58/mountain-bike-4510246_960_720.jpg");
+    height:740px;
+    margin-top:42px;
+  }
 }
 
