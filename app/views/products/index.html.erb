@@ -1,35 +1,40 @@
-<div class="container">
-<h1>Trouvez votre produit</h1>
+<div class="background-search">
+  <div class="container">
+    <div class="search-form b-ticket">
+      <h1>Trouvez votre produit</h1>
 
-<%= form_tag products_path, method: :get do %>
-  <%= text_field_tag :query,
-    params[:query],
-    class: "form-control",
-    placeholder: "Max 2 mots-clés"
-  %>
-  <%= submit_tag "Rechercher", class: "btn btn-primary" %>
-<% end %>
-
-
-
-  <div class="cards-products">
-    <% @products.each do |product|  %>
-      <% product['skus'].each do |p|%>
-
-        <div class="card-products">
-            <img src="https://media.alltricks.com/medium/<%= p['photo'].split('¤')[0] %>" class="card-img-product">
-            <div class="card-infos">
-            <h4><%= p['Model'] %></h4>
-            <div class="card-price">
-            <p><%= p['price'] %> €</p>
-            </div>
-          <div class="btn btn-primary">
-        <%= link_to 'Voir Fiche Produit', product_path(:id) %>
-      </div>
-          </div>
+      <%= form_tag products_path, method: :get do %>
+        <%= text_field_tag :query,
+          params[:query],
+          class: "form-control",
+          placeholder: "Max 2 mots-clés"
+        %>
+        <div class="btn-search-form">
+          <%= submit_tag "Rechercher", class: "btn btn-primary" %>
         </div>
       <% end %>
-    <% end  %>
+    </div>
+
+
+
+    <div class="cards-products">
+      <% @products.each do |product|  %>
+        <% product['skus'].each do |p|%>
+
+          <div class="card-products">
+            <img src="https://media.alltricks.com/medium/<%= p['photo'].split('¤')[0] %>" class="card-img-product">
+            <div class="card-infos">
+              <h4><%= p['Model'] %></h4>
+              <div class="card-price">
+                <p><%= p['price'] %> €</p>
+              </div>
+              <div class="btn btn-primary">
+                <%= link_to 'Voir Fiche Produit', product_path(:id) %>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      <% end  %>
+    </div>
   </div>
 </div>
-

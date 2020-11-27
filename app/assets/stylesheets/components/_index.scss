@@ -2,3 +2,20 @@
 @import "alert";
 @import "avatar";
 @import "navbar";
+
+.btn-search-form {
+  padding-top: 15px;
+}
+
+.search-form {
+  margin-top: 60px;
+}
+
+.background-search {
+  background-image: url("https://cdn.pixabay.com/photo/2015/10/12/14/53/cyclist-983931_960_720.jpg");
+  height: 2100px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
