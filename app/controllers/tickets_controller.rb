@@ -20,7 +20,7 @@ class TicketsController < ApplicationController
     if @ticket.save
       StoreChannel.broadcast_to(
         Store.first.id,
-        render_to_string(partial: "ticket", locals: { ticket: @ticket })
+        render_to_string(partial: "tickets/ticket", locals: { ticket: @ticket })
       )
         redirect_to ticket_path(@ticket), notice: 'Votre ticket a bien été créé, un vendeur est en chemin'
     else
