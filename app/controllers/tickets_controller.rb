@@ -19,8 +19,8 @@ class TicketsController < ApplicationController
     @ticket.status = 'En attente'
     if @ticket.save
       StoreChannel.broadcast_to(
-        Store.first.id,
-        render_to_string(partial: "tickets/ticket", locals: { ticket: @ticket })
+        Store.first,
+        body: render_to_string(partial: "tickets/ticket", locals: { ticket: @ticket, new: true })
       )
         redirect_to ticket_path(@ticket), notice: 'Votre ticket a bien été créé, un vendeur est en chemin'
     else
