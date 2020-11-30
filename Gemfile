@@ -65,3 +65,4 @@ gem 'devise'
 gem "redis", "~> 4.2"
 
 gem "amazing_print", "~> 1.2"
+gem 'active_link_to'
