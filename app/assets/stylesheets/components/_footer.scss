@@ -11,20 +11,25 @@
   padding: 0;
   font-family: Roboto,sans-serif;
   color: #000;
-  background-color: #008bd2;
+  background-color: white;
 }
 
 .alltricks-Footer .fas {
   font-size: 28px;
   padding-top: 10px;
-  color: white;
+  color: #04A2F3;
 }
 
 .alltricks-Footer .fa-barcode {
-  font-size: 32px;
-  padding-top: 9px;
+  font-size: 36px;
+  padding-top: 8px;
 }
 
 .active {
-  color: #004289!important;
+  color: #027AB8!important;
+  text-shadow: 2px 2px 3px #027AB8;
+}
+
+.scan-btn-footer {
+  background: white !important;
 }
