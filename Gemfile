@@ -64,3 +64,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'devise'
 gem "redis", "~> 4.2"
+
+gem "amazing_print", "~> 1.2"

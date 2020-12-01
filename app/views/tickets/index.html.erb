@@ -34,14 +34,10 @@
       </tr>
     </thead>
 
-    <tbody>
-        <div id="tickets" data-store-id="<%= current_user.store.id %>">
-          <% @tickets_to_be_assign.each do |ticket| %>
-            <tr>
-              <%= render 'tickets/ticket', ticket: ticket %>
-            </tr>
-          <% end %>
-        </div>
+    <tbody id="tickets" data-store-id="<%= current_user.store.id %>">
+      <% @tickets_to_be_assign.each do |ticket| %>
+        <%= render 'tickets/ticket', ticket: ticket, new: false %>
+      <% end %>
     </tbody>
   </table>
 </div>
