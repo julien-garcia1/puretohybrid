@@ -3,17 +3,17 @@
   <img src="<%= @html_doc.at('.js-allbox img')['src'] %>" alt="">
   </div>
   <div>
-  <h1><%= @html_doc.search('.heading-title-text').first.text %></h1>
+  <h2><%= @html_doc.search('.heading-title-text').first.text %></h2>
   </div>
   <div>
-  <h2><%= @html_doc.search('.price span').first.text %></h2>
+  <h2 class='price'><%= @html_doc.search('.prices').first.text %></h2>
   </div>
   <button id="togg1" class="btn btn-primary">Description Produit</button>
-    <div id="d1">
+    <div id="d1" style='display:none'>
         <p><%= @html_doc.search('.product-description-text').first.text.gsub("PLUS D'INFORMATIONS","") %></p>
     </div>
   <div>
-  <p><%= @html_doc.search('.alltricks-Product-stars--active').first.text %> <%= @html_doc.search('.alltricks-Product-ReviewCounter').first.text %></p>
+  <p class='stars'><%= @html_doc.search('.alltricks-Product-stars--active').first.text %> <%= @html_doc.search('.alltricks-Product-ReviewCounter').first.text.gsub("Soyez le premier à laisser un avis","") %></p>
   </div>
   <div>
   <h3>Avis.</h3>
