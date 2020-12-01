@@ -1,5 +1,7 @@
 require 'json'
 require 'open-uri'
+require 'nokogiri'
+require 'pry'
 
 class ProductsController < ApplicationController
   skip_before_action :authenticate_user!
@@ -26,6 +28,10 @@ class ProductsController < ApplicationController
   def barcode
   end
 
+  def scraping
+    @barcode = params[:val_barcode]
+    url = "https://www.alltricks.fr/Acheter/#{@barcode}"
+    html_file = open(url).read
+    @html_doc = Nokogiri::HTML(html_file)
+  end
 end
-
-

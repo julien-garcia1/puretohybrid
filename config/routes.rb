@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   end
   get "/tickets/new/ticket_response", to: "tickets#ticket_response", as: 'ticket_response'
   get "/scan/barcode", to: "products#barcode", as: 'barcode'
+  post "/scan/barcode", to: "products#barcode"
+  get "/scraping", to: "products#scraping"
   # end
 
   root to: 'pages#home'
