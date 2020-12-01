@@ -6,6 +6,7 @@
         <th>Client</th>
         <th>Statut du ticket</th>
         <th>Vendeur associé</th>
+        <th>Rayon</th>
       </tr>
     </thead>
 
@@ -15,6 +16,7 @@
         <td><%= ticket.client_firstname %></td>
         <td><%= ticket.status %></td>
         <td><%= ticket.user.nickname %></td>
+        <td><%= ticket.section %></td>
         <td><%= link_to 'Clôturer le ticket', closed_ticket_path(ticket) %></td>
       </tr>
       <% end %>
@@ -28,6 +30,7 @@
       <tr>
         <th>Client</th>
         <th>Statut du ticket</th>
+        <th>Rayon</th>
       </tr>
     </thead>
 
