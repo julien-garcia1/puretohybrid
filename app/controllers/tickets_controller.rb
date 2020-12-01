@@ -34,6 +34,7 @@ class TicketsController < ApplicationController
     @ticket.user = current_user
     @ticket.status = 'En cours'
     @ticket.save
+    TicketChannel.broadcast_to(@ticket, action: 'refresh')
     redirect_to tickets_path
   end
 
@@ -41,6 +42,7 @@ class TicketsController < ApplicationController
     @ticket = Ticket.find(params[:id])
     @ticket.status = 'Terminé'
     @ticket.save
+    TicketChannel.broadcast_to(@ticket, action: 'refresh')
     redirect_to tickets_path
   end
 
