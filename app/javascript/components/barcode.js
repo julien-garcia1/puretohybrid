@@ -52,10 +52,10 @@ const quaggaScanner = () => {
         last_result = [];
         console.log(barcode);
         Quagga.stop();
-          // window.location.href = `https://www.alltricks.fr/Acheter/${barcode}`
-          const url = `https://www.alltricks.fr/Acheter/${barcode}`;
-          const html = `<iframe src="${url}" style="height: 100vh; width: 100%; border:none"></iframe>`;
-          document.querySelector('#barcode').innerHTML = html;
+          window.location.href = `/scraping?val_barcode=${barcode}`;
+          // const url = `https://www.alltricks.fr/Acheter/${barcode}`;
+          // const html = `<iframe src="${url}" style="height: 100vh; width: 100%; border:none"></iframe>`;
+          // document.querySelector('#barcode').innerHTML = html;
       }
       // const avis = document.querySelector('#lien');
        // avis.addEventListener('click', (event) => {
