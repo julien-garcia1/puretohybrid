@@ -1,13 +1,6 @@
 module ApplicationHelper
-  def current_class?(root_path)
-    if request.path == root_path
-      return 'active'
-    elsif request.path == barcode_path
-      return 'active'
-    elsif request.path == products_path
-      return 'active'
-    else
-      return 'active'
-    end
-  end
+  def current?(key, path)
+    "#{key}" if current_page? path
+    # We use string interpolation "#{key}" here to access the CSS classes we are going to create.
+ end
 end
