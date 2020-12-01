@@ -1,5 +1,5 @@
 .alltricks-Footer {
-  height: 50px;
+  height: 60px;
   z-index: 6;
   text-align: center;
   position: fixed;
@@ -15,19 +15,20 @@
 }
 
 .alltricks-Footer .fas {
-  font-size: 28px;
-  padding-top: 10px;
+  font-size: 22px;
+  padding-top: 7px;
   color: #04A2F3;
 }
 
-.alltricks-Footer .fa-barcode {
-  font-size: 36px;
-  padding-top: 8px;
+.alltricks-Footer p {
+  font-size: 14px;
+  font-weight: 800;
+  padding-bottom: 3px;
 }
 
 .active {
+  border-bottom: solid 5px #027AB8;
   color: #027AB8!important;
-  text-shadow: 2px 2px 3px #027AB8;
 }
 
 .scan-btn-footer {

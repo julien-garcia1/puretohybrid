@@ -1,10 +1,10 @@
 // Specific CSS for your home-page
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
 @media (max-width: 767px) {
   h1, h2, h3, h4 {
     font-family: 'Roboto', sans-serif;
-    text-transform: uppercase;
     font-size: 20px;
     font-weight: 600;
   }
@@ -55,9 +55,32 @@
   }
 
   .background {
-    background-image: url("https://cdn.pixabay.com/photo/2019/09/28/08/58/mountain-bike-4510246_960_720.jpg");
-    height:100vh;
+    background-image: url("https://cdn.pixabay.com/photo/2015/10/12/14/53/cyclist-983931_960_720.jpg");
+    height: calc(100vh - 70px);
     margin-top:42px;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      bottom: 0px;
+      left: 0px;
+      background-color: rgba(0,0,0,0.4);
+    }
+  }
+
+  .home-container {
+    position: relative;
+    padding-top: 50px;
+  }
+
+
+  .home-text {
+    color: white;
+    font-weight: 600;
+    font-size: 30px;
+    font-family: 'Roboto', sans-serif;
+    padding-left: 10px;
   }
 
   .test {
@@ -77,6 +100,37 @@
     border-radius: 4px;
     padding: 20px;
   }
+
+  .home-text {
+    text-align: left;
+    padding-top:50px;
+    color: white;
+    font-size: 26px;
+    letter-spacing: 1px;
+    border-bottom: solid 6px white;
+    padding-bottom: 6px;
+    width: 78%;
+    margin-left: 15px;
+    margin-top: -20px
+  }
+
+  .content-homepage {
+    padding-top: 130px;
+    text-align: center;
+  }
+
+  .content-homepage .btn-primary {
+    font-size: 20px;
+    border-radius: 6px;
+    padding: 10px 25px;
+    background-color: rgba(0, 139, 210, 0.9);
+ }
+
+ .content-homepage p {
+  padding-top: 100px;
+  color: white;
+  text-decoration: underline;
+}
 
   // .test3 {
   //   background-image: url("https://memegenerator.net/img/instances/81923917/cheers-to-your-success.jpg");
