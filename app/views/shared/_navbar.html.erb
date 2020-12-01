@@ -1,3 +1,30 @@
-<div class="alltricks-Header">
-  <h2 class="navbar">AllTricks</h2>
-</div>
+<% if ["scraping"].include?(params[:action]) %>
+  <div class="alltricks-Header flex-navbar">
+      <%= link_to root_path do %>
+        <i class="fas fa-angle-left"></i>
+      <% end %>
+      <h2 class="navbar">AllTricks</h2>
+      <%= link_to barcode_path do %>
+        <i class="fas fa-qrcode"></i>
+      <% end %>
+  </div>
+<% elsif ["barcode", "scan"].include?(params[:action]) %>
+  <div class="alltricks-Header">
+      <h2 class="navbar">AllTricks</h2>
+  </div>
+
+<% else %>
+  <div class="alltricks-Header flex-navbar">
+    <%= link_to root_path do %>
+        <i class="fas fa-angle-left"></i>
+    <% end %>
+    <h2 class="navbar">AllTricks</h2>
+    <i class="fas fa-qrcode no-display"></i>
+  </div>
+<% end %>
+
+<% if ["home"].include?(params[:action]) %>
+  <div class="alltricks-Header">
+    <h2 class="navbar">AllTricks</h2>
+  </div>
+<% end %>
