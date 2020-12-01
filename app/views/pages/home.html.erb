@@ -1,13 +1,9 @@
 <div class="background">
-  <div class="container">
-    <h2 style="text-align:center; padding-top:50px;">Scannez votre produit</h2>
-    <div class='scan-btn'>
-      <%= link_to barcode_path do %>
-        <i class="fas fa-barcode"></i>
-      <% end %>
-    </div>
-    <div class='scan-btn' style="margin-top:150px; padding-top:30px;">
-      <%= link_to 'Appeler un vendeur', new_ticket_path, :class => 'btn btn-primary' %>
+  <div class="home-container">
+    <h2 class="home-text">Bienvenue dans votre <br> magasin !</h2>
+    <div class="content-homepage">
+        <%= link_to 'Scanner un produit', barcode_path, :class => 'btn btn-primary' %>
+        <p>Saisir le code barre manuellement</p>
     </div>
   </div>
 </div>

@@ -1,25 +1,25 @@
 @media (max-width: 767px) {
   .alltricks-Header {
-    top: 0;
-    height: 50px;
-    z-index: 6;
-  }
-
-  .alltricks-Header img {
-    width: 45%;
-    padding-top: 10px;
-  }
-}
-
-.alltricks-Header {
+  top: 0;
+  height: 50px;
+  z-index: 6;
   text-align: center;
   position: fixed;
   left: 0;
   right: 0;
-  margin: 0;
-  padding: 0;
   font-family: Roboto,sans-serif;
-  font-size: 13px;
-  color: #000;
-  background-color: #008bd2;
+  color: #04A2F3;
+  background-color: white;
+  letter-spacing: 1px;
+  border-bottom:2px solid grey;
+  padding-top: 7px;
+  }
+
+  .navbar {
+    font-size: 27px;
+    text-align: center !important;
+    display: inline;
+  }
+
 }
+

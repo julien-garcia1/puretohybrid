@@ -1,45 +1,40 @@
 <div class="alltricks-Footer">
   <div class='scan-btn-footer'>
-    <% if ["home"].include?(params[:action])%>
-      <%= link_to root_path do %>
-        <i class="fas fa-home fa-footer-home active"></i>
-      <% end %>
-    <% else %>
-      <%= link_to root_path do %>
-        <i class="fas fa-home fa-footer-home"></i>
-      <% end %>
-    <% end %>
-  </div>
-  <div class='scan-btn-footer'>
     <% if ["scan", "barcode"].include?(params[:action])%>
       <%= link_to barcode_path do %>
-        <i class="fas fa-barcode fa-footer active"></i>
+        <i class="fas fa-qrcode"></i>
+        <p class="active">AllTricks</p>
       <% end %>
     <% else %>
       <%= link_to barcode_path do %>
-        <i class="fas fa-barcode fa-footer"></i>
+        <i class="fas fa-qrcode"></i>
+        <p>AllTricks</p>
       <% end %>
     <% end %>
   </div>
   <div class='scan-btn-footer'>
     <% if ["index"].include?(params[:action])%>
       <%= link_to products_path do %>
-        <i class="fas fa-search active"></i>
+        <i class="fas fa-bicycle"></i>
+        <p class="active">Produits</p>
       <% end %>
     <% else %>
       <%= link_to products_path do %>
-        <i class="fas fa-search"></i>
+        <i class="fas fa-bicycle"></i>
+        <p>Produits</p>
       <% end %>
     <% end %>
   </div>
   <div class='scan-btn-footer'>
     <% if ["new"].include?(params[:action])%>
       <%= link_to new_ticket_path do %>
-        <i class="fas fa-question fa-help active"></i>
+        <i class="fas fa-concierge-bell"></i>
+        <p class="active">Vendeur</p>
       <% end %>
     <% else %>
       <%= link_to new_ticket_path do %>
-        <i class="fas fa-question fa-help"></i>
+        <i class="fas fa-concierge-bell"></i>
+        <p>Vendeur</p>
       <% end %>
     <% end %>
   </div>
