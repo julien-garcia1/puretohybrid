@@ -1,17 +1,46 @@
 <div class="alltricks-Footer">
-    <div class='scan-btn-footer'>
-  <%= link_to root_path do %>
-    <i class="fas fa-home fa-footer-home"></i>
-  <% end %>
+  <div class='scan-btn-footer'>
+    <% if ["home"].include?(params[:action])%>
+      <%= link_to root_path do %>
+        <i class="fas fa-home fa-footer-home active"></i>
+      <% end %>
+    <% else %>
+      <%= link_to root_path do %>
+        <i class="fas fa-home fa-footer-home"></i>
+      <% end %>
+    <% end %>
   </div>
   <div class='scan-btn-footer'>
-  <%= link_to barcode_path do %>
-    <i class="fas fa-barcode fa-footer"></i>
-  <% end %>
+    <% if ["scan", "barcode"].include?(params[:action])%>
+      <%= link_to barcode_path do %>
+        <i class="fas fa-barcode fa-footer active"></i>
+      <% end %>
+    <% else %>
+      <%= link_to barcode_path do %>
+        <i class="fas fa-barcode fa-footer"></i>
+      <% end %>
+    <% end %>
   </div>
   <div class='scan-btn-footer'>
-  <%= link_to new_ticket_path do %>
-    <i class="fas fa-question fa-help"></i>
-  <% end %>
+    <% if ["index"].include?(params[:action])%>
+      <%= link_to products_path do %>
+        <i class="fas fa-search active"></i>
+      <% end %>
+    <% else %>
+      <%= link_to products_path do %>
+        <i class="fas fa-search"></i>
+      <% end %>
+    <% end %>
+  </div>
+  <div class='scan-btn-footer'>
+    <% if ["new"].include?(params[:action])%>
+      <%= link_to new_ticket_path do %>
+        <i class="fas fa-question fa-help active"></i>
+      <% end %>
+    <% else %>
+      <%= link_to new_ticket_path do %>
+        <i class="fas fa-question fa-help"></i>
+      <% end %>
+    <% end %>
   </div>
 </div>

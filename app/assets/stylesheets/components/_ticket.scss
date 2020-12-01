@@ -1,0 +1,13 @@
+@keyframes bb {
+  from {background-color: blue;}
+  to {background-color: #CCCCCC;}
+}
+
+
+.ticket {
+  background-color: #CCCCCC;
+
+  &.new {
+    animation: bb 5s;
+  }
+}

@@ -1,5 +1,6 @@
-<div class="tickets-container" id="ticket-<%= ticket.id %>">
+ <tr class="ticket <%= 'new' if new %>" id="ticket-<%= ticket.id %>">
   <td><%= ticket.client_firstname %></td>
   <td><%= ticket.status %></td>
-  <td><%= link_to 'Assigner', assign_ticket_path(ticket) %></td>
+  <td><%= ticket.section %></td>
+  <td><%= link_to "J'y vais", assign_ticket_path(ticket) %></td>
 </div>

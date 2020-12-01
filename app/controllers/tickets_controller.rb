@@ -1,5 +1,5 @@
 class TicketsController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:new, :create, :ticket_response, :show]
+  skip_before_action :authenticate_user!, only: [:new, :create, :show]
 
   def index
     @tickets_to_be_assign = Ticket.where(status: 'En attente')
@@ -17,10 +17,11 @@ class TicketsController < ApplicationController
   def create
     @ticket = Ticket.new(ticket_params)
     @ticket.status = 'En attente'
+    @ticket.section = params[:commit]
     if @ticket.save
       StoreChannel.broadcast_to(
-        Store.first.id,
-        render_to_string(partial: "tickets/ticket", locals: { ticket: @ticket })
+        Store.first,
+        body: render_to_string(partial: "tickets/ticket", locals: { ticket: @ticket, new: true })
       )
         redirect_to ticket_path(@ticket), notice: 'Votre ticket a bien été créé, un vendeur est en chemin'
     else
@@ -36,10 +37,6 @@ class TicketsController < ApplicationController
     redirect_to tickets_path
   end
 
-  def ticket_response
-    @ticket = Ticket.last
-  end
-
   def closed
     @ticket = Ticket.find(params[:id])
     @ticket.status = 'Terminé'
@@ -50,7 +47,7 @@ class TicketsController < ApplicationController
   private
 
   def ticket_params
-    params.require(:ticket).permit(:client_firstname, :status, :user_id, :product_id)
+    params.require(:ticket).permit(:client_firstname, :status, :user_id, :product_id, :section)
   end
 
 end
