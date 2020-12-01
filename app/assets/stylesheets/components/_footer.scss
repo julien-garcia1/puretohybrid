@@ -21,12 +21,17 @@
 }
 
 .alltricks-Footer .fa-barcode {
-  font-size: 38px;
-  padding-top: 7px;
+  font-size: 36px;
+  padding-top: 8px;
 }
 
 .active {
-  color: #004289!important;
+  color: #03689C!important;
+  text-shadow: 2px 2px 5px #03689C;
+}
+
+.fa-barcode:before {
+  content: "\f150"
 }
 
 .scan-btn-footer {
