@@ -23,8 +23,8 @@ const quaggaScanner = () => {
         target: scanDiv,  // Or '#yourElement' (optional)
       },
       decoder : {
-        // readers : ["code_128_reader", "ean_reader", "ean_8_reader", "code_39_reader", "code_39_vin_reader", "codabar_reader", "upc_reader", "upc_e_reader", "i2of5_reader", "2of5_reader","code_93_reader"],
-        readers : ["ean_reader"],
+        readers : ["code_128_reader", "ean_reader", "ean_8_reader", "code_39_reader", "code_39_vin_reader", "codabar_reader", "upc_reader", "upc_e_reader", "i2of5_reader", "2of5_reader","code_93_reader"],
+        // readers : ["ean_reader"],
         debug: {
           drawBoundingBox: true,
           drawScanline: true,
@@ -46,8 +46,9 @@ const quaggaScanner = () => {
     Quagga.onDetected(function(result) {
       let last_code = result.codeResult.code;
       last_result.push(last_code);
-      console.log(last_code);
-      if (last_result.length > 35) {
+      const percent = Math.round(last_result.length/35*100)
+      document.querySelector(".progress-bar").style.width= `${percent}%`
+      if (last_result.length > 20) {
         var barcode = orderByOccurrence(last_result)[0];
         last_result = [];
         console.log(barcode);
