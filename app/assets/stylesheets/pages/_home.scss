@@ -1,6 +1,7 @@
 // Specific CSS for your home-page
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
 
 @media (max-width: 767px) {
   h1, h2, h3, h4 {
@@ -11,6 +12,11 @@
 
   body {
     background-color: white;
+    font-family: 'Roboto', sans-serif;
+  }
+
+  p {
+    font-family: 'Roboto', sans-serif;
   }
 
   .scan-btn {
@@ -27,6 +33,10 @@
     display: flex;
     justify-content: center;
     padding-top: 105px;
+  }
+
+  .btn {
+    text-decoration: none;
   }
 
   .scan-btn img {
