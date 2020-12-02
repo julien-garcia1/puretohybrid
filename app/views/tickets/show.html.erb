@@ -7,30 +7,33 @@
       </div>
       <br>
       <div style="padding-top: 100px">
-        <%= link_to 'Annuler', new_ticket_path, :class => 'btn btn-primary' %>
+        <%= link_to 'Annuler', new_ticket_path, :class => 'btn btn-primary'%>
       </div>
     </div>
 
   <% elsif @ticket.status == 'En cours' %>
     <div class="container ticket-response">
-      <div>
-        <h1><%= @ticket.user.nickname %> est en chemin</h1>
-        <h4>Notre expert vient à votre rescousse</h4>
-      </div>
-      <div class="test2">
-        <%# <img src="https://i.pinimg.com/originals/42/f8/e6/42f8e617a028ffed2a6d16c758e44d9b.jpg" width=80% alt=""> %>
+      <div class="content-t" style="padding-top: 160px">
+        <h1><span style="color:#008bd2; font-weight: 900"><%= @ticket.user.nickname %></span> est en chemin</h1>
+        <h4>Notre expert <span style="color:#008bd2; font-weight: 900">pédale</span> à votre rescousse</h4>
+        <div class="avatar">
+          <img src="https://miro.medium.com/max/2600/1*JyYin7G7aGwgD9zpYBZ12Q.png">
+        </div>
       </div>
     </div>
 
   <% else %>
     <div class="container ticket-response">
-      <div>
-        <h1>Ticket terminé</h1>
+      <div class="content-t" style="padding-top: 80px">
         <h4>Nous espérons que notre conseiller à répondu à vos interrogations</h4>
+        <br><br>
+        <h1>Merci</h1>
         <div class="heart"></div>
       </div>
-      <div>
-        <%# <img src="https://memegenerator.net/img/instances/81923917/cheers-to-your-success.jpg" width=80% alt=""> %>
+      <div style="padding-top: 320px">
+        <%= link_to root_path, :class => 'btn btn-primary home' do %>
+          <i class="fas fa-home"></i>
+        <% end %>
       </div>
     </div>
   <% end %>
