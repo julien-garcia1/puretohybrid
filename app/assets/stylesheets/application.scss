@@ -11,12 +11,13 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+@import "components/barcode";
 
 #barcode-scanner canvas.drawingBuffer, #barcode-scanner video.drawingBuffer {
   display: none;
 }
 #barcode-scanner canvas, #barcode-scanner video {
-  width: 100%;
+  width: 60%;
   height: auto;
   position:relative;
 }
@@ -35,4 +36,3 @@
 .price {
   color:red;
 }
-

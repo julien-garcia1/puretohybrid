@@ -3,7 +3,15 @@
     <h2 class="home-text">Bienvenue dans votre <br> magasin !</h2>
     <div class="content-homepage">
         <%= link_to 'Scanner un produit', barcode_path, :class => 'btn btn-primary' %>
-        <p>Saisir le code barre manuellement</p>
+        <p><button id="togg1">Saisir le code barre manuellement</button></p>
+          <div id="d1" style='display:none' class="form-card">
+            <form action="/scraping?val_barcode=" method="get">
+              <div>
+              <input id="val_barcode" name="val_barcode" class="input-form">
+              <button type="submit" class="btn btn-primary submit">Go</button>
+              </div>
+            </form>
+          </div>
     </div>
   </div>
 </div>
