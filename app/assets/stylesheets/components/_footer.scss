@@ -4,14 +4,14 @@
   text-align: center;
   position: fixed;
   display:flex;
-  bottom:0;
-  left: 0;
-  right: 0;
+  bottom:5px;
+  left: 5px;
+  right: 5px;
   margin: 0;
   padding: 0;
   font-family: Roboto,sans-serif;
-  background-color: black;
-  border-top: solid 2px rgba(0, 0, 0, 0.3);
+  background-color: white;
+  border-radius:6px;
 }
 
 .alltricks-Footer .fas {
@@ -28,10 +28,10 @@
 }
 
 .active {
-  border-bottom: solid 5px #008bd2;
+  border-bottom: solid 0px #008bd2;
   color: #008bd2!important;
 }
 
 .scan-btn-footer {
-  background: black !important;
+  background: white !important;
 }
