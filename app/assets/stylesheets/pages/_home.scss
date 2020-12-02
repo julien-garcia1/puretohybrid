@@ -20,33 +20,8 @@
     font-family: 'Roboto', sans-serif;
   }
 
-  .scan-btn {
-    display: flex;
-    justify-content: center;
-    background-color: rgba(0, 139, 210, 0.8);
-    border-radius: 5px;
-    width: 200px;
-    height: 100px;
-    margin:20px auto;
-  }
-
-  .btn-home {
-    display: flex;
-    justify-content: center;
-    padding-top: 105px;
-  }
-
   .btn {
     text-decoration: none;
-  }
-
-  .scan-btn img {
-    width: 70%;
-  }
-
-  .scan-btn .btn-primary {
-    background-color: rgba(0, 139, 210, 0);
-    border:none;
   }
 
   .btn-primary {
@@ -57,16 +32,6 @@
   .fa-barcode {
     font-size: 100px;
     color: white;
-  }
-
-  .scan-btn-footer {
-    position: center;
-    justify-content: center;
-    background-color: #008bd2;
-    border-radius: 5px;
-    width: 100px;
-    height: 50px;
-    margin: 0 auto;
   }
 
   .background {

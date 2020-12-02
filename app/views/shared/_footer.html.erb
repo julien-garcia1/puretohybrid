@@ -1,6 +1,6 @@
 <div class="alltricks-Footer">
-  <div class='scan-btn-footer'>
-    <% if ["scan", "barcode"].include?(params[:action])%>
+  <div class='scan-btn-footer b-left'>
+    <% if ["scan", "barcode", "home"].include?(params[:action])%>
       <%= link_to barcode_path do %>
         <i class="fas fa-qrcode"></i>
         <p class="active">AllTricks</p>
@@ -25,7 +25,7 @@
       <% end %>
     <% end %>
   </div>
-  <div class='scan-btn-footer'>
+  <div class='scan-btn-footer b-right'>
     <% if ["new"].include?(params[:action])%>
       <%= link_to new_ticket_path do %>
         <i class="fas fa-concierge-bell"></i>

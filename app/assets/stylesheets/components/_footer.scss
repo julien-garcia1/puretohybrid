@@ -1,17 +1,15 @@
 .alltricks-Footer {
-  height: 50px;
+  height: 55px;
   z-index: 6;
   text-align: center;
-  position: fixed;
+  position: absolute;
   display:flex;
-  bottom:5px;
-  left: 5px;
-  right: 5px;
-  margin: 0;
-  padding: 0;
+  bottom: 18px;
+  left: 12px;
+  right: 12px;
   font-family: Roboto,sans-serif;
   background-color: white;
-  border-radius:6px;
+  border-radius: 6px !important;
 }
 
 .alltricks-Footer .fas {
@@ -28,10 +26,23 @@
 }
 
 .active {
-  border-bottom: solid 0px #008bd2;
+  border-bottom: solid 4px #008bd2;
   color: #008bd2!important;
+  padding-top: 1.2px;
 }
 
 .scan-btn-footer {
-  background: white !important;
+  height: 55px;
+  margin: 0 auto;
+  background: white;
+  padding-top: 5px;
+  width: 90px;
+}
+
+.b-left {
+  border-radius: 6px 0px 0px 6px !important;
+}
+
+.b-right {
+  border-radius: 0px 6px 6px 0px !important;
 }
