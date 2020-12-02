@@ -1,17 +1,44 @@
 @media (max-width: 767px) {
   .scan-form button {
-  text-decoration:underline;
   border:none;
   color: black;
   background: transparent;
 }
 
+.scan-form {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.scan-cam {
+  text-align: center;
+  border: solid 2px grey;
+  border-radius: 6px;
+  padding: 15px;
+  height: 200px;
+}
+
+video {
+  border-radius: 6px;
+}
+
 .input-form {
   border-radius:5px;
-  padding:10px;
 }
 
 .submit {
   text-decoration:none;
+}
+
+.title-barcode {
+  text-align: center;
+}
+
+.scan-form .btn-primary {
+  font-size: 20px;
+  border-radius: 6px;
+  padding: 10px 25px;
+  background-color: rgba(0, 139, 210, 0.9);
+  color: white;
 }
 }

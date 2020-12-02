@@ -18,6 +18,10 @@
     <!-- <p class="alert"><%= alert %></p> -->
     <%= render 'shared/navbar' %>
     <%= yield %>
-    <%= render 'shared/footer' %>
+    <% if ["barcode"].include?(params[:action]) %>
+      <%=  %>
+    <% else %>
+      <%= render 'shared/footer' %>
+    <% end %>
   </body>
 </html>
