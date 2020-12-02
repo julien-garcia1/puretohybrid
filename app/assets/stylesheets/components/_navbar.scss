@@ -11,14 +11,15 @@
   color: #04A2F3;
   background-color: white;
   letter-spacing: 1px;
-  border-bottom:2px solid grey;
+  border-bottom:solid 2px rgba(0, 0, 0, 0.3);
   padding-top: 7px;
   }
 
   .navbar {
-    font-size: 27px;
+    font-size: 25px;
     text-align: center !important;
     display: inline;
+    font-weight:500;
   }
 
 }

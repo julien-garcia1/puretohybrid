@@ -128,8 +128,6 @@
 
  .content-homepage p {
   padding-top: 100px;
-  color: white;
-  text-decoration: underline;
 }
 
   // .test3 {
@@ -137,5 +135,20 @@
   //   height: 400px;
   //   width: 100%;
   // }
+}
+button {
+  text-decoration:underline;
+  border:none;
+  color: white;
+  background: transparent;
+}
+
+.input-form {
+  border-radius:5px;
+  padding:10px;
+}
+
+.submit {
+  text-decoration:none;
 }
 

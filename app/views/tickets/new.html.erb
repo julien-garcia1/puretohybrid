@@ -8,8 +8,8 @@
           <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
           <div class="form">
             <%= f.input :client_firstname, label: 'Renseignez votre prénom', :label_html => {:class => "form-ticket-text"} %>
-          </div> 
-           
+          </div>
+
           <div class="form">
             <p class="form-ticket-text">Vous souhaitez les conseils du spécialiste du rayon:</p>
               <%= f.submit "VTT", class: "btn btn-primary section" %>
@@ -22,4 +22,4 @@
         <% end %>
     </div>
   </div>
-</div>
+
