@@ -111,9 +111,13 @@
 
   .b-ticket {
     position: relative;
-    background-color: rgba(0,0,0,0.8);
+    background-color: #2f3032;
     padding: 17px;
     border-radius: 6px;
+  }
+
+  #form-line {
+    background: white;
   }
 
   .b-ticket p {
@@ -127,6 +131,7 @@
 
   .b-ticket h2 {
     font-size: 25px !important;
+    text-align: center;
   }
 
   .home-text {

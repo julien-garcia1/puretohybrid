@@ -1,15 +1,15 @@
 <div id="ticket-show" data-ticket-id="<%= @ticket.id %>">
   <% if @ticket.status == 'En attente' %>
     <div class="container ticket-response">
-      <div>
-        <h1>Votre ticket a bien été créé</h1>
-        <h4>Nous allons assigner un vendeur à votre ticket</h4>
+      <div class="content-t" style="padding-top: 160px">
+        <h1>Nous recherchons un vendeur disponible pour vous aider</h1>
+        <div class="loader">Loading...</div>
       </div>
-      <div class="test">
-        <%# <img src="https://i.pinimg.com/474x/d7/48/c5/d748c5b0f21fa5232f71bfdce87d2f38.jpg" width=80% alt=""> %>
+      <br>
+      <div style="padding-top: 100px">
+        <%= link_to 'Annuler', new_ticket_path, :class => 'btn btn-primary' %>
       </div>
     </div>
-
 
   <% elsif @ticket.status == 'En cours' %>
     <div class="container ticket-response">
