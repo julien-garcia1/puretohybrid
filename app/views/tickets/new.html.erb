@@ -1,15 +1,15 @@
 <div class="background">
   <div class="container" style="padding-top: 85px">
     <div class="b-ticket">
-        <p class="form-ticket-text title">Appeler un vendeur</p>
-
+        <h2 class="form-ticket-text title">Appeler un vendeur</h2>
+<br><br>
         <%= simple_form_for(@ticket) do |f| %>
           <%= f.error_notification %>
           <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
           <div class="form">
             <%= f.input :client_firstname, label: 'Renseignez votre prénom', :label_html => {:class => "form-ticket-text"} %>
           </div>
-
+<br><br>
           <div class="form">
             <p class="form-ticket-text">Vous souhaitez les conseils du spécialiste du rayon:</p>
               <%= f.submit "VTT", class: "btn btn-primary section" %>

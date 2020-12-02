@@ -18,7 +18,7 @@
     <!-- <p class="alert"><%= alert %></p> -->
     <%= render 'shared/navbar' %>
     <%= yield %>
-    <% if ["barcode"].include?(params[:action]) %>
+    <% if ["barcode", "scraping"].include?(params[:action]) %>
       <%=  %>
     <% else %>
       <%= render 'shared/footer' %>

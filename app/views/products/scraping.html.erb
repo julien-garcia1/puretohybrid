@@ -1,32 +1,47 @@
 <div class="container">
-  <div class="img-product">
-  <img src="<%= @html_doc.at('.js-allbox img')['src'] %>" alt="">
-  </div>
-  <div>
-  <h2><%= @html_doc.search('.heading-title-text').first.text %></h2>
-  </div>
-  <div>
-  <h2 class='price'><%= @html_doc.search('.prices').first.text %></h2>
-  </div>
-  <button id="togg1" class="btn btn-primary">Description Produit</button>
-    <div id="d1" style='display:none'>
-        <p><%= @html_doc.search('.product-description-text').first.text.gsub("PLUS D'INFORMATIONS","") %></p>
+  <div class="card card-img-p">
+    <div class="img-product">
+      <img src="<%= @html_doc.at('.js-allbox img')['src'] %>" alt="">
     </div>
+    <div class='price'>
+      <h2><%= @html_doc.search('.prices').first.text %></h2>
+    </div>
+  </div>
+  <br>
+  <div class="card price-field">
+    <div>
+      <h2><%= @html_doc.search('.heading-title-text').first.text %></h2>
+    </div>
+    <div class="buttons-product">
+      <div>
+        <%= link_to new_ticket_path, :class => 'btn btn-primary' do %>
+          <i class="fas fa-concierge-bell"></i><span style="padding-left: 15px">Vendeur</span>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <br>
+  <div class="card">
+    <button id="togg1" class="btn btn-primary">En savoir plus</button>
+    <div id="d1" style='display:none'>
+      <p><%= @html_doc.search('.product-description-text').first.text.gsub("PLUS D'INFORMATIONS","") %></p>
+    </div>
+  </div>
+  <br>
   <div>
-  <p class='stars'><%= @html_doc.search('.alltricks-Product-stars--active').first.text %> <%= @html_doc.search('.alltricks-Product-ReviewCounter').first.text.gsub("Soyez le premier à laisser un avis","") %></p>
-  </div>
-  <div>
-  <h3>Avis.</h3>
-  <div>
-  <% @html_doc.search("[@itemprop= 'review']").each do |element| %>
-  <div>
-  <p><%= element.search("[@itemprop= 'author']").text %> a écrit:</p>
-  <p>"<%= element.search("[@itemprop= 'description']").text %>"</p>
-  </div>
-  <hr>
-  </div>
-  </div>
-  <% end %>
-  </div>
+    <div>
+      <p class='stars'><%= @html_doc.search('.alltricks-Product-stars--active').first.text %> <%= @html_doc.search('.alltricks-Product-ReviewCounter').first.text.gsub("Soyez le premier à laisser un avis","") %></p>
+    </div>
+      <% @html_doc.search("[@itemprop= 'review']").each do |element| %>
+        <div>
+          <p class="comment"><%= element.search("[@itemprop= 'author']").text %> a écrit:</p>
+          <div class="card">
+            <p>"<%= element.search("[@itemprop= 'description']").text %>"</p>
+          </div>
+        </div>
+        <hr>
+      <% end %>
+    </div>
   </div>
 </div>
+<br>
