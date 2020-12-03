@@ -46,9 +46,9 @@ const quaggaScanner = () => {
     Quagga.onDetected(function(result) {
       let last_code = result.codeResult.code;
       last_result.push(last_code);
-      const percent = Math.round(last_result.length/35*100)
+      const percent = Math.round(last_result.length/30*100)
       document.querySelector(".progress-bar").style.width= `${percent}%`
-      if (last_result.length > 20) {
+      if (last_result.length > 30) {
         var barcode = orderByOccurrence(last_result)[0];
         last_result = [];
         console.log(barcode);
