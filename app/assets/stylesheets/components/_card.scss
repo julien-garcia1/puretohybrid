@@ -4,59 +4,62 @@
   padding: 15px;
   background: white;
 }
-
-.price-field {
-  background: #008bd2;
-  color: white;
+.card-img {
+  padding: 15px;
+  background: white;
 }
-
-.buttons-product {
+.price-field {
+  color: #2f2f37;
   display: flex;
   justify-content: space-between;
 }
-
+.buttons-product {
+  position: fixed;
+  bottom: 20px;
+  left: 65px;
+}
+.b-product {
+  background-color: white;
+}
 .buttons-product .btn-primary {
-  width: 100%;
-  padding: 6px 25px;
-  border-radius: 6px;
+  border-radius: 50px;
   background: white;
   color: #008bd2;
+  box-shadow: 2px 2px 8px grey;
   font-weight: bold;
+  width: 240px;
+  padding: 17px 32px;
+  font-size: 19px;
 }
-
 .stars {
   color:#008bd2;
   font-size: 22px;
 }
-
 .price {
   color:black;
+}
+.card-img-p {
+  position: relative;
+}
+.img-product .fas {
   position: absolute;
-  top: 10px;
-  right: 0px;
-  background: #008bd2;
-  border-radius: 6px 0px 0px 6px;
-  padding-left: 12px;
-  padding-right: 12px;
+  top: 15px;
+  left: 15px;
+  font-size: 20px;
+  background-color: #2f2f37;
+  height: 35px;
+  width: 35px;
+  border-radius: 50%;
+  text-align: center;
   padding-top: 7px;
+  padding-right: 2px;
   color: white;
 }
-
-.price h2 {
-  font-size: 16px;
-  font-family: 'Ubuntu', sans-serif;
-}
-
-.card-img-p {
-  position: relative
-}
-
 .comment {
   font-weight: bold;
   color: rgba(0, 0, 0, 0.8);
 }
-
 #d1 p{
   text-align: justify;
-  color: rgba(0, 0, 0, 0.8);
+  color: #2f2f37;
 }

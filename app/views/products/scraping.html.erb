@@ -1,30 +1,28 @@
-<div class="container">
-  <div class="card card-img-p">
-    <div class="img-product">
-      <img src="<%= @html_doc.at('.js-allbox img')['src'] %>" alt="">
-    </div>
-    <div class='price'>
-      <h2><%= @html_doc.search('.prices').first.text %></h2>
-    </div>
+<div class="card-img card-img-p">
+  <div class="img-product">
+    <img src="<%= @html_doc.at('.js-allbox img')['src'] %>" alt="">
+    <%= link_to barcode_path do %>
+      <i class="fas fa-angle-left"></i>
+    <% end %>
   </div>
-  <br>
-  <div class="card price-field">
+</div>
+<br>
+<div class="container b-product">
+  <div class="price-field">
     <div>
       <h2><%= @html_doc.search('.heading-title-text').first.text %></h2>
     </div>
-    <div class="buttons-product">
-      <div>
-        <%= link_to new_ticket_path, :class => 'btn btn-primary' do %>
-          <i class="fas fa-concierge-bell"></i><span style="padding-left: 15px">Vendeur</span>
-        <% end %>
-      </div>
-    </div>
+    <div class='price'>
+      <h2><%= @html_doc.search('.prices').first.text %></h2>
+  </div>
   </div>
   <br>
-  <div class="card">
-    <button id="togg1" class="btn btn-primary">En savoir plus</button>
+  <div>
+    <button id="togg1" class="btn btn-primary">Description du produit<button>
     <div id="d1" style='display:none'>
-      <p><%= @html_doc.search('.product-description-text').first.text.gsub("PLUS D'INFORMATIONS","") %></p>
+      <div class="card">
+        <p><%= @html_doc.search('.product-description-text').first.text.gsub("PLUS D'INFORMATIONS","") %></p>
+      </div>
     </div>
   </div>
   <br>
@@ -41,6 +39,11 @@
         </div>
         <hr>
       <% end %>
+    </div>
+    <div class="buttons-product">
+        <%= link_to new_ticket_path, :class => 'btn btn-primary' do %>
+          <i class="fas fa-concierge-bell"></i><span style="padding-left: 25px">Vendeur</span>
+        <% end %>
     </div>
   </div>
 </div>

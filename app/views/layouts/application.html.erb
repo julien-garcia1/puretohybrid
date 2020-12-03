@@ -27,7 +27,7 @@
 
   <body>
     <%= yield %>
-    <% if ["barcode", "scraping", "show"].include?(params[:action]) %>
+    <% if ["barcode", "scraping", "show", "index"].include?(params[:action]) %>
       <%=  %>
     <% else %>
       <%= render 'shared/footer' %>
