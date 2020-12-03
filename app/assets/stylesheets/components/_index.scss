@@ -17,7 +17,7 @@
 
 .background-search {
   background-image: url("https://cdn.pixabay.com/photo/2015/10/12/14/53/cyclist-983931_960_720.jpg");
-  height: 2100px;
+  min-height: 100vh;
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
