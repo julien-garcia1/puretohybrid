@@ -1,6 +1,6 @@
 <div id="ticket-show" data-ticket-id="<%= @ticket.id %>">
   <% if @ticket.status == 'En attente' %>
-    <div class="container ticket-response">
+    <div class="container ticket-response" style="padding-top: 60px">
       <div class="content-t" style="padding-top: 160px">
         <h1>Nous recherchons un vendeur disponible pour vous aider</h1>
         <div class="loader">Loading...</div>
@@ -12,7 +12,7 @@
     </div>
 
   <% elsif @ticket.status == 'En cours' %>
-    <div class="container ticket-response">
+    <div class="container ticket-response" style="padding-top: 60px">
       <div class="content-t" style="padding-top: 160px">
         <h1><span style="color:#008bd2; font-weight: 900"><%= @ticket.user.nickname %></span> est en chemin</h1>
         <h4>Notre expert <span style="color:#008bd2; font-weight: 900">pédale</span> à votre rescousse</h4>
@@ -23,7 +23,7 @@
     </div>
 
   <% else %>
-    <div class="container ticket-response">
+    <div class="container ticket-response" style="padding-top: 60px">
       <div class="content-t" style="padding-top: 80px">
         <h4>Nous espérons que notre conseiller à répondu à vos interrogations</h4>
         <br><br>
