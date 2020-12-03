@@ -2,7 +2,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Mulish&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@700&display=swap');
+
 
 @media (max-width: 767px) {
   h1, h2, h3, h4 {
@@ -116,7 +117,7 @@
 
   .content-homepage .btn-primary {
     font-size: 20px;
-    border-radius: 6px;
+    border-radius: 30px;
     padding: 10px 25px;
     background-color: rgba(0, 139, 210, 0.9);
  }

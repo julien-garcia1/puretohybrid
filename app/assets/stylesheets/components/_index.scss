@@ -16,15 +16,33 @@
 }
 
 .background-search {
-  background-image: url("https://cdn.pixabay.com/photo/2015/10/12/14/53/cyclist-983931_960_720.jpg");
+  background-image: url("https://www.designbolts.com/wp-content/uploads/2018/05/Cycling-Apple-iPhone-X-Wallpaper.jpg");
   min-height: 100vh;
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+
 }
 
 .background-search h1 {
   color: white;
   padding-bottom: 10px;
+}
+
+.b-search p {
+  position: relative;
+  color: #2f2f37 !important;
+  font-size: 26px;
+  font-family: 'Mulish', sans-serif;
+  font-weight: 900;
+}
+
+.search-form input {
+  border-radius: 30px;
+}
+
+.footer .alltricks-Footer {
+  position: fixed;
+  bottom: 15px !important;
 }
