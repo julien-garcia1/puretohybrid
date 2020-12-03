@@ -14,10 +14,11 @@
   justify-content: space-between;
 }
 .buttons-product {
-  position: fixed;
+  position: sticky;
   bottom: 20px;
-  left: 65px;
+  text-align: center;
 }
+
 .b-product {
   background-color: white;
 }
@@ -29,14 +30,15 @@
   font-weight: bold;
   width: 240px;
   padding: 17px 32px;
-  font-size: 19px;
+  font-size: 14px;
 }
 .stars {
   color:#008bd2;
-  font-size: 22px;
+  font-size: 1rem;
 }
-.price {
-  color:black;
+.price h2{
+  color:#2f2f37;
+  font-size: 25px !important;
 }
 .card-img-p {
   position: relative;
@@ -60,14 +62,14 @@
   position: absolute;
   top: 15px;
   right: 15px;
-  font-size: 18px;
+  font-size: 15px;
   background-color: #2f2f37;
   height: 35px;
   width: 35px;
   border-radius: 50%;
   text-align: center;
-  padding-top: 7px;
-  padding-right: 2px;
+  padding-top: 9.5px;
+  padding-right: 0px;
   color: white;
 }
 
