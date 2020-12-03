@@ -36,8 +36,8 @@ class ProductsController < ApplicationController
     json = html_file.match(REGEX)[:json].split('<script type="application/ld+json">').last.strip
     data = JSON.parse(json)
     @price = (data['offers'].key?('price') ? data['offers']['price'] : data['offers']['lowPrice'])
-    @rating = data['aggregateRating']['ratingValue']
-    @rating_count = data['aggregateRating']['reviewCount']
+    @rating = (data['aggregateRating'].key?('ratingValue') ? data['aggregateRating']['ratingValue'] : "pas d'avis")
+    @rating_count = (data['aggregateRating'].key?('reviewCount') ? data['aggregateRating']['reviewCount'] : "pas d'avis")
     @name = data['name']
     @image = data['image']
     @url = data ['url']
@@ -47,6 +47,7 @@ class ProductsController < ApplicationController
 
   end
 end
+
 
 
 # if @html_doc.search('.titreconseil').present?

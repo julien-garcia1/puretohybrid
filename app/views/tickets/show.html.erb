@@ -14,7 +14,7 @@
   <% elsif @ticket.status == 'En cours' %>
     <div class="container ticket-response" style="padding-top: 60px">
       <div class="content-t" style="padding-top: 160px">
-        <h1><span style="color:#008bd2; font-weight: 900"><%= @ticket.user.nickname %></span> est en chemin</h1>
+        <h1><span style="color:#008bd2; font-weight: 900;text-transform: uppercase"><%= @ticket.user.nickname %></span> est en chemin</h1>
         <h4>Notre expert <span style="color:#008bd2; font-weight: 900">pédale</span> à votre rescousse</h4>
 <!--         <div class="avatar">
           <img src="https://miro.medium.com/max/2600/1*JyYin7G7aGwgD9zpYBZ12Q.png">
@@ -34,7 +34,25 @@
         <h1>Merci</h1>
         <div class="heart"></div>
       </div>
-      <div style="padding-top: 220px">
+
+    <div class="rating-group" style="padding-top:200px">
+      <p class="desc" style="padding-top:200px,font-family: sans-serif; font-size:1.2rem">Merci d'évaluer le conseil de <span style="color:#008bd2; font-weight:bold;font-size:1.5rem;text-transform: uppercase"><%= @ticket.user.nickname %></span></p>
+        <div id="full-stars-example-two">
+        <input disabled checked class="rating__input rating__input--none" name="rating3" id="rating3-none" value="0" type="radio">
+        <label aria-label="1 star" class="rating__label" for="rating3-1"><i class="rating__icon rating__icon--star fa fa-star"></i></label>
+        <input class="rating__input" name="rating3" id="rating3-1" value="1" type="radio">
+        <label aria-label="2 stars" class="rating__label" for="rating3-2"><i class="rating__icon rating__icon--star fa fa-star"></i></label>
+        <input class="rating__input" name="rating3" id="rating3-2" value="2" type="radio">
+        <label aria-label="3 stars" class="rating__label" for="rating3-3"><i class="rating__icon rating__icon--star fa fa-star"></i></label>
+        <input class="rating__input" name="rating3" id="rating3-3" value="3" type="radio">
+        <label aria-label="4 stars" class="rating__label" for="rating3-4"><i class="rating__icon rating__icon--star fa fa-star"></i></label>
+        <input class="rating__input" name="rating3" id="rating3-4" value="4" type="radio">
+        <label aria-label="5 stars" class="rating__label" for="rating3-5"><i class="rating__icon rating__icon--star fa fa-star"></i></label>
+        <input class="rating__input" name="rating3" id="rating3-5" value="5" type="radio">
+    </div>
+  </div>
+      <div style="padding-top: 70px">
+
         <%= link_to root_path, :class => 'btn btn-primary home' do %>
           <i class="fas fa-home"></i>
         <% end %>
