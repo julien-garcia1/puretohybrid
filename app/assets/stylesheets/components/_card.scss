@@ -41,7 +41,7 @@
 .card-img-p {
   position: relative;
 }
-.img-product .fas {
+.img-product .fa-angle-left {
   position: absolute;
   top: 15px;
   left: 15px;
@@ -55,6 +55,22 @@
   padding-right: 2px;
   color: white;
 }
+
+.img-product .fa-wrench {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 18px;
+  background-color: #2f2f37;
+  height: 35px;
+  width: 35px;
+  border-radius: 50%;
+  text-align: center;
+  padding-top: 7px;
+  padding-right: 2px;
+  color: white;
+}
+
 .comment {
   font-weight: bold;
   color: rgba(0, 0, 0, 0.8);

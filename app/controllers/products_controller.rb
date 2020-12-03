@@ -40,6 +40,7 @@ class ProductsController < ApplicationController
     @rating_count = data['aggregateRating']['reviewCount']
     @name = data['name']
     @image = data['image']
+    @url = data ['url']
     @description = data['description']
     @brand = data['brand']['name']
     @html_doc = Nokogiri::HTML(html_file)
