@@ -23,7 +23,7 @@ video {
 }
 
 .input-form {
-  border-radius:5px;
+  border-radius: 30px;
 }
 
 .submit {
@@ -36,10 +36,14 @@ video {
 
 .scan-form .btn-primary {
   font-size: 20px;
-  border-radius: 6px;
+  border-radius: 30px;
   padding: 10px 25px;
   background-color: rgba(0, 139, 210, 0.9);
   color: white;
+}
+
+.title-barcode h2 {
+  font-size: 30px;
 }
 }
 

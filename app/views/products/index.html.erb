@@ -1,7 +1,7 @@
 <div class="background-search">
   <div class="container" style="padding-top: 60px">
     <div class="search-form b-search">
-      <p style="padding-bottom: 22px">Recherchez parmi <br> nos <span style="background:white; color:#008bd2; font-size: 30px; padding: 3px">200000 références</span></p>
+      <p style="padding-bottom: 22px">Recherchez parmi <br> nos <span style="background:white; color:#008bd2; font-size: 31px; padding: 0px 10px">200000 références</span></p>
 
       <%= form_tag products_path, method: :get do %>
         <%= text_field_tag :query,
@@ -14,9 +14,6 @@
         </div>
       <% end %>
     </div>
-
-
-
     <div class="cards-products">
       <% @products.each do |product|  %>
         <% product['skus'].each do |p|%>
@@ -44,12 +41,12 @@
     <% if ["scan", "barcode", "home"].include?(params[:action])%>
       <%= link_to barcode_path do %>
         <i class="fas fa-qrcode active" style="border-bottom: none !important"></i>
-        <p class="active">AllTricks</p>
+        <p class="active">Scan</p>
       <% end %>
     <% else %>
       <%= link_to barcode_path do %>
         <i class="fas fa-qrcode"></i>
-        <p>AllTricks</p>
+        <p>Scan</p>
       <% end %>
     <% end %>
   </div>

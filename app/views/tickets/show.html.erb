@@ -27,13 +27,14 @@
     </div>
 
   <% else %>
-    <div class="container ticket-response" style="padding-top: 60px">
+    <div class="container ticket-response" style="padding-top: 30px">
       <div class="content-t" style="padding-top: 80px">
         <h4>Nous espérons que notre conseiller à répondu à vos interrogations</h4>
         <br><br>
         <h1>Merci</h1>
         <div class="heart"></div>
       </div>
+
     <div class="rating-group" style="padding-top:200px">
       <p class="desc" style="padding-top:200px,font-family: sans-serif; font-size:1.2rem">Merci d'évaluer le conseil de <span style="color:#008bd2; font-weight:bold;font-size:1.5rem;text-transform: uppercase"><%= @ticket.user.nickname %></span></p>
         <div id="full-stars-example-two">
@@ -51,6 +52,7 @@
     </div>
   </div>
       <div style="padding-top: 70px">
+
         <%= link_to root_path, :class => 'btn btn-primary home' do %>
           <i class="fas fa-home"></i>
         <% end %>
