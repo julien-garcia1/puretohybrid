@@ -1,4 +1,5 @@
 <!-- <a id="lien" href="#product">AVIS</a> -->
+
 <div class="container" style="padding-top: 60px">
 <div class="title-barcode">
   <h3>Scannez le code-barre</h3>
@@ -21,16 +22,26 @@
 </div>
 
 <div class="scan-form">
-  <p><button id="togg1">Un soucis ?</button></p>
-          <div id="d1" style='display:none' class="form-card">
-            <form action="/scraping?val_barcode=" method="get">
-              <label for="val_barcode">Saisir le code manuellement</label>
-              <div>
-              <input id="val_barcode" name="val_barcode" class="input-form">
-              <button type="submit" class="btn btn-primary submit">Go</button>
-              </div>
-            </form>
-          </div>
+  <p><button id="togg1">Un souci ?</button></p>
+    <div id="d1" style='display:none' class="form-card">
+      <form action="/scraping?val_barcode=" method="get">
+        <label for="val_barcode">Saisir le code manuellement</label>
+        <div>
+        <input id="val_barcode" name="val_barcode" class="input-form">
+        <button type="submit" class="btn btn-primary submit">Go</button>
+        </div>
+      </form>
+    </div>
+    <div>
+      <%= link_to root_path do %>
+        <i class="fas fa-angle-left"></i><span class="retour"></span>
+        <p>retour à l'acceuil</p>
+    <% end %>
+    </div>
+  </div>
 </div>
-</div>
+
+
+
+
 
