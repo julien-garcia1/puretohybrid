@@ -24,6 +24,11 @@
   .btn-primary {
      background-color: #008bd2;
      border:none;
+     transition: transform 0s; /* Animation */
+    }
+
+  .btn-primary:focus {
+    transform: scale(1.1);
   }
 
   .fa-barcode {
