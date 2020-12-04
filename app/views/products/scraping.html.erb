@@ -31,8 +31,9 @@
   </div>
   <br>
   <div>
-    <div style="display: flex; padding-bottom: 10px;">
-      <p class='stars'><div style="position: absolute"><% 5.times do %><i class="fas fa-star" style="color: grey"></i><% end %></div><div class="star" style="position: relative"><% @rating.to_i.times do %><i class="fas fa-star" style="color: red"></i><% end %></div><span style="padding-left: 10px; color: #008bd2; font-weight: bold"><%= @html_doc.search('.alltricks-Product-ReviewCounter').first.text.gsub("Soyez le premier à laisser un avis","") %></span></p>
+    <div style="display: flex; justify-content: space-between; padding-bottom: 10px;">
+      <div style="position: absolute"><% 5.times do %><i class="fas fa-star" style="color: grey"></i><% end %></div><div class="star" style="position: relative"><% @rating.to_i.times do %><i class="fas fa-star" style="color: red"></i><% end %></div>
+      <div style="padding-right: 55%"><span style="color: #008bd2; font-weight: bold"><%= @html_doc.search('.alltricks-Product-ReviewCounter').first.text.gsub("Soyez le premier à laisser un avis","") %></span></div>
     </div>
       <% @html_doc.search("[@itemprop= 'review']").each do |element| %>
         <div>
