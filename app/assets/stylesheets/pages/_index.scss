@@ -57,11 +57,26 @@
 
 
 body {
+  background-color: white;
   font-family: 'Montserrat', sans-serif;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
+
+body.pages_home, body.tickets_new{
+  background-image: url("https://i.pinimg.com/originals/d6/42/65/d64265e5539b75f47df0bc62276731e6.jpg");
+}
+
+body.products_index {
+  background-image: url("https://www.designbolts.com/wp-content/uploads/2018/05/Cycling-Apple-iPhone-X-Wallpaper.jpg");
+}
+
+// body.background
 
 .card-products .btn {
   padding: 6px 5px;

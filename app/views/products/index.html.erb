@@ -1,83 +1,38 @@
-<div class="background-search">
-  <div class="container" style="padding-top: 60px">
-    <div class="search-form b-search">
-      <p style="padding-bottom: 22px">Recherchez parmi <br> nos <span style="background:white; color:#008bd2; font-size: 30px; padding: 3px">200000 références</span></p>
+<div class="container" style="padding-top: 60px">
+  <div class="search-form b-search">
+    <p style="padding-bottom: 22px">Recherchez parmi <br> nos <span style="background:white; color:#008bd2; font-size: 30px; padding: 3px">200000 références</span></p>
 
-      <%= form_tag products_path, method: :get do %>
-        <%= text_field_tag :query,
-          params[:query],
-          class: "form-control",
-          placeholder: "Entrez votre recherche"
-        %>
-        <div class="btn-search-form">
-          <%= submit_tag "Rechercher", class: "btn btn-primary" %>
-        </div>
-      <% end %>
-    </div>
-
+    <%= form_tag products_path, method: :get do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control",
+        placeholder: "Entrez votre recherche"
+      %>
+      <div class="btn-search-form">
+        <%= submit_tag "Rechercher", class: "btn btn-primary" %>
+      </div>
+    <% end %>
+  </div>
 
 
-    <div class="cards-products">
-      <% @products.each do |product|  %>
-        <% product['skus'].each do |p|%>
 
-          <div class="card-products">
-            <img src="https://media.alltricks.com/medium/<%= p['photo'].split('¤')[0] %>" class="card-img-product">
-            <div class="card-infos">
-              <h4><%= p['Model'] %></h4>
-              <div class="card-price">
-                <p><%= p['price'] %> €</p>
-              </div>
-              <div class="btn btn-primary">
-                <%= link_to 'Voir Fiche Produit', product_path(:id) %>
-              </div>
+  <div class="cards-products">
+    <% @products.each do |product|  %>
+      <% product['skus'].each do |p|%>
+
+        <div class="card-products">
+          <img src="https://media.alltricks.com/medium/<%= p['photo'].split('¤')[0] %>" class="card-img-product">
+          <div class="card-infos">
+            <h4><%= p['Model'] %></h4>
+            <div class="card-price">
+              <p><%= p['price'] %> €</p>
+            </div>
+            <div class="btn btn-primary">
+              <%= link_to 'Voir Fiche Produit', product_path(:id) %>
             </div>
           </div>
-        <% end %>
-      <% end  %>
-    </div>
+        </div>
+      <% end %>
+    <% end  %>
   </div>
-</div>
-<div class="footer">
-    <div class="alltricks-Footer">
-  <div class='scan-btn-footer b-left'>
-    <% if ["scan", "barcode", "home"].include?(params[:action])%>
-      <%= link_to barcode_path do %>
-        <i class="fas fa-qrcode active" style="border-bottom: none !important"></i>
-        <p class="active">AllTricks</p>
-      <% end %>
-    <% else %>
-      <%= link_to barcode_path do %>
-        <i class="fas fa-qrcode"></i>
-        <p>AllTricks</p>
-      <% end %>
-    <% end %>
-  </div>
-  <div class='scan-btn-footer'>
-    <% if ["index"].include?(params[:action])%>
-      <%= link_to products_path do %>
-        <i class="fas fa-bicycle active" style="border-bottom: none !important"></i>
-        <p class="active">Produits</p>
-      <% end %>
-    <% else %>
-      <%= link_to products_path do %>
-        <i class="fas fa-bicycle"></i>
-        <p>Produits</p>
-      <% end %>
-    <% end %>
-  </div>
-  <div class='scan-btn-footer b-right'>
-    <% if ["new"].include?(params[:action])%>
-      <%= link_to new_ticket_path do %>
-        <i class="fas fa-concierge-bell active" style="border-bottom: none !important"></i>
-        <p class="active">Vendeur</p>
-      <% end %>
-    <% else %>
-      <%= link_to new_ticket_path do %>
-        <i class="fas fa-concierge-bell"></i>
-        <p>Vendeur</p>
-      <% end %>
-    <% end %>
-  </div>
-</div>
 </div>

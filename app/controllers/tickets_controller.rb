@@ -8,6 +8,7 @@ class TicketsController < ApplicationController
 
   def show
     @ticket = Ticket.find(params[:id])
+    no_footer
   end
 
   def new

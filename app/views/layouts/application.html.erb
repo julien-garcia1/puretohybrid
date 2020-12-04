@@ -19,18 +19,14 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-
     <%= render 'application/favicon' %>
-
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
   </head>
 
-  <body>
-    <%= yield %>
-    <% if ["barcode", "scraping", "show", "index"].include?(params[:action]) %>
-      <%=  %>
-    <% else %>
-      <%= render 'shared/footer' %>
-    <% end %>
+  <body class="<%= params[:controller] %>_<%= params[:action] %>">
+    <div class="flex-grow-1" style="min-height: 400px;">
+      <%= yield %>
+    </div>
+    <%= render 'shared/footer' unless @no_footer %>
   </body>
 </html>
