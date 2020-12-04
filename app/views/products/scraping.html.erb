@@ -32,7 +32,7 @@
   <br>
   <div>
     <div>
-      <p class='stars'> Note : <%= @rating %> / 5 <%= @html_doc.search('.alltricks-Product-ReviewCounter').first.text.gsub("Soyez le premier à laisser un avis","") %></p>
+      <p class='stars' style="display: inline-block"><div style="position: absolute"><% 5.times do %><i class="fas fa-star" style="color: grey"></i><% end %></div><div class="star" style="position: relative"><% @rating.to_i.times do %><i class="fas fa-star" style="color: red"></i><% end %></div><span><%= @html_doc.search('.alltricks-Product-ReviewCounter').first.text.gsub("Soyez le premier à laisser un avis","") %></span></p>
     </div>
       <% @html_doc.search("[@itemprop= 'review']").each do |element| %>
         <div>
