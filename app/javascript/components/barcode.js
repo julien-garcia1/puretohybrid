@@ -15,7 +15,7 @@ const orderByOccurrence = (arr) => {
 const quaggaScanner = () => {
   const scanDiv = document.querySelector('#barcode-scanner');
   if (scanDiv && navigator.mediaDevices && typeof navigator.mediaDevices.getUserMedia === 'function') {
-    console.log('init')
+    // console.log('init')
     Quagga.init({
       inputStream : {
         name : "Live",
@@ -33,10 +33,10 @@ const quaggaScanner = () => {
       }
     }, function(err) {
         if (err) {
-          console.log(err);
+          // console.log(err);
           return
         }
-        console.log("Initialization finished. Ready to start");
+        // console.log("Initialization finished. Ready to start");
         Quagga.start();
     });
     var last_result = [];
@@ -51,7 +51,7 @@ const quaggaScanner = () => {
       if (last_result.length > 30) {
         var barcode = orderByOccurrence(last_result)[0];
         last_result = [];
-        console.log(barcode);
+        // console.log(barcode);
         Quagga.stop();
           window.location.href = `/scraping?val_barcode=${barcode}`;
           // const url = `https://www.alltricks.fr/Acheter/${barcode}`;

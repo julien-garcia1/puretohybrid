@@ -1,5 +1,5 @@
 .card {
-  border-radius: 6px;
+  border-radius: 30px;
   box-shadow: 2px 2px 12px #CFCFCF;
   padding: 15px;
   background: white;
@@ -58,7 +58,7 @@
   color: white;
 }
 
-.img-product .fa-wrench {
+.img-product .fa-plus {
   position: absolute;
   top: 15px;
   right: 15px;
@@ -80,4 +80,12 @@
 #d1 p{
   text-align: justify;
   color: #2f2f37;
+}
+
+#d1 {
+  padding-top: 15px;
+}
+
+#togg1 {
+  border-radius: 30px;
 }
