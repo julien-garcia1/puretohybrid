@@ -39,16 +39,24 @@ body {
   background-size: cover;
 }
 
-body.pages_home {
-  background-image: url("https://i.pinimg.com/originals/d6/42/65/d64265e5539b75f47df0bc62276731e6.jpg");
+@media (max-width: 767px) {
+  body.pages_home {
+    background-image: url("https://i.pinimg.com/originals/d6/42/65/d64265e5539b75f47df0bc62276731e6.jpg");
+  }
+
+  body.products_index {
+    background-image: url("https://www.designbolts.com/wp-content/uploads/2018/05/Cycling-Apple-iPhone-X-Wallpaper.jpg");
+  }
+
+  body.tickets_new{
+    background-image: url("https://images.unsplash.com/photo-1571188654248-7a89213915f7?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80");
+  }
 }
 
-body.products_index {
-  background-image: url("https://www.designbolts.com/wp-content/uploads/2018/05/Cycling-Apple-iPhone-X-Wallpaper.jpg");
-}
-
-body.tickets_new{
-  background-image: url("https://images.unsplash.com/photo-1571188654248-7a89213915f7?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80");
+@media (min-width: 1100px) {
+  body.pages_home {
+    background-image: url("https://cdn.pixabay.com/photo/2017/08/07/15/54/mountain-2605151_1280.jpg");
+  }
 }
 
 button {

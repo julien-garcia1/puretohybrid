@@ -1,18 +1,26 @@
-<!-- <div class="background"> -->
-  <div class="home-container">
-    <h2 class="home-text"><span style="font-size:50px">Bienvenue</span> <br>dans votre magasin</h2>
-    <h2 class="home-text"><span style="background: white; color: #008bd2; font-size: 51px; padding: 0px 10px">AllTricks !</span></h2>
-    <div class="content-homepage">
-        <%= link_to 'Scanner un produit', barcode_path, :class => 'btn btn-primary' %>
-        <p><button id="togg1">Saisir le code barre manuellement</button></p>
-          <div id="d1" style='display:none' class="form-card">
-            <form action="/scraping?val_barcode=" method="get">
-              <div>
-              <input id="val_barcode" name="val_barcode" class="input-form">
-              <button type="submit" class="btn btn-primary submit">Go</button>
-              </div>
-            </form>
-          </div>
+<div class="home-container">
+  <h2 class="home-text"><span style="font-size:50px">Bienvenue</span> <br>dans votre magasin</h2>
+  <h2 class="home-text"><span style="background: white; color: #008bd2; font-size: 51px; padding: 0px 10px">AllTricks !</span></h2>
+  <div class="content-homepage">
+    <%= link_to 'Scanner un produit', barcode_path, :class => 'btn btn-primary' %>
+    <p><button id="togg1">Saisir le code barre manuellement</button></p>
+    <div id="d1" style='display:none' class="form-card">
+      <form action="/scraping?val_barcode=" method="get">
+        <div>
+          <input id="val_barcode" name="val_barcode" class="input-form">
+          <button type="submit" class="btn btn-primary submit">Go</button>
+        </div>
+      </form>
     </div>
   </div>
-<!-- </div> -->
+</div>
+<div class="home-lg">
+  <div class="container">
+    <h2><span style="font-size:50px">Bienvenue</span> <br>dans votre magasin</h2>
+    <h2 class="home-text"><span style="background: white; color: #008bd2; font-size: 51px; padding: 0px 10px">AllTricks !</span></h2>
+    <div class="content-homepage-lg">
+      <h4>Ce site est optimisé pour une utilisation en magasin et sur smartphone</h4>
+      <h4>Pour profiter pleinement de toutes ces fonctionnalités rendez-vous donc sur votre smartphone et en magasin !</h4>
+    </div>
+  </div>
+</div>
