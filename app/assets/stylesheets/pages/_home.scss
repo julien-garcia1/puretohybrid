@@ -6,6 +6,11 @@
 
 
 @media (max-width: 767px) {
+
+  .home-lg {
+    display: none;
+  }
+
   h1, h2, h3, h4 {
     font-family: 'Mulish', sans-serif;
     font-size: 20px;
@@ -118,20 +123,18 @@
   }
 }
 
-/// below code moved to aplication.scss
+@media (min-width: 1100px) {
+  .home-lg {
+    color: white;
+    padding-top: 150px;
+    text-shadow: 2px 2px 12px grey;
+  }
 
-/* button {
-  text-decoration:underline;
-  border:none;
-  color: white;
-  background: transparent;
+  .content-homepage-lg h4 {
+    padding-top: 20px;
+  }
+
+  .home-container {
+    display: none;
+  }
 }
-
-.input-form {
-  border-radius:5px;
-  padding:10px;
-}
-
-.submit {
-  text-decoration:none;
-} */
