@@ -32,10 +32,10 @@
   }
 
   .background {
-    // background-image: url("https://i.pinimg.com/originals/d6/42/65/d64265e5539b75f47df0bc62276731e6.jpg");
     min-height: 100vh;
     background-size: cover;
     background-position: center;
+    // background-image: url("https://i.pinimg.com/originals/d6/42/65/d64265e5539b75f47df0bc62276731e6.jpg");
     // &::before {
     //   content: "";
     //   position: absolute;
@@ -46,12 +46,12 @@
     // }
   }
 
-  .background-ticket {
+    /*   .background-ticket {
     background-image: url("https://images.unsplash.com/photo-1571188654248-7a89213915f7?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80");
     height: 100vh;
     background-size: cover;
     background-position: 55% 45%;
-  }
+    } */
 
   .home-container {
     position: relative;
@@ -115,15 +115,12 @@
 
  .content-homepage p {
   padding-top: 100px;
+  }
 }
 
-  // .test3 {
-  //   background-image: url("https://memegenerator.net/img/instances/81923917/cheers-to-your-success.jpg");
-  //   height: 400px;
-  //   width: 100%;
-  // }
-}
-button {
+/// below code moved to aplication.scss
+
+/* button {
   text-decoration:underline;
   border:none;
   color: white;
@@ -137,4 +134,4 @@ button {
 
 .submit {
   text-decoration:none;
-}
+} */
