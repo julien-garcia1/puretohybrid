@@ -1,8 +1,5 @@
 .ticket-response {
   text-align:center;
-}
-
-.ticket-response {
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
@@ -35,7 +32,6 @@
 .form-ticket-text {
   font-size: 20px;
   font-weight: bold;
-  color:  #008bd2;
 }
 
 .title {
@@ -44,4 +40,8 @@
 
 .form.client-firstname {
   width: 70%
+}
+
+#form-line {
+  background: white;
 }

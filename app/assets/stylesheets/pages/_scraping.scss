@@ -1,0 +1,83 @@
+.card {
+  border-radius: 30px;
+  box-shadow: 2px 2px 12px #CFCFCF;
+  padding: 15px;
+  background: white;
+}
+.card-img {
+  padding: 15px;
+  background: white;
+}
+.price-field {
+  color: #2f2f37;
+  display: flex;
+  justify-content: space-between;
+}
+
+.buttons-product {
+  position: sticky;
+  bottom: 20px;
+  text-align: center;
+}
+
+.buttons-product .btn-primary {
+  background: white;
+  color: #008bd2;
+  box-shadow: 2px 2px 8px grey;
+  font-weight: bold;
+  width: 240px;
+  padding: 17px 32px;
+  font-size: 14px;
+}
+
+.price h2{
+  color:#2f2f37;
+  font-size: 25px !important;
+}
+
+.img-product .fa-angle-left {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  font-size: 20px;
+  background-color: #2f2f37;
+  height: 35px;
+  width: 35px;
+  border-radius: 50%;
+  text-align: center;
+  padding-top: 7px;
+  padding-right: 2px;
+  color: white;
+}
+
+.img-product .fa-plus {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 15px;
+  background-color: #2f2f37;
+  height: 35px;
+  width: 35px;
+  border-radius: 50%;
+  text-align: center;
+  padding-top: 9.5px;
+  padding-right: 0px;
+  color: white;
+}
+
+.comment {
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.8);
+}
+#d1 p{
+  text-align: justify;
+  color: #2f2f37;
+}
+
+#d1 {
+  padding-top: 15px;
+}
+
+#togg1 {
+  border-radius: 30px;
+}

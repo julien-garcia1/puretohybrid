@@ -1,0 +1,21 @@
+button {
+  text-decoration:underline;
+  border:none;
+  color: white;
+  background: transparent;
+}
+
+.btn {
+  text-decoration: none;
+}
+
+.btn-primary {
+   background-color: #008bd2;
+   border:none;
+   transition: transform 0s; /* Animation */
+   border-radius: 30px;
+  }
+
+.btn-primary:focus {
+  transform: scale(1.1);
+}
