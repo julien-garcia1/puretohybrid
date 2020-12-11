@@ -1,52 +1,52 @@
-@media (max-width: 767px) {
-  .alltricks-Header {
-  top: 0;
-  height: 50px;
-  z-index: 6;
-  text-align: center;
-  position: fixed;
-  left: 0;
-  right: 0;
-  font-family: Roboto,sans-serif;
-  color: #04A2F3;
-  background-color: rgba(0, 0, 0, 1);
-  letter-spacing: 1px;
-  padding-top: 7px;
-  }
+// @media (max-width: 767px) {
+//   .alltricks-Header {
+//   top: 0;
+//   height: 50px;
+//   z-index: 6;
+//   text-align: center;
+//   position: fixed;
+//   left: 0;
+//   right: 0;
+//   font-family: Roboto,sans-serif;
+//   color: #04A2F3;
+//   background-color: rgba(0, 0, 0, 1);
+//   letter-spacing: 1px;
+//   padding-top: 7px;
+//   }
 
-  .navbar {
-    font-size: 25px;
-    text-align: center !important;
-    display: inline;
-    font-weight:500;
-  }
+//   .navbar {
+//     font-size: 25px;
+//     text-align: center !important;
+//     display: inline;
+//     font-weight:500;
+//   }
 
-  .flex-navbar {
-    display: flex;
-    justify-content: space-between;
-    padding-left: 15px;
-    padding-right: 15px;
-    padding-top: 0px
-  }
+//   .flex-navbar {
+//     display: flex;
+//     justify-content: space-between;
+//     padding-left: 15px;
+//     padding-right: 15px;
+//     padding-top: 0px
+//   }
 
-  .alltricks-Header i {
-    font-size: 28px;
-    padding-top: 10px;
-  }
+//   .alltricks-Header i {
+//     font-size: 28px;
+//     padding-top: 10px;
+//   }
 
-  .alltricks-Header a {
-    color: #04A2F3;
-  }
+//   .alltricks-Header a {
+//     color: #04A2F3;
+//   }
 
-  .no-display {
-    color: white;
-  }
+//   .no-display {
+//     color: white;
+//   }
 
-  .retour {
-    margin-top: 7px;
-    position: absolute;
-    top: 6px;
-    left: 35px;
-  }
-}
+//   .retour {
+//     margin-top: 7px;
+//     position: absolute;
+//     top: 6px;
+//     left: 35px;
+//   }
+// }
 

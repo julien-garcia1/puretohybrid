@@ -1,68 +1,19 @@
-// Specific CSS for your home-page
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@700&display=swap');
-
-
 @media (max-width: 767px) {
 
   .home-lg {
     display: none;
   }
 
-  h1, h2, h3, h4 {
-    font-family: 'Mulish', sans-serif;
-    font-size: 20px;
-    font-weight: 600;
-  }
-
-  .btn {
-    text-decoration: none;
-  }
-
-  .btn-primary {
-     background-color: #008bd2;
-     border:none;
-     transition: transform 0s; /* Animation */
-    }
-
-  .btn-primary:focus {
-    transform: scale(1.1);
-  }
-
-  .fa-barcode {
-    font-size: 100px;
-    color: white;
-  }
-
   .background {
     min-height: 100vh;
     background-size: cover;
     background-position: center;
-    // background-image: url("https://i.pinimg.com/originals/d6/42/65/d64265e5539b75f47df0bc62276731e6.jpg");
-    // &::before {
-    //   content: "";
-    //   position: absolute;
-    //   top: 0px;
-    //   right: 0px;
-    //   bottom: 0px;
-    //   left: 0px;
-    // }
   }
-
-    /*   .background-ticket {
-    background-image: url("https://images.unsplash.com/photo-1571188654248-7a89213915f7?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80");
-    height: 100vh;
-    background-size: cover;
-    background-position: 55% 45%;
-    } */
 
   .home-container {
     position: relative;
     padding-top: 50px;
   }
-
 
   .home-text {
     font-weight: 600;
@@ -79,30 +30,8 @@
     font-family: 'Mulish', sans-serif;
   }
 
-  #form-line {
-    background: white;
-  }
-
   .content-homepage input {
     border-radius: 30px;
-  }
-
-  .b-ticket p {
-    color: #2f2f37!important;
-  }
-
-  .form-ticket-text {
-    color: #2f2f37 !important;
-    font-size: 18px !important;
-    font-family: 'Mulish', sans-serif;
-  }
-
-  .b-ticket input {
-    border-radius: 30px;
-  }
-
-  .b-ticket h2 {
-    font-size: 30px !important;
   }
 
   .content-homepage {

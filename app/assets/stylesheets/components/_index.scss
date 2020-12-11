@@ -5,29 +5,6 @@
 @import "ticket";
 @import "footer";
 @import "card";
-
-
-.btn-search-form {
-  padding-top: 15px;
-}
-
-.search-form {
-  margin-top: 60px;
-}
-
-.b-search p {
-  position: relative;
-  color: #2f2f37 !important;
-  font-size: 26px;
-  font-family: 'Mulish', sans-serif;
-  font-weight: 900;
-}
-
-.search-form input {
-  border-radius: 30px;
-}
-
-.footer .alltricks-Footer {
-  position: fixed;
-  bottom: 15px !important;
-}
+@import "button";
+@import "form";
+@import "barcode";

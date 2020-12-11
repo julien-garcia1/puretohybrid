@@ -3,6 +3,12 @@
 @import "config/colors";
 @import "config/bootstrap_variables";
 
+// Fonts
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@700&display=swap');
+
 // External libraries
 @import "bootstrap/scss/bootstrap";
 @import "font-awesome-sprockets";
@@ -11,21 +17,6 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
-@import "components/barcode";
-
-#barcode-scanner canvas.drawingBuffer, #barcode-scanner video.drawingBuffer {
-  display: none;
-}
-#barcode-scanner canvas, #barcode-scanner video {
-  width: 100%;
-  height: 166px;
-  position: relative;
-  object-fit: cover;
-}
-.img-product img {
-  width: 95%;
-  height: 200px;
-}
 
 body {
   background-color: white;
@@ -37,6 +28,12 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Mulish', sans-serif;
+  font-size: 20px;
+  font-weight: 600;
 }
 
 @media (max-width: 767px) {
@@ -57,20 +54,4 @@ body {
   body.pages_home {
     background-image: url("https://cdn.pixabay.com/photo/2017/08/07/15/54/mountain-2605151_1280.jpg");
   }
-}
-
-button {
-  text-decoration:underline;
-  border:none;
-  color: white;
-  background: transparent;
-}
-
-.input-form {
-  border-radius:5px;
-  padding:10px;
-}
-
-.submit {
-  text-decoration:none;
 }

@@ -1,49 +1,57 @@
 @media (max-width: 767px) {
+
   .scan-form button {
-  border:none;
-  color: black;
-  background: transparent;
-}
+    border:none;
+    color: black;
+    background: transparent;
+  }
 
-.scan-form {
-  text-align: center;
-  margin-top: 30px;
-}
+  .scan-form {
+    text-align: center;
+    margin-top: 30px;
+  }
 
-.scan-cam {
-  text-align: center;
-  border: solid 2px grey;
-  border-radius: 6px;
-  padding: 15px;
-  height: 200px;
-}
+  .scan-cam {
+    text-align: center;
+    border: solid 2px grey;
+    border-radius: 6px;
+    padding: 15px;
+    height: 200px;
+  }
 
-video {
-  border-radius: 6px;
-}
+  video {
+    border-radius: 6px;
+  }
 
-.input-form {
-  border-radius: 30px;
-}
+  .submit {
+    text-decoration: none;
+  }
 
-.submit {
-  text-decoration:none;
-}
+  .title-barcode {
+    text-align: center;
+  }
 
-.title-barcode {
-  text-align: center;
-}
+  .scan-form .btn-primary {
+    font-size: 20px;
+    border-radius: 30px;
+    padding: 10px 25px;
+    background-color: rgba(0, 139, 210, 0.9);
+    color: white;
+  }
 
-.scan-form .btn-primary {
-  font-size: 20px;
-  border-radius: 30px;
-  padding: 10px 25px;
-  background-color: rgba(0, 139, 210, 0.9);
-  color: white;
-}
+  .title-barcode h2 {
+    font-size: 30px;
+  }
 
-.title-barcode h2 {
-  font-size: 30px;
-}
+  #barcode-scanner canvas.drawingBuffer, #barcode-scanner video.drawingBuffer {
+    display: none;
+  }
+  #barcode-scanner canvas, #barcode-scanner video {
+    width: 100%;
+    height: 166px;
+    position: relative;
+    object-fit: cover;
+  }
+
 }
 
