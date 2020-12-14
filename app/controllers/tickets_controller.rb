@@ -4,6 +4,7 @@ class TicketsController < ApplicationController
   def index
     @tickets_to_be_assign = Ticket.where(status: 'En attente')
     @tickets_assigned = Ticket.where(status: 'En cours')
+    no_footer
   end
 
   def show
