@@ -1,14 +1,3 @@
-
-<% if user_signed_in? %>
-  <li>
-    <%= link_to'Se déconncter', destroy_user_session_path, method: :delete %>
-  </li>
-<% else %>
-  <li>
-  <%= link_to'Se connecter', new_user_session_path %>
-  </li>
-<% end %>
-
 <div class="container" style="padding-top: 60px">
   <h1 style="text-align:center; padding-bottom:25px">Tickets en cours</h1>
   <table class="table">
@@ -54,4 +43,7 @@
     </tbody>
   </table>
 </div>
+  <div>
+    <%= link_to'Se déconnecter', destroy_user_session_path, :class => 'logout btn btn-primary', method: :delete %>
+  </div>
 
