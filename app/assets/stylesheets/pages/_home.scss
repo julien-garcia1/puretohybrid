@@ -53,17 +53,33 @@
 }
 
 @media (min-width: 768px) {
-  .home-lg {
-    color: white;
-    padding-top: 150px;
-    text-shadow: 2px 2px 12px grey;
-  }
-
-  .content-homepage-lg h4 {
-    padding-top: 20px;
-  }
-
   .home-container {
     display: none;
+  }
+
+  .home-lg {
+    color: white;
+    padding-top: 40px;
+    text-align: center;
+    font-family: 'Mulish', sans-serif;
+  }
+
+  .home-lg h2 {
+    font-size: 27px;
+    padding-bottom: 30px;
+    text-shadow: 2px 2px 8px grey;
+  }
+
+  .home-lg img {
+    border-radius: 6px !important;
+  }
+
+  .content-homepage-lg h2 {
+    padding-top: 50px;
+  }
+
+  .barcodes {
+    display: flex;
+    justify-content: space-between;
   }
 }
