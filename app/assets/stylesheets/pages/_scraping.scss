@@ -31,7 +31,7 @@
 }
 
 .price h2{
-  color:#2f2f37;
+  color:#008bd2;
   font-size: 25px !important;
 }
 
@@ -67,7 +67,7 @@
   color: rgba(0, 0, 0, 0.8);
 }
 #d1 p{
-  text-align: justify;
+  text-align: left;
   color: #2f2f37;
 }
 
@@ -77,4 +77,8 @@
 
 #togg1 {
   border-radius: 30px;
+}
+
+.img-product img {
+  width: 100%;
 }
