@@ -12,7 +12,16 @@
   color: #2f2f37;
   display: flex;
   justify-content: space-between;
+  font-size: 100%;
 }
+
+.price-field h3 {
+  font-size: 100%;
+} 
+
+.price-field h2 {
+  font-size: 100%;
+} 
 
 .buttons-product {
   position: sticky;
@@ -32,7 +41,7 @@
 
 .price h2{
   color:#008bd2;
-  font-size: 25px !important;
+  font-size: 120%;
 }
 
 .img-product .fa-angle-left {
@@ -72,7 +81,11 @@
 }
 
 #d1 {
-  padding-top: 15px;
+  padding-top: 2%;
+}
+
+#d1 #scrapping{
+  padding-top: 5%;
 }
 
 #togg1 {
