@@ -1,6 +1,6 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
-
+  GA.tracker = "G-49B1K682X3"
   # Code is not reloaded between requests.
   config.cache_classes = true
 

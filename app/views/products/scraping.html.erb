@@ -1,20 +1,17 @@
 <div class="card-img card-img-p">
   <div class="img-product">
     <img src="<%= @image %>" alt="">
-    <%= link_to barcode_path do %>
-      <i class="fas fa-angle-left"></i>
-    <% end %>
-    <a href="<%= @url %>">
-      <i class="fas fa-plus"></i>
-    </a>
+      <%= link_to barcode_path do %>
+        <i class="fas fa-angle-left"></i>
+      <% end %>
   </div>
 </div>
 <br>
 <div class="container b-product">
   <div class="price-field">
     <div style="padding-right: 30px;">
-      <h2><%= @name %></h2>
-      <h3>Par <span style="color:#008bd2"><%= @brand  %></span></h3>
+      <h2><%= @name.gsub("&#039;","'") %></h2>
+      <h3><span style="color:#008bd2"><%= @brand  %></span></h3>
     </div>
     <div class='price'>
       <h2><%= @price %><span>€</span></h2>
@@ -25,26 +22,28 @@
     <button id="togg1" class="btn btn-primary">Description du produit <span style="padding-left: 10px"><i class="fas fa-angle-down"></i></span><button>
     <div id="d1" style='display:none'>
       <div class="card">
-        <p><%= @description.gsub("&#039;","'") %></p>
+        <p><%= simple_format(@description.gsub(".",".\n").truncate(600)) %></p>
+        <a href="<%= @url %>">
+          <i class="fas fa-plus"></i>
+        </a>
       </div>
     </div>
   </div>
   <br>
+  <div style="display: flex; padding-bottom: 30px;">
+    <div style="position: absolute"><% 5.times do %><i class="fas fa-star" style="color: grey"></i><% end %></div><div class="star" style="position: relative"><% @rating.to_i.times do %><i class="fas fa-star" style="color: red"></i><% end %></div>
+    <div style="padding-left: 27%"><span style="color: #008bd2; font-weight: bold"><%= @html_doc.search('.alltricks-Product-ReviewCounter').first.text.gsub("Soyez le premier à laisser un avis","   - Pas de note") %></span></div>
+  </div>
   <div>
-    <div style="display: flex; justify-content: space-between; padding-bottom: 10px;">
-      <div style="position: absolute"><% 5.times do %><i class="fas fa-star" style="color: grey"></i><% end %></div><div class="star" style="position: relative"><% @rating.to_i.times do %><i class="fas fa-star" style="color: red"></i><% end %></div>
-      <div style="padding-right: 55%"><span style="color: #008bd2; font-weight: bold"><%= @html_doc.search('.alltricks-Product-ReviewCounter').first.text.gsub("Soyez le premier à laisser un avis","") %></span></div>
-    </div>
-      <% @html_doc.search("[@itemprop= 'review']").each do |element| %>
-        <div>
-          <p class="comment"><%= element.search("[@itemprop= 'author']").text %> a écrit:</p>
-          <div class="card">
-            <p>"<%= element.search("[@itemprop= 'description']").text %>"</p>
-          </div>
+    <% @html_doc.search("[@itemprop= 'review']").each do |element| %>
+      <div>
+        <p class="comment"><%= element.search("[@itemprop= 'author']").text %> a écrit:</p>
+        <div class="card">
+          <p>"<%= element.search("[@itemprop= 'description']").text %>"</p>
         </div>
-        <hr>
-      <% end %>
-    </div>
+      </div>
+      <hr>
+    <% end %>
     <div class="buttons-product">
       <div class="btn-pro">
         <%= link_to new_ticket_path, :class => 'btn btn-primary' do %>
