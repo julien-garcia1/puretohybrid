@@ -1,0 +1,27 @@
+@media (max-width: 767px) {
+
+  .scan-form {
+    text-align: center;
+    margin-top: 6%;
+  }
+
+  .scan-form button {
+    border:none;
+    color: black;
+    background: transparent;
+  }
+
+  .submit {
+    text-decoration: none;
+  }
+
+  .scan-form .btn-primary {
+    font-size: 20px;
+    border-radius: 30px;
+    padding: 10px 25px;
+    background-color: rgba(0, 139, 210, 0.9);
+    color: white;
+  }
+
+}
+

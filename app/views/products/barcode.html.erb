@@ -1,43 +1,40 @@
-<!-- <a id="lien" href="#product">AVIS</a> -->
 
-<div class="container" style="padding-top: 60px">
-<div class="title-barcode">
-  <h2><span style="background: #008bd2; color: white; font-size: 40px; padding: 0px 10px">Scannez</span><br> le code-barre</h2>
-  <p>Positionnez le code barre immobile devant l'appareil photo</p>
-</div>
+<div class="container" style="padding-top: 10%">
+  <div class="title-barcode">
+    <h2><span class="title-barcode blue">Scannez</span><br> le code-barre</h2>
+    <p>Positionnez le code-barre immobile devant l'appareil photo</p>
+  </div>
 
-<div class="scan-cam">
-  <div id="barcode" class="barcode-scan">
-    <div id='barcode-scanner'>
+  <div class="scan-cam">
+    <div id="barcode" class="barcode-scan">
+      <div id='barcode-scanner'>
+      </div>
     </div>
   </div>
-</div>
 
-<hr>
-<br>
-
-<div class="progress" >
-  <div class="progress-bar" role="progressbar" style="width: 0%; transition-duration: 0s" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
-  </div>
-</div>
-
-<div class="scan-form">
-  <p><button id="togg1" style="font-size: 20px"><strong>Un souci ?</strong></button></p>
-    <div id="d1" style='display:none' class="form-card">
-      <form action="/scraping?val_barcode=" method="get">
-        <label for="val_barcode">Saisir le code manuellement</label>
-        <div>
-        <input id="val_barcode" name="val_barcode" class="input-form">
-        <button type="submit" class="btn btn-primary submit">Go</button>
-        </div>
-      </form>
+  <div class="progress" >
+    <div class="progress-bar" role="progressbar" style="width: 0%; transition-duration: 0s" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
     </div>
   </div>
+
+  <div class="scan-form">
+    <p><button id="togg1" style="font-size: larger"><strong>Un souci ?</strong></button></p>
+      <div id="d1" style='display:none' class="form-card">
+        <form action="/scraping?val_barcode=" method="get">
+          <label for="val_barcode">Saisir le code manuellement</label>
+          <div>
+          <input id="val_barcode" name="val_barcode" class="input-form">
+          <button type="submit" class="btn btn-primary submit">Go</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div style="text-align: center; padding-top: 15%">
+    <%= link_to root_path, :class => 'btn btn-primary home' do %>
+      <i class="fas fa-home"></i>
+    <% end %>
+    </div>
 </div>
-<div style="text-align: center; padding-top: 50px">
-  <%= link_to root_path, :class => 'btn btn-primary home' do %>
-    <i class="fas fa-home"></i>
-  <% end %>
-</div>
+
 
 
