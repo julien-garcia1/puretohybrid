@@ -42,7 +42,7 @@ class ProductsController < ApplicationController
     @name = data['name']
     @image = data['image']
     @url = data ['url']
-    @description = data['description']
+    @description = (data['description'])
     @brand = data['brand']['name']
     @html_doc = Nokogiri::HTML(html_file)
     no_footer
