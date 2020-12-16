@@ -4,11 +4,14 @@ class TicketsController < ApplicationController
   def index
     @tickets_to_be_assign = Ticket.where(status: 'En attente')
     @tickets_assigned = Ticket.where(status: 'En cours')
+    @reviews = Review.all
+    @average_rating = @reviews.average(:rating)
     no_footer
   end
 
   def show
     @ticket = Ticket.find(params[:id])
+    @review = Review.new
     no_footer
   end
 

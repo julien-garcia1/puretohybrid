@@ -30,12 +30,14 @@ import "bootstrap";
 import { initStoreCable } from '../channels/store_channel';
 import { quaggaScanner } from '../components/barcode';
 import { toggle } from '../components/toggle';
+import { dynamicRating } from '../components/stars';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here:
   quaggaScanner();
   initStoreCable();
   toggle();
+  dynamicRating();
 });
 
 import "controllers"

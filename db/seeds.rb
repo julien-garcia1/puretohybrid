@@ -17,6 +17,7 @@ Store.destroy_all
 store = Store.create(name:"Bron", address:"Lyon")
 
 user = User.create(store_id: store.id, nickname: "Bob", email:"toto@gmail.com", password:"azerty")
+user2 = User.create(store_id: store.id, nickname: "Jean", email:"jean@gmail.com", password:"azerty")
 
 puts user.errors.full_messages
 puts "DB seed end"
