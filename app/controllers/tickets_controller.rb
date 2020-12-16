@@ -52,6 +52,12 @@ class TicketsController < ApplicationController
     redirect_to tickets_path
   end
 
+  def destroy
+    @ticket = Ticket.find(params[:id])
+    @ticket.destroy
+    redirect_to new_ticket_path, notice: "Votre demande d'aide à un vendeur à bien été annulée"
+  end
+
   private
 
   def ticket_params
