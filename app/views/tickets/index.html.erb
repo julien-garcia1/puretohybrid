@@ -42,6 +42,15 @@
       <% end %>
     </tbody>
   </table>
+  <div class="reviews">
+  <p>Moyenne de l'équipe : <% @average_rating.to_i.times do %>
+        <i class="fas fa-star"></i>
+      <% end %>
+      <% (5 - @average_rating.to_i).times do %>
+        <i class="far fa-star"></i>
+      <% end %>
+  </p>
+  </div>
 </div>
   <div>
     <%= link_to'Se déconnecter', destroy_user_session_path, :class => 'logout btn btn-primary', method: :delete %>
