@@ -1,5 +1,5 @@
 class TicketsController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:new, :create, :show]
+  skip_before_action :authenticate_user!, only: [:new, :create, :show, :destroy]
 
   def index
     @tickets_to_be_assign = Ticket.where(status: 'En attente')
