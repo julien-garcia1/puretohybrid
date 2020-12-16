@@ -22,7 +22,7 @@
     <tbody id="ticket-show tickets" data-store-id="<%= current_user.store.id %>">
       <% @tickets_assigned.each do |ticket| %>
         <%= render 'tickets/ticket_2', ticket: ticket, new: false %>
-      <% end %>
+     <% end %>
     </tbody>
   </table>
 
@@ -51,6 +51,7 @@
       <% (5 - @average_rating.to_i).times do %>
         <i class="far fa-star"></i>
       <% end %>
+      sur <%= @reviews.count %> avis
   </p>
   </div>
 </div>

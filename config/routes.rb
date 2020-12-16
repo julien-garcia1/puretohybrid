@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
-
+  delete "/tickets/:id", to: "tickets#destroy"
   resources :products, only: [:show, :index]
   # resources :store, only: [:show] do
   resources :tickets, only: [:show, :index, :create, :new] do
@@ -13,6 +13,5 @@ Rails.application.routes.draw do
   post "/scan/barcode", to: "products#barcode"
   get "/scraping", to: "products#scraping"
   # end
-
   root to: 'pages#home'
 end
