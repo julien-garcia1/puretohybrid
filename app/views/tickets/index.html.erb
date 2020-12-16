@@ -13,13 +13,7 @@
 
     <tbody id="ticket-show" data-store-id="<%= current_user.store.id %>">
       <% @tickets_assigned.each do |ticket| %>
-      <tr>
-        <td><%= ticket.client_firstname %></td>
-        <td><%= ticket.status %></td>
-        <td><%= ticket.user.nickname %></td>
-        <td><%= ticket.section %></td>
-        <td><%= link_to 'Clôturer le ticket', closed_ticket_path(ticket) %></td>
-      </tr>
+        <%= render 'tickets/ticket_2', ticket: ticket, new: false %>
       <% end %>
     </tbody>
   </table>
