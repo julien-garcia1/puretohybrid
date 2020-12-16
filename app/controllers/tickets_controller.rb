@@ -40,6 +40,7 @@ class TicketsController < ApplicationController
     @ticket.status = 'En cours'
     @ticket.save
     TicketChannel.broadcast_to(@ticket, action: 'refresh')
+    StoreChannel.broadcast_to(@store, action: 'refresh')
     redirect_to tickets_path
   end
 
