@@ -1,4 +1,5 @@
 class ReviewsController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:new, :create, :show]
   before_action :set_ticket, only: [:new, :create]
   def show
     @reviews = Review.all
