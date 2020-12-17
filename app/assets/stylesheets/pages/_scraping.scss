@@ -12,7 +12,6 @@
   color: #2f2f37;
   display: flex;
   justify-content: space-between;
-  font-size: 100%;
 }
 
 .price-field h3 {
@@ -20,6 +19,12 @@
 }
 
 .price-field h2 {
+  font-size: 120%;
+} 
+
+
+.price h2{
+  color:#008bd2;
   font-size: 120%;
 }
 
@@ -39,10 +44,7 @@
   font-size: 14px;
 }
 
-.price h2{
-  color:#008bd2;
-  font-size: 120%;
-}
+
 
 .img-product .fa-angle-left {
   position: absolute;
