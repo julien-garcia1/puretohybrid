@@ -12,6 +12,9 @@ const initStoreCable = () => {
         // console.log(ticketsContainer.querySelector('tbody'))
         // console.log(data)
         ticketsContainer.insertAdjacentHTML('beforeend', data.body);
+        if (data.action == 'refresh') {
+          document.location.reload()
+        }
       },
     });
   }

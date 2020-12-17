@@ -1,3 +1,11 @@
+<head>
+  <script type="text/javascript">
+    setTimeout(function(){
+      location = ''
+    },5000)
+  </script>
+</head>
+
 <div class="container" style="padding-top: 60px">
   <h1 style="text-align:center; padding-bottom:25px">Tickets en cours</h1>
   <table class="table">
@@ -11,16 +19,10 @@
       </tr>
     </thead>
 
-    <tbody>
+    <tbody id="ticket-show tickets" data-store-id="<%= current_user.store.id %>">
       <% @tickets_assigned.each do |ticket| %>
-      <tr>
-        <td><%= ticket.client_firstname %></td>
-        <td><%= ticket.status %></td>
-        <td><%= ticket.user.nickname %></td>
-        <td><%= ticket.section %></td>
-        <td><%= link_to 'Clôturer le ticket', closed_ticket_path(ticket) %></td>
-      </tr>
-      <% end %>
+        <%= render 'tickets/ticket_2', ticket: ticket, new: false %>
+     <% end %>
     </tbody>
   </table>
 
@@ -42,6 +44,16 @@
       <% end %>
     </tbody>
   </table>
+  <div class="reviews">
+  <p>Moyenne de l'équipe : <% @average_rating.to_i.times do %>
+        <i class="fas fa-star"></i>
+      <% end %>
+      <% (5 - @average_rating.to_i).times do %>
+        <i class="far fa-star"></i>
+      <% end %>
+      sur <%= @reviews.count %> avis
+  </p>
+  </div>
 </div>
   <div>
     <%= link_to'Se déconnecter', destroy_user_session_path, :class => 'logout btn btn-primary', method: :delete %>

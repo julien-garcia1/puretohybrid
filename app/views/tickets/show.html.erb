@@ -7,7 +7,7 @@
       </div>
       <br>
       <div style="padding-top: 5vh">
-        <%= link_to 'Annuler', new_ticket_path, :class => 'btn btn-primary'%>
+        <%= link_to 'Annuler', ticket_path(@ticket), method: :delete, :class => 'btn btn-primary' %>
       </div>
     </div>
 
@@ -34,24 +34,21 @@
         <div class="heart" style="margin-top: 43vh"></div>
       </div>
 
-    <div class="rating-group" style="margin-top: 25vh">
-      <p class="desc" style="font-family: sans-serif; font-size:1.2rem">Merci d'évaluer le conseil de <span style="color:#008bd2; font-weight:bold;font-size:1.5rem;text-transform: uppercase"><%= @ticket.user.nickname %></span></p>
-        <div id="full-stars-example-two">
-        <input disabled checked class="rating__input rating__input--none" name="rating3" id="rating3-none" value="0" type="radio">
-        <label aria-label="1 star" class="rating__label" for="rating3-1"><i class="rating__icon rating__icon--star fa fa-star"></i></label>
-        <input class="rating__input" name="rating3" id="rating3-1" value="1" type="radio">
-        <label aria-label="2 stars" class="rating__label" for="rating3-2"><i class="rating__icon rating__icon--star fa fa-star"></i></label>
-        <input class="rating__input" name="rating3" id="rating3-2" value="2" type="radio">
-        <label aria-label="3 stars" class="rating__label" for="rating3-3"><i class="rating__icon rating__icon--star fa fa-star"></i></label>
-        <input class="rating__input" name="rating3" id="rating3-3" value="3" type="radio">
-        <label aria-label="4 stars" class="rating__label" for="rating3-4"><i class="rating__icon rating__icon--star fa fa-star"></i></label>
-        <input class="rating__input" name="rating3" id="rating3-4" value="4" type="radio">
-        <label aria-label="5 stars" class="rating__label" for="rating3-5"><i class="rating__icon rating__icon--star fa fa-star"></i></label>
-        <input class="rating__input" name="rating3" id="rating3-5" value="5" type="radio">
-    </div>
+<div class="container">
+  <div class="review" style="margin-top: 25vh">
+      <p class="desc" style="padding-top:200px,font-family: sans-serif; font-size:1.2rem">Merci d'évaluer le conseil de <span style="color:#008bd2; font-weight:bold;font-size:1.5rem;text-transform: uppercase"><%= @ticket.user.nickname %></span></p>
+      <%= simple_form_for [@ticket, @review] do |f| %>
+        <%= f.input :rating, as: :hidden  %>
+        <div class="my-3">
+          <% 5.times do |index| %>
+            <i id="<%= index + 1 %>" class="review-rating far fa-star"></i>
+          <% end %>
+        </div>
+          <%= f.button :submit, "Valider", class: "btn btn-primary" %>
+      <% end %>
   </div>
+</div>
       <div style="marging-top: 2vh">
-
         <%= link_to root_path, :class => 'btn btn-primary home' do %>
           <i class="fas fa-home"></i>
         <% end %>

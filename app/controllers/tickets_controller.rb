@@ -1,14 +1,17 @@
 class TicketsController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:new, :create, :show]
+  skip_before_action :authenticate_user!, only: [:new, :create, :show, :destroy]
 
   def index
     @tickets_to_be_assign = Ticket.where(status: 'En attente')
     @tickets_assigned = Ticket.where(status: 'En cours')
+    @reviews = Review.all
+    @average_rating = @reviews.average(:rating)
     no_footer
   end
 
   def show
     @ticket = Ticket.find(params[:id])
+    @review = Review.new
     no_footer
   end
 
@@ -37,6 +40,7 @@ class TicketsController < ApplicationController
     @ticket.status = 'En cours'
     @ticket.save
     TicketChannel.broadcast_to(@ticket, action: 'refresh')
+    StoreChannel.broadcast_to(@store, action: 'refresh')
     redirect_to tickets_path
   end
 
@@ -46,6 +50,12 @@ class TicketsController < ApplicationController
     @ticket.save
     TicketChannel.broadcast_to(@ticket, action: 'refresh')
     redirect_to tickets_path
+  end
+
+  def destroy
+    @ticket = Ticket.find(params[:id])
+    @ticket.destroy
+    redirect_to new_ticket_path, notice: "Votre demande d'aide à un vendeur à bien été annulée"
   end
 
   private
