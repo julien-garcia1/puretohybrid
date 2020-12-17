@@ -1,6 +1,29 @@
+@media (min-width: 768px) {
+  .d-flex-lg {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .card-ticket {
+    width: 48%
+  }
+
+  .reviews {
+    width: 100%;
+  }
+
+  .table {
+    font-size: 100% !important;
+  }
+
+  .fa-trash {
+    font-size: 26px;
+  }
+}
+
 @keyframes bb {
-  from {background-color: blue;}
-  to {background-color: #CCCCCC;}
+  from {background-color: #008bd2;}
+  to {background-color: white;}
 }
 
 .table {
@@ -305,10 +328,9 @@
   }
 }
 
-.logout {
-  position: relative;
-  top: 30px !important;
-  left: 30%;
+#logout {
+  text-align: center;
+  padding-top: 30px;
 }
 
 
