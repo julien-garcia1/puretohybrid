@@ -2,60 +2,62 @@
   <script type="text/javascript">
     setTimeout(function(){
       location = ''
-    },5000)
+    },60000)
   </script>
 </head>
 
-<div class="container" style="padding-top: 60px">
-  <h1 style="text-align:center; padding-bottom:25px">Tickets en cours</h1>
-  <table class="table">
-    <thead>
-      <tr>
-        <th>Client</th>
-        <th>Statut</th>
-        <th>Vendeur</th>
-        <th>Rayon</th>
-        <th>Action</th>
-      </tr>
-    </thead>
-
-    <tbody id="ticket-show tickets" data-store-id="<%= current_user.store.id %>">
-      <% @tickets_assigned.each do |ticket| %>
-        <%= render 'tickets/ticket_2', ticket: ticket, new: false %>
-     <% end %>
-    </tbody>
-  </table>
-
-  <h1 style="text-align:center; padding-bottom:25px; padding-top:60px">Tickets en attente</h1>
-
-  <table class="table">
-    <thead>
-      <tr>
-        <th>Client</th>
-        <th>Statut</th>
-        <th>Rayon</th>
-        <th>Action</th>
-      </tr>
-    </thead>
-
-    <tbody id="tickets" data-store-id="<%= current_user.store.id %>">
-      <% @tickets_to_be_assign.each do |ticket| %>
-        <%= render 'tickets/ticket', ticket: ticket, new: false %>
-      <% end %>
-    </tbody>
-  </table>
-  <div class="reviews">
-  <p>Moyenne de l'équipe : <% @average_rating.to_i.times do %>
+<div class="container">
+  <div class="d-flex-lg">
+    <div class="card card-ticket">
+      <h1 style="text-align:center; padding-bottom:25px; padding-top:5px">Tickets en attente</h1>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Client</th>
+            <th>Statut</th>
+            <th>Rayon</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody id="tickets" data-store-id="<%= current_user.store.id %>">
+          <% @tickets_to_be_assign.each do |ticket| %>
+            <%= render 'tickets/ticket', ticket: ticket, new: false %>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+    <div class="card card-ticket">
+      <h1 style="text-align:center; padding-top: 5px; padding-bottom:25px">Tickets en cours</h1>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Client</th>
+            <th>Statut</th>
+            <th>Vendeur</th>
+            <th>Rayon</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody id="ticket-show tickets" data-store-id="<%= current_user.store.id %>">
+          <% @tickets_assigned.each do |ticket| %>
+            <%= render 'tickets/ticket_2', ticket: ticket, new: false %>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="card card-ticket reviews">
+    <p>
+      <strong>Moyenne de l'équipe</strong><br><% @average_rating.to_i.times do %>
         <i class="fas fa-star"></i>
       <% end %>
       <% (5 - @average_rating.to_i).times do %>
         <i class="far fa-star"></i>
-      <% end %>
-      sur <%= @reviews.count %> avis
-  </p>
+      <% end %> sur <span style="color:#008bd2; font-weight: bold"><%= @reviews.count %></span> avis
+    </p>
   </div>
-</div>
-  <div>
+  <div id="logout">
     <%= link_to'Se déconnecter', destroy_user_session_path, :class => 'logout btn btn-primary', method: :delete %>
   </div>
+</div>
 
