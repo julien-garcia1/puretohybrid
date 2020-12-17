@@ -3,10 +3,30 @@
   to {background-color: #CCCCCC;}
 }
 
+.table {
+  font-size: 12px;
+}
+
+.fa-trash {
+  font-size: 18px;
+  color: #008bd2;
+}
+
+.table th, .table td {
+  vertical-align: middle;
+}
+
+.card-ticket {
+  margin-top: 30px;
+}
+
+.reviews {
+  vertical-align: middle;
+  text-align: center;
+  line-height: 35px;
+}
 
 .ticket {
-  background-color: #CCCCCC;
-
   &.new {
     animation: bb 5s;
   }
@@ -287,7 +307,7 @@
 
 .logout {
   position: relative;
-  top: 60px !important;
+  top: 30px !important;
   left: 30%;
 }
 
