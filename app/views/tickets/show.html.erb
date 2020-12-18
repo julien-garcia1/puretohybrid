@@ -16,13 +16,9 @@
       <div class="content-t">
         <h1><span style="color:#008bd2; font-weight: 900;text-transform: uppercase"><%= @ticket.user.nickname %></span> est en chemin</h1>
         <h4>Notre expert <span style="color:#008bd2; font-weight: 900">pédale</span> à votre rescousse</h4>
-<!--         <div class="avatar">
-          <img src="https://miro.medium.com/max/2600/1*JyYin7G7aGwgD9zpYBZ12Q.png">
-        </div> -->
         <div class="biking">
           <img src="https://media.giphy.com/media/l0IsHKjavEvd0ihG0/giphy.gif" alt="">
         </div>
-
       </div>
     </div>
 
@@ -33,27 +29,27 @@
         <h1 style="margin-top: 6vh">Merci</h1>
         <div class="heart" style="margin-top: 43vh"></div>
       </div>
-
-<div class="container">
-  <div class="review" style="margin-top: 25vh">
-      <p class="desc" style="padding-top:200px,font-family: sans-serif; font-size:1.2rem">Merci d'évaluer le conseil de <span style="color:#008bd2; font-weight:bold;font-size:1.5rem;text-transform: uppercase"><%= @ticket.user.nickname %></span></p>
-      <%= simple_form_for [@ticket, @review] do |f| %>
-        <%= f.input :rating, as: :hidden  %>
-        <div class="my-3">
-          <% 5.times do |index| %>
-            <i id="<%= index + 1 %>" class="review-rating far fa-star"></i>
-          <% end %>
+      <div>
+        <div class="review" style="margin-top: 22vh">
+          <p class="desc" style="font-family: sans-serif; font-size:1.2rem">Merci d'évaluer le conseil de <span style="color:#008bd2; font-weight:bold;font-size:1.5rem;text-transform: uppercase"><%= @ticket.user.nickname %></span></p>
+          <%= simple_form_for [@ticket, @review] do |f| %>
+          <%= f.input :rating, as: :hidden  %>
+            <div class="my-3">
+              <% 5.times do |index| %>
+                <i id="<%= index + 1 %>" class="review-rating far fa-star"></i>
+              <% end %>
+            </div>
+              <%= f.button :submit, "Valider", class: "btn btn-primary" %>
+            <% end %>
+            </div>
         </div>
-          <%= f.button :submit, "Valider", class: "btn btn-primary" %>
-      <% end %>
-  </div>
-</div>
-      <div style="marging-top: 2vh">
-        <%= link_to root_path, :class => 'btn btn-primary home' do %>
-          <i class="fas fa-home"></i>
-        <% end %>
-      </div>
-    </div>
+          <div style="margin-top: 2vh">
+            <%= link_to root_path, :class => 'btn btn-primary home' do %>
+            <i class="fas fa-home"></i>
+            <% end %>
+          </div>
+        </div>
+    </div> 
   <% end %>
 </div>
 
