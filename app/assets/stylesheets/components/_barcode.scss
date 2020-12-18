@@ -1,47 +1,39 @@
 @media (max-width: 767px) {
-
   .title-barcode {
     text-align: center;
   }
-
   .blue {
     background: #008bd2;
-    color: white; 
-    font-size: 130%;
+    color: white;
+    font-size: 100%;
     padding: 0% 5%;
   }
-
   .title-barcode h2 {
-    font-size: 170%;
+    font-size: 200%;
   }
-
   .scan-cam {
     text-align: center;
     border: solid grey;
     border-radius: 3%;
+    padding: 5%;
+    height: auto;
+    padding-bottom: 3%;
   }
-
   video {
     border-radius: 3%;
-    position: relative;
-    object-fit: cover;
-  }  
-
+  }
   .progress {
     margin-top: 5%;
   }
-
   .scan-form button {
     border:none;
     color: black;
     background: transparent;
   }
-
   .scan-form {
     text-align: center;
     margin-top: 2%;
   }
-
   .scan-form .btn-primary {
     font-size: 20px;
     border-radius: 30px;
@@ -49,21 +41,16 @@
     background-color: rgba(0, 139, 210, 0.9);
     color: white;
   }
-
   .submit {
     text-decoration: none;
   }
-
-
   #barcode-scanner canvas.drawingBuffer, #barcode-scanner video.drawingBuffer {
     display: none;
   }
   #barcode-scanner canvas, #barcode-scanner video {
     width: 100%;
-    height: 100%;
+    height: 166px;
     position: relative;
     object-fit: cover;
   }
-
 }
-

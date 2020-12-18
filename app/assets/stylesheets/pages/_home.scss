@@ -12,17 +12,34 @@
 
   .home-container {
     position: relative;
+    padding-top: 12%;
   }
+
+  // .home-text {
+  //   font-weight: 600;
+  //   text-align: left;
+  //   letter-spacing: 1px;
+  //   width: 78%;
+  //   margin-left: 5%;
+  //   font-family: 'Mulish', sans-serif;
+  //   margin-bottom: none;
+  // }
 
   .home-text {
     font-weight: 600;
+    font-size: 25px;
+    padding-left: 10px;
     text-align: left;
+    padding-top:30px;
+    color: white;
     letter-spacing: 1px;
+    // border-bottom: solid 6px white;
     width: 78%;
-    margin-left: 5%;
+    margin-left: 15px;
+    margin-top: -20px;
     font-family: 'Mulish', sans-serif;
-    margin-bottom: none;
   }
+
 
   .bienvenue{
     font-size: 240%;
@@ -51,7 +68,7 @@
   }
 
   .content-homepage {
-    padding-top: 10vh;
+    padding-top: 17vh;
     padding-bottom: 18px;
     text-align: center;
   }
