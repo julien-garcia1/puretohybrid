@@ -1,12 +1,15 @@
 <div class="home-container">
-  <h2 class="home-text"><span style="font-size:50px">Bienvenue</span> <br>dans votre magasin</h2>
-  <h2 class="home-text"><span style="background: white; color: #008bd2; font-size: 51px; padding: 0px 10px">AllTricks !</span></h2>
-  <%# <div class="home-text bienvenue">Bienvenue</div>
-  <div class="home-text dansvotremagasin">dans votre magasin</div>
-  <div class="home-text nomdumag">AllTricks !</div> %>
+  <h2 class="home-text">
+    <span style="font-size:50px">Bienvenue</span> <br>dans votre magasin
+  </h2>
+  <h2 class="home-text">
+    <span style="background: white; color: #008bd2; font-size: 51px; padding: 0px 10px">AllTricks !</span>
+  </h2>
   <div class="content-homepage">
     <%= link_to 'Scanner un produit', barcode_path, :class => 'btn btn-primary' %>
-    <p><button id="togg1">Saisir le code barre manuellement</button></p>
+    <p>
+      <button id="togg1">Saisir le code barre manuellement</button>
+    </p>
     <div id="d1" style='display:none' class="form-card">
       <form action="/scraping?val_barcode=" method="get">
         <div>
@@ -19,8 +22,11 @@
 </div>
 <div class="home-lg">
   <div class="container">
-    <h2>Scannez le QR Code avec votre smartphone pour vous rendre sur <br> l'application mobile <span style="background: white; color: #008bd2; font-size: 33px; padding: 0px 10px; text-shadow: none">AllTricks !</span></h2>
-    <a rel='nofollow' href='https://www.qr-code-generator.com' border='0' style='cursor:default'></a><img src='https://chart.googleapis.com/chart?cht=qr&chl=https%3A%2F%2Fwww.anphibia.com%2F&chs=180x180&choe=UTF-8&chld=L|2' alt=''>
+    <h2>
+      Scannez le QR Code avec votre smartphone pour vous rendre sur <br> l'application mobile <span style="background: white; color: #008bd2; font-size: 33px; padding: 0px 10px; text-shadow: none">AllTricks !</span>
+    </h2>
+    <a rel='nofollow' href='https://www.qr-code-generator.com' border='0' style='cursor:default'></a>
+    <img src='https://chart.googleapis.com/chart?cht=qr&chl=https%3A%2F%2Fwww.anphibia.com%2F&chs=180x180&choe=UTF-8&chld=L|2' alt=''>
     <div class="content-homepage-lg">
       <h2>Scannez un code barre avec l'application mobile <span style="background: white; color: #008bd2; font-size: 33px; padding: 0px 10px; text-shadow: none">AllTricks !</span></h2>
       <div class="barcodes">

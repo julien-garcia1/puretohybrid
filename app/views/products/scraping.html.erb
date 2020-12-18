@@ -1,9 +1,9 @@
 <div class="card-img card-img-p">
   <div class="img-product">
     <img src="<%= @image %>" alt="">
-      <%= link_to barcode_path do %>
-        <i class="fas fa-angle-left"></i>
-      <% end %>
+    <%= link_to barcode_path do %>
+      <i class="fas fa-angle-left"></i>
+    <% end %>
   </div>
 </div>
 <br>
@@ -31,8 +31,19 @@
   </div>
   <br>
   <div style="display: flex; padding-bottom: 30px;">
-    <div style="position: absolute"><% 5.times do %><i class="fas fa-star" style="color: grey"></i><% end %></div><div class="star" style="position: relative"><% @rating.to_i.times do %><i class="fas fa-star" style="color: red"></i><% end %></div>
-    <div style="padding-left: 27%"><span style="color: #008bd2; font-weight: bold"><%= @html_doc.search('.alltricks-Product-ReviewCounter').first.text.gsub("Soyez le premier à laisser un avis","   - Pas de note") %></span></div>
+    <div style="position: absolute">
+      <% 5.times do %>
+        <i class="fas fa-star" style="color: grey"></i>
+      <% end %>
+    </div>
+    <div class="star" style="position: relative">
+      <% @rating.to_i.times do %>
+        <i class="fas fa-star" style="color: red"></i>
+      <% end %>
+    </div>
+    <div style="padding-left: 27%">
+      <span style="color: #008bd2; font-weight: bold"><%= @html_doc.search('.alltricks-Product-ReviewCounter').first.text.gsub("Soyez le premier à laisser un avis","   - Pas de note") %></span>
+    </div>
   </div>
   <div>
     <% @html_doc.search("[@itemprop= 'review']").each do |element| %>

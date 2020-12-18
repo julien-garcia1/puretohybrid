@@ -1,27 +1,31 @@
 <div id="ticket-show" data-ticket-id="<%= @ticket.id %>">
   <% if @ticket.status == 'En attente' %>
-    <div class="container ticket-response" style="padding-top: 10vh">
+    <div class="container ticket-response p-t">
       <div class="content-t">
         <h1>Nous recherchons un vendeur disponible pour vous aider</h1>
-        <div class="loader">Loading...</div>
+        <div class="loader">
+          Loading...
+        </div>
       </div>
       <br>
       <div style="padding-top: 5vh">
         <%= link_to 'Annuler', ticket_path(@ticket), method: :delete, :class => 'btn btn-primary' %>
       </div>
     </div>
-
   <% elsif @ticket.status == 'En cours' %>
     <div class="container ticket-response" style="padding-top: 10vh">
       <div class="content-t">
-        <h1><span style="color:#008bd2; font-weight: 900;text-transform: uppercase"><%= @ticket.user.nickname %></span> est en chemin</h1>
-        <h4>Notre expert <span style="color:#008bd2; font-weight: 900">pédale</span> à votre rescousse</h4>
+        <h1>
+          <span style="color:#008bd2; font-weight: 900;text-transform: uppercase"><%= @ticket.user.nickname %></span> est en chemin
+        </h1>
+        <h4>
+          Notre expert <span style="color:#008bd2; font-weight: 900">pédale</span> à votre rescousse
+        </h4>
         <div class="biking">
           <img src="https://media.giphy.com/media/l0IsHKjavEvd0ihG0/giphy.gif" alt="">
         </div>
       </div>
     </div>
-
   <% else %>
     <div class="container ticket-response" style="margin-top: 10vh">
       <div class="content-t">
@@ -31,24 +35,25 @@
       </div>
       <div>
         <div class="review" style="margin-top: 22vh">
-          <p class="desc" style="font-family: sans-serif; font-size:1.2rem">Merci d'évaluer le conseil de <span style="color:#008bd2; font-weight:bold;font-size:1.5rem;text-transform: uppercase"><%= @ticket.user.nickname %></span></p>
+          <p class="desc" style="font-family: sans-serif; font-size:1.2rem">
+            Merci d'évaluer le conseil de <span style="color:#008bd2; font-weight:bold;font-size:1.5rem;text-transform: uppercase"><%= @ticket.user.nickname %></span>
+          </p>
           <%= simple_form_for [@ticket, @review] do |f| %>
-          <%= f.input :rating, as: :hidden  %>
+            <%= f.input :rating, as: :hidden  %>
             <div class="my-3">
               <% 5.times do |index| %>
                 <i id="<%= index + 1 %>" class="review-rating far fa-star"></i>
               <% end %>
             </div>
-              <%= f.button :submit, "Valider", class: "btn btn-primary" %>
-            <% end %>
-            </div>
+            <%= f.button :submit, "Valider", class: "btn btn-primary" %>
+          <% end %>
         </div>
-          <div style="margin-top: 2vh">
-            <%= link_to root_path, :class => 'btn btn-primary home' do %>
-            <i class="fas fa-home"></i>
-            <% end %>
-          </div>
-        </div>
+      </div>
+      <div style="margin-top: 2vh">
+        <%= link_to root_path, :class => 'btn btn-primary home' do %>
+          <i class="fas fa-home"></i>
+        <% end %>
+      </div>
     </div>
   <% end %>
 </div>
