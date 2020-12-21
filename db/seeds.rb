@@ -14,10 +14,9 @@ User.destroy_all
 Product.destroy_all
 Store.destroy_all
 
-store = Store.create(name:"Bron", address:"Lyon")
+store = Store.create(name:"AllTricks Bron", address:"322 Avenue Général de Gaulle, 69500 Bron")
 
-user = User.create(store_id: store.id, nickname: "Bob", email:"toto@gmail.com", password:"azerty")
-user2 = User.create(store_id: store.id, nickname: "Jean", email:"jean@gmail.com", password:"azerty")
+user = User.create(store_id: store.id, nickname: "Conseiller", email:"conseiller@gmail.com", password:"322.Alltricks")
 
 puts user.errors.full_messages
 puts "DB seed end"

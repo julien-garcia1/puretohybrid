@@ -16,7 +16,7 @@
     <div class="container ticket-response" style="padding-top: 10vh">
       <div class="content-t">
         <h1>
-          <span style="color:#008bd2; font-weight: 900;text-transform: uppercase"><%= @ticket.user.nickname %></span> est en chemin
+          Votre <span style="color:#008bd2; font-weight: 900;text-transform: uppercase"><%= @ticket.user.nickname %></span> est en chemin
         </h1>
         <h4>
           Notre expert <span style="color:#008bd2; font-weight: 900">pédale</span> à votre rescousse
@@ -36,7 +36,7 @@
       <div>
         <div class="review" style="margin-top: 22vh">
           <p class="desc" style="font-family: sans-serif; font-size:1.2rem">
-            Merci d'évaluer le conseil de <span style="color:#008bd2; font-weight:bold;font-size:1.5rem;text-transform: uppercase"><%= @ticket.user.nickname %></span>
+            Merci d'évaluer le conseil de votre <span style="color:#008bd2; font-weight:bold;font-size:1.5rem;text-transform: uppercase"><%= @ticket.user.nickname %></span>
           </p>
           <%= simple_form_for [@ticket, @review] do |f| %>
             <%= f.input :rating, as: :hidden  %>
