@@ -8,6 +8,18 @@
         </div>
       </div>
       <br>
+      <div class="timer">
+        <span id="countdowntimer">30 secondes </span>
+        <script type="text/javascript">
+          var timeleft = 30;
+          var downloadTimer = setInterval(function(){
+            timeleft--;
+            document.getElementById("countdowntimer").textContent = timeleft;
+            if(timeleft <= 0)
+              document.getElementById('countdowntimer').innerHTML = '<a href="https://www.anphibia.com">Call the callcenter</a>';
+          },1000);
+        </script>
+      </div>
       <div style="padding-top: 5vh">
         <%= link_to 'Annuler', ticket_path(@ticket), method: :delete, :class => 'btn btn-primary' %>
       </div>
