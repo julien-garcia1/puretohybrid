@@ -15,16 +15,6 @@
     padding-top: 12%;
   }
 
-  // .home-text {
-  //   font-weight: 600;
-  //   text-align: left;
-  //   letter-spacing: 1px;
-  //   width: 78%;
-  //   margin-left: 5%;
-  //   font-family: 'Mulish', sans-serif;
-  //   margin-bottom: none;
-  // }
-
   .home-text {
     font-weight: 600;
     font-size: 25px;
@@ -68,20 +58,20 @@
   }
 
   .content-homepage {
-    padding-top: 17vh;
-    padding-bottom: 18px;
+    padding-top: 22vh;
     text-align: center;
   }
 
   .content-homepage .btn-primary {
     font-size: 20px;
     border-radius: 30px;
-    padding: 10px 25px;
+    padding: 2vh 6vh;
+    letter-spacing: 1px;
     background-color: rgba(0, 139, 210, 0.9);
  }
 
  .content-homepage p {
-  padding-top: 13vh;
+  padding-top: 3vh;
   }
 }
 
