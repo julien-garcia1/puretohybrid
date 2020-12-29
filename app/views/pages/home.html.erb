@@ -6,7 +6,17 @@
     <span style="background: white; color: #008bd2; font-size: 51px; padding: 0px 10px">AllTricks !</span>
   </h2>
   <div class="content-homepage">
-    <%= link_to 'Scanner un produit', barcode_path, :class => 'btn btn-primary' %>
+    <div>
+      <%= link_to new_ticket_path, :class => 'btn btn-primary' do %>
+      <i class="fas fa-concierge-bell"></i><span style="padding-left: 15px">Appeler un vendeur</span>
+      <% end %>
+    </div>
+    <div style="margin-top: 5vh" >
+      <%= link_to barcode_path, :class => 'btn btn-primary' do %>
+      <i class="fas fa-qrcode"></i><span style="padding-left: 15px ">Scanner un produit</span>
+      <% end %>
+    </div>
+
     <p>
       <button id="togg1">Saisir le code barre manuellement</button>
     </p>
@@ -20,6 +30,9 @@
     </div>
   </div>
 </div>
+
+
+
 <div class="home-lg">
   <div class="container">
     <h2>

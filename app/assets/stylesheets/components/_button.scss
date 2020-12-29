@@ -20,9 +20,42 @@ button {
   transform: scale(1.1);
 }
 
+.buttons-product {
+  position: sticky;
+  bottom: 20px;
+  text-align: center;
+}
+
+.buttons-product .btn-primary {
+  background: white;
+  color: #008bd2;
+  box-shadow: 2px 2px 8px grey;
+  font-weight: bold;
+  width: 240px;
+  padding: 17px 32px;
+  font-size: 14px;
+}
+
+
 .home {
   height: 60px;
   width: 60px;
   border-radius: 50%;
   font-size: 30px;
+}
+
+.submit {
+  text-decoration: none;
+  padding: 10px 25px !important;
+}
+
+.button_ticket_scan .btn-primary {
+  font-size: 20px;
+  border-radius: 30px;
+  padding: 2vh 6vh;
+  letter-spacing: 1px;
+  background-color: rgba(0, 139, 210, 0.9);
+}
+.button_ticket_scan {
+  text-align: center;
 }

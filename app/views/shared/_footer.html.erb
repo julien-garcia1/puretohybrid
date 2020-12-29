@@ -1,6 +1,6 @@
-<div class="alltricks-Footer">
+<!-- <div class="alltricks-Footer">
   <div class='scan-btn-footer b-left'>
-    <% if ["scan", "barcode", "home"].include?(params[:action])%>
+    <% if ["scan", "barcode"].include?(params[:action])%>
       <%= link_to barcode_path do %>
         <i class="fas fa-qrcode active" style="border-bottom: none !important"></i>
         <p class="active">Scan</p>
@@ -12,7 +12,7 @@
       <% end %>
     <% end %>
   </div>
-   <!-- <div class='scan-btn-footer'>
+   <div class='scan-btn-footer'>
     <% if ["index"].include?(params[:action])%>
       <%= link_to products_path do %>
         <i class="fas fa-bicycle active" style="border-bottom: none !important"></i>
@@ -24,7 +24,7 @@
         <p>Produits</p>
       <% end %>
     <% end %>
-  </div> -->
+  </div> 
   <div class='scan-btn-footer b-right'>
     <% if ["new"].include?(params[:action])%>
       <%= link_to new_ticket_path do %>
@@ -37,5 +37,5 @@
         <p>Vendeur</p>
       <% end %>
     <% end %>
-  </div>
-</div>
+  </div> 
+</div>  -->
