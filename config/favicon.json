@@ -1,7 +1,7 @@
 
 
 {
-  "master_picture": "https://drive.google.com/file/d/1Gc8X-c9_iCTQbN6Nmucr7ZUD_arLKyGj/view?usp=sharing",
+  "master_picture": "app/assets/images/a_de_alltricks.jpg", 
   "favicon_design": {
       "ios": {
           "picture_aspect": "no_change",
