@@ -38,30 +38,27 @@
       </div>
     </div>
   <% elsif @ticket.status == 'En cours' %>
-    <div class="container ticket-response" style="padding-top: 10vh">
+    <div class="container ticket-response" style="padding-top: 27vh">
       <div class="content-t">
-        <h1>
-          Votre <span style="color:#008bd2; font-weight: 900;text-transform: uppercase"><%= @ticket.user.nickname %></span> est en chemin
-        </h1>
-        <h4>
-          Notre expert <span style="color:#008bd2; font-weight: 900">pédale</span> à votre rescousse vers le rayon <span style="color:#008bd2; font-weight: 900"> <%= @ticket.section %> </span>
-        </h4>
+        <h2>
+          Notre vendeur <span style="color:#008bd2; font-weight: 900">pédale</span> à votre rescousse vers le rayon <span style="color:#008bd2; font-weight: 900"> <%= @ticket.section %> </span>
+        </h2>
         <div class="biking">
           <img src="https://media.giphy.com/media/l0IsHKjavEvd0ihG0/giphy.gif" alt="">
         </div>
       </div>
     </div>
   <% else %>
-    <div class="container ticket-response" style="margin-top: 10vh">
+    <div class="container ticket-response" style="margin-top: 15vh">
       <div class="content-t">
-        <h2>Nous espérons que notre conseiller a répondu à vos interrogations</h2>
+        <h2>Nous espérons avoir répondu à vos interrogations</h2>
         <h1 style="margin-top: 6vh">Merci</h1>
         <div class="heart" style="margin-top: 43vh"></div>
       </div>
       <div>
         <div class="review" style="margin-top: 22vh">
           <p class="desc" style="font-family: sans-serif; font-size:1.2rem">
-            Merci d'évaluer le conseil de votre <span style="color:#008bd2; font-weight:bold;font-size:1.5rem;text-transform: uppercase"><%= @ticket.user.nickname %></span>
+            Merci d'évaluer le conseil de votre <span style="color:#008bd2; font-weight:bold;font-size:1.5rem;text-transform: uppercase">vendeur</span>
           </p>
           <%= simple_form_for [@ticket, @review] do |f| %>
             <%= f.input :rating, as: :hidden  %>
