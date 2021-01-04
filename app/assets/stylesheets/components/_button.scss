@@ -52,14 +52,22 @@ button {
 .button_ticket_scan .btn-primary {
   font-size: 20px;
   border-radius: 30px;
-  padding: 2vh 6vh;
+  padding: 1vh 5vh;
   letter-spacing: 1px;
   background-color: rgba(0, 139, 210, 0.9);
 }
+
 .button_ticket_scan {
   text-align: center;
 }
+
 .appel_vendeur_scan {
   text-align: center;
   padding-top: 5vh;
+}
+
+.appel_vendeur_scan .btn-primary {
+  font-size: 18px;
+  padding: 1vh 5vh;
+  letter-spacing: 1px;
 }
