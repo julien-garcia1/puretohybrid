@@ -3,42 +3,39 @@
 <head>
   <style>
     body{
-            background: #33cc99;
-            color:#fff;
-            font-family: 'Open Sans', sans-serif;
-            max-height:700px;
-            overflow: hidden;
-        }
-        .quatrecent{
-            font-size: 220px;
-            position: relative;
-            display: inline-block;
-            z-index: 2;
-            height: 250px;
-            letter-spacing: 15px;
-        }
-        .btn{
-            background-color: rgb( 255, 255, 255 );
-            position: relative;
-            display: inline-block;
-            width: 358px;
-            padding: 5px;
-            z-index: 5;
-            font-size: 25px;
-            margin:0 auto;
-            color:#33cc99;
-            text-decoration: none;
-            margin-right: 10px
+        color: #008bd2;
+        font-family: 'Open Sans', sans-serif;
+        max-height:700px;
+        overflow: hidden;
         }
   </style>
 </head>
 
-<div>
-    <div class='quatrecent'>500</div>
-    <hr>
-    <div>La page n'a pas été trouvée</div>
-    <a class='btn' href='https://www.anphibia.com/'>Retour à l'acceuil</a>
-    <a class='btn' href='https://www.anphibia.com/scan/barcode'>Retour au scan</a>
-    <a class='btn' href='https://www.anphibia.com/tickets/new'>Retour à l'appel d'un vendeur</a>
+
+<body>
+  <div>
+  <div style="font-size:20px; text-align:center">Erreur 500</div>
+  <br>
+  <div>Nous espérons que vous vivez une bonne expérience en magasin malgré ce problème technique!</div>
+  <div>L'erreur est problablement de notre responsabilité, mais avez-vous ...</div>
+      <ul>
+          <li>une <span style="font-weight:bold">connection internet </span> suffisante ?</li>
+          <li>autorisé l'accès à votre <span style="font-weight:bold">caméra </span>pour votre navigateur ?</li>
+       </ul>   
+  <div>Si c'est le cas, vous pouvez vous adresser à l'acceuil du magasin pour obtenir de l'aide! Sinon vous pouvez cliquer sur les boutons ci-dessous</div>
+  <br>
+<div class="btn btn-primary" style="margin-top: 2vh ">
+  <a href="https://www.anphibia.com/scan/barcode">
+    <i class="fas fa-qrcode"></i><span style="padding-left: 15px ">Scanner un produit</span>
+  </a>
 </div>
+<div class="btn btn-primary" style="margin-top: 2vh ">
+  <a href="https://www.anphibia.com/tickets/new">
+    <i class="fas fa-concierge-bell"></i><span style="padding-left: 15px ">Appeler un vendeur</span>
+  </a>
+</div>
+<br>
+  <div style="font-size:20px; text-align:center">Bonne journée</div>       
+  </div>
+</body>
 </html>
