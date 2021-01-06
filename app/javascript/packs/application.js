@@ -32,6 +32,8 @@ import { quaggaScanner } from '../components/barcode';
 import { toggle } from '../components/toggle';
 import { dynamicRating } from '../components/stars';
 
+Notification.requestPermission().then(function (result) {})
+
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here:
   quaggaScanner();
