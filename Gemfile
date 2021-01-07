@@ -70,3 +70,6 @@ gem 'devise'
 gem "redis", "~> 4.2"
 
 gem "amazing_print", "~> 1.2"
+
+# service-worker for notification
+gem 'serviceworker-rails'
