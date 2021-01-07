@@ -1,8 +1,8 @@
 <head>
-  <script type="text/javascript">
+<script type="text/javascript">
     setTimeout(function(){
       location = ''
-    },10000)
+    },10 *1000) // durée en secondes avant le *
   </script>
 </head>
 
@@ -59,4 +59,24 @@
     <%= link_to'Se déconnecter', destroy_user_session_path, :class => 'logout btn btn-primary', method: :delete %>
   </div>
 </div>
+
+
+<% if user_signed_in? %>
+<script>
+  console.log("je commence le script")
+  if(document.querySelector('.notification') != null) {
+      Notification.requestPermission()
+        .then(permisssion => {
+            if (permisssion === 'granted') {
+                navigator.serviceWorker.ready;
+            }
+        }).then(() => navigator.serviceWorker.register('service-worker.js'))
+        .then(registration => registration.showNotification('👋 magasin Alltricks de Bron', {
+            body: 'Un client a besoin de vous, si vous êtes disponible, allez sur l interface vendeur pour vous y positionner',
+        })); 
+        console.log("je suis dans le script")
+  };
+  console.log("je suis à la fin du script")
+</script>
+<% end %>
 
