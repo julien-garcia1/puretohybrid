@@ -24,7 +24,6 @@ class TicketsController < ApplicationController
     @ticket.status = 'En attente'
     @ticket.section = params[:commit]
     if @ticket.save
-      ActionCable.server.broadcast('notification_channel', 'You have visited the welcome page.')
       StoreChannel.broadcast_to(
         Store.first,
         body: render_to_string(partial: "tickets/ticket", locals: { ticket: @ticket, new: true })
