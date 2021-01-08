@@ -1,10 +1,5 @@
 <tr class="ticket <%= 'new' if new %>" id="ticket-<%= ticket.id %> ">
   <td><%= ticket.client_firstname %></td>
-  <td><%= ticket.status %></td>
   <td><%= ticket.section %></td>
-  <td>
-    <%= link_to closed_ticket_path(ticket) do %>
-      <i class="fa fa-trash"></i>
-    <% end %>
-  </td>
+  <td><%= link_to "Clôturer", closed_ticket_path(ticket), class: 'btn btn-primary' %></td>
 </div>
