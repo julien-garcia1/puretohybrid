@@ -11,7 +11,7 @@
               "precomposed_icons": false,
               "declare_only_default_icon": true
           },
-          "app_name": "Alltricks store, by webinmag"
+          "app_name": "Alltricks store, by Anphibia"
       },
       "desktop_browser": {
           "design": "background",
@@ -32,7 +32,7 @@
                   "rectangle": false
               }
           },
-          "app_name": "Alltricks store, by webinmag"
+          "app_name": "Alltricks store, by Anphibia"
       },
       "android_chrome": {
           "picture_aspect": "background_and_margin",
