@@ -24,10 +24,6 @@ class ProductsController < ApplicationController
   def scan
   end
 
-  def barcode
-    no_footer
-  end
-
   REGEX = /<script type=\"application\/ld\+json\">\n(?<json>.*?\"@type\": \"Product\".*?})\n<\/script>/m
 
   def scraping
@@ -45,7 +41,6 @@ class ProductsController < ApplicationController
     @description = (data['description'])
     @brand = data['brand']['name']
     @html_doc = Nokogiri::HTML(html_file)
-    no_footer
   end
 end
 
