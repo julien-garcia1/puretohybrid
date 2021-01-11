@@ -6,13 +6,11 @@ class TicketsController < ApplicationController
     @tickets_assigned = Ticket.where(status: 'En cours')
     @reviews = Review.all
     @average_rating = @reviews.average(:rating)
-    no_footer
   end
 
   def show
     @ticket = Ticket.find(params[:id])
     @review = Review.new
-    no_footer
   end
 
   def new
