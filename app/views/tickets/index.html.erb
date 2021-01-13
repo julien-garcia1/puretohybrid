@@ -52,6 +52,9 @@
         <i class="far fa-star"></i>
       <% end %> sur <span style="color:#008bd2; font-weight: bold"><%= @reviews.count %></span> avis
     </p>
+    <p>
+      <strong>Nombre de tickets crées:</strong> <%= @count %>
+    </p>
   </div>
   <div id="logout">
     <%= link_to'Se déconnecter', destroy_user_session_path, :class => 'logout btn btn-primary', method: :delete %>
@@ -71,7 +74,7 @@
         }).then(() => navigator.serviceWorker.register('service-worker.js'))
         .then(registration => registration.showNotification('👋 magasin Alltricks de Bron', {
             body: 'Un client a besoin de vous, si vous êtes disponible, allez sur l interface vendeur pour vous y positionner',
-        })); 
+        }));
         console.log("je suis dans le script")
   };
   console.log("je suis à la fin du script")

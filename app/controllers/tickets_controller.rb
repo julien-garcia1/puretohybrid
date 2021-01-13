@@ -6,6 +6,7 @@ class TicketsController < ApplicationController
     @tickets_assigned = Ticket.where(status: 'En cours')
     @reviews = Review.all
     @average_rating = @reviews.average(:rating)
+    @count = Ticket.all.count
   end
 
   def show
