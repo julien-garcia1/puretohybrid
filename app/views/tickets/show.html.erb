@@ -49,11 +49,11 @@
       </div>
     </div>
   <% else %>
-    <div class="container ticket-response" style="margin-top: 15vh">
+    <div class="container ticket-response" style="margin-top: 10vh">
       <div class="content-t">
         <h2>Nous espérons avoir répondu à vos interrogations</h2>
-        <h1 style="margin-top: 6vh">Merci</h1>
-        <div class="heart" style="margin-top: 43vh"></div>
+        <h1 style="margin-top: 5vh">Merci</h1>
+        <div class="heart" style="margin-top: 35vh"></div>
       </div>
       <div>
         <div class="review" style="margin-top: 22vh">
@@ -67,14 +67,16 @@
                 <i id="<%= index + 1 %>" class="review-rating far fa-star"></i>
               <% end %>
             </div>
-            <%= f.button :submit, "Valider", class: "btn btn-primary" %>
+            <%= f.button :submit, "Valider et revenir à l'acceuil", class: "btn btn-primary" %>
           <% end %>
         </div>
       </div>
-      <div style="margin-top: 2vh">
-        <%= link_to root_path, :class => 'btn btn-primary home' do %>
-          <i class="fas fa-home"></i>
-        <% end %>
+      <div>
+        <a href="https://www.anphibia.com"><span class="far fa-hand-point-right" style="color: #008bd2; margin-top:5vh" > Revenez à l'acceuil directement <br>ou</span></a>
+      </div>
+      <div>
+        <a href="https://fr.surveymonkey.com/r/QZFFVSW"><span class="fas fa-praying-hands" style="color: #008bd2; margin-top:5vh"> Donnez votre avis sur l'application !</span></a>
+      </div>
       </div>
     </div>
   <% end %>
