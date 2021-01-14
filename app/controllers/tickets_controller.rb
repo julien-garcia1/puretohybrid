@@ -4,6 +4,7 @@ class TicketsController < ApplicationController
   def index
     @tickets_to_be_assign = Ticket.where(status: 'En attente')
     @tickets_assigned = Ticket.where(status: 'En cours')
+    @tickets_closed = Ticket.where(status: 'Terminé')
     @reviews = Review.all
     @average_rating = @reviews.average(:rating)
     @count = Ticket.all.count
