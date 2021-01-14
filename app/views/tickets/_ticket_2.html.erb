@@ -1,5 +1,6 @@
 <tr class="ticket <%= 'new' if new %>" id="ticket-<%= ticket.id %> ">
   <td><%= ticket.client_firstname %></td>
   <td><%= ticket.section %></td>
+  <td><%= ticket.updated_at.strftime("%Hh%M") %></td>
   <td><%= link_to "Clôturer", closed_ticket_path(ticket), class: 'btn btn-primary' %></td>
 </div>

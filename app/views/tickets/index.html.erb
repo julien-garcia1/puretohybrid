@@ -1,9 +1,9 @@
 <head>
-<script type="text/javascript">
+<!-- <script type="text/javascript">
     setTimeout(function(){
       location = ''
     },10 *1000) // durée en secondes avant le *
-  </script>
+  </script> -->
 </head>
 
 <div class="container">
@@ -15,6 +15,7 @@
           <tr>
             <th>Client</th>
             <th>Rayon</th>
+            <th>Heure</th>
             <th>Action</th>
           </tr>
         </thead>
@@ -32,6 +33,7 @@
           <tr>
             <th>Client</th>
             <th>Rayon</th>
+            <th>Heure</th>
             <th>Action</th>
           </tr>
         </thead>
@@ -54,6 +56,15 @@
     </p>
     <p>
       <strong>Nombre de tickets crées:</strong> <%= @count %>
+    </p>
+        <p>
+      <strong>Moyenne temps d'un ticket:</strong>
+      <% moyenne = [] %>
+      <% @tickets_closed.each do |ticket| %>
+            <% moyenne << ticket.updated_at - ticket.created_at %>
+      <% end %>
+      <p> <% timing = (moyenne.inject{ |sum, el| sum + el } / moyenne.size) %>
+      <%= Time.at(timing).utc.strftime("%M min %S sec") %> </p>
     </p>
   </div>
   <div id="logout">
