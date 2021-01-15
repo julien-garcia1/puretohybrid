@@ -63,8 +63,12 @@
       <% @tickets_closed.each do |ticket| %>
             <% moyenne << ticket.updated_at - ticket.created_at %>
       <% end %>
-      <p> <% timing = (moyenne.inject{ |sum, el| sum + el } / moyenne.size) %>
-      <%= Time.at(timing).utc.strftime("%M min %S sec") %> </p>
+      <p> 
+        <% timing = (moyenne.inject{ |sum, el| sum + el }.to_f / moyenne.size) %> 
+        <% unless timing.nan? %>
+          <%= Time.at(timing).utc.strftime("%M min %S sec") %>
+        <% end %>
+      </p>
     </p>
   </div>
   <div id="logout">
