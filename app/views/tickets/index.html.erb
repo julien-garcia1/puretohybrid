@@ -17,6 +17,7 @@
             <th>Rayon</th>
             <th>Heure</th>
             <th>Action</th>
+            <th>à faire</th>
           </tr>
         </thead>
         <tbody id="tickets" data-store-id="<%= current_user.store.id %>">
@@ -27,6 +28,22 @@
       </table>
     </div>
     <div class="card card-ticket">
+      <h1 style="text-align:center; padding-top: 5px; padding-bottom:25px">Tickets pris par un vendeur</h1>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Client</th>
+            <th>Rayon</th>
+            <th>Heure</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody id="ticket-show tickets" data-store-id="<%= current_user.store.id %>">
+          <% @tickets_assigned_later.each do |ticket| %>
+            <%= render 'tickets/ticket_2', ticket: ticket, new: false %>
+          <% end %>
+        </tbody>
+      </table>
       <h1 style="text-align:center; padding-top: 5px; padding-bottom:25px">Tickets en cours</h1>
       <table class="table">
         <thead>
@@ -63,8 +80,8 @@
       <% @tickets_closed.each do |ticket| %>
             <% moyenne << ticket.updated_at - ticket.created_at %>
       <% end %>
-      <p> 
-        <% timing = (moyenne.inject{ |sum, el| sum + el }.to_f / moyenne.size) %> 
+      <p>
+        <% timing = (moyenne.inject{ |sum, el| sum + el }.to_f / moyenne.size) %>
         <% unless timing.nan? %>
           <%= Time.at(timing).utc.strftime("%M min %S sec") %>
         <% end %>
