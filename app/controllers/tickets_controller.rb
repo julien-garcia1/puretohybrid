@@ -47,6 +47,7 @@ class TicketsController < ApplicationController
   def closed
     @ticket = Ticket.find(params[:id])
     @ticket.status = 'Terminé'
+    @ticket.client_firstname = "anonymized"
     @ticket.save
     TicketChannel.broadcast_to(@ticket, action: 'refresh')
     redirect_to tickets_path
