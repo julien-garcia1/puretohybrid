@@ -1,7 +1,6 @@
-<%# <div class="notification"> %>
-  <tr class="ticket <%= 'new' if new %>" id="ticket-<%= ticket.id %>">
+<tr class="ticket <%= 'new' if new %>" id="ticket-<%= ticket.id %>">
   <td class="notification"><%= ticket.client_firstname %></td>
   <td><%= ticket.section %></td>
   <td><%= ticket.created_at.strftime("%Hh%M") %></td>
   <td><%= link_to "J'y vais", assign_ticket_path(ticket), class: 'btn btn-primary' %></td>
-<%# </div> %>
+  <td><%= link_to "Plus tard", assign_later_ticket_path(ticket), class: 'btn btn-primary' %></td>

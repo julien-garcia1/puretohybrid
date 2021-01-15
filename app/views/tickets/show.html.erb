@@ -1,4 +1,5 @@
 <div id="ticket-show" data-ticket-id="<%= @ticket.id %>">
+
   <% if @ticket.status == 'En attente' %>
     <div class="container ticket-response p-t">
       <div class="content-t">
@@ -37,6 +38,7 @@
         <%= link_to 'Annuler', ticket_path(@ticket), method: :delete, :class => 'btn btn-primary' %>
       </div>
     </div>
+
   <% elsif @ticket.status == 'En cours' %>
     <div class="container ticket-response" style="padding-top: 27vh">
       <div class="content-t">
@@ -48,6 +50,19 @@
         </div>
       </div>
     </div>
+
+  <% elsif @ticket.status == 'Plus tard' %>
+    <div class="container ticket-response" style="padding-top: 27vh">
+      <div class="content-t">
+        <h2>
+          Notre vendeur est en pleine <span style="color:#008bd2; font-weight: 900">étape</span> avec un autre client. Il se rendra vers vous dès qu'il arrivera au <span style="color:#008bd2; font-weight: 900">sommet</span>.
+        </h2>
+        <div class="biking">
+          <img src="https://media.giphy.com/media/l0IsHKjavEvd0ihG0/giphy.gif" alt="">
+        </div>
+      </div>
+    </div>
+
   <% else %>
     <div class="container ticket-response" style="margin-top: 10vh">
       <div class="content-t">
@@ -80,6 +95,7 @@
       </div>
     </div>
   <% end %>
+
 </div>
 
 

@@ -3,6 +3,7 @@ class TicketsController < ApplicationController
 
   def index
     @tickets_to_be_assign = Ticket.where(status: 'En attente')
+    @tickets_assigned_later = Ticket.where(status: 'Plus tard')
     @tickets_assigned = Ticket.where(status: 'En cours')
     @tickets_closed = Ticket.where(status: 'Terminé')
     @reviews = Review.all
@@ -38,6 +39,16 @@ class TicketsController < ApplicationController
     @ticket = Ticket.find(params[:id])
     @ticket.user = current_user
     @ticket.status = 'En cours'
+    @ticket.save
+    TicketChannel.broadcast_to(@ticket, action: 'refresh')
+    StoreChannel.broadcast_to(@store, action: 'refresh')
+    redirect_to tickets_path
+  end
+
+  def assign_later
+    @ticket = Ticket.find(params[:id])
+    @ticket.user = current_user
+    @ticket.status = 'Plus tard'
     @ticket.save
     TicketChannel.broadcast_to(@ticket, action: 'refresh')
     StoreChannel.broadcast_to(@store, action: 'refresh')
