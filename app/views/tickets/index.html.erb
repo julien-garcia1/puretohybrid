@@ -9,7 +9,7 @@
 <div class="container">
   <div class="d-flex-lg">
     <div class="card card-ticket">
-      <h1 style="text-align:center; padding-bottom:25px; padding-top:5px">Tickets en attente</h1>
+      <h2 class="ticket-title">Tickets en attente</h2>
       <table class="table">
         <thead>
           <tr>
@@ -17,7 +17,6 @@
             <th>Rayon</th>
             <th>Heure</th>
             <th>Action</th>
-            <th>à faire</th>
           </tr>
         </thead>
         <tbody id="tickets" data-store-id="<%= current_user.store.id %>">
@@ -28,7 +27,7 @@
       </table>
     </div>
     <div class="card card-ticket">
-      <h1 style="text-align:center; padding-top: 5px; padding-bottom:25px">Tickets pris par un vendeur</h1>
+      <h2 class="ticket-title">Tickets pris par un vendeur</h2>
       <table class="table">
         <thead>
           <tr>
@@ -44,7 +43,8 @@
           <% end %>
         </tbody>
       </table>
-      <h1 style="text-align:center; padding-top: 5px; padding-bottom:25px">Tickets en cours</h1>
+      <br>
+      <h2 class="ticket-title">Tickets en cours</h2>
       <table class="table">
         <thead>
           <tr>
@@ -72,10 +72,10 @@
       <% end %> sur <span style="color:#008bd2; font-weight: bold"><%= @reviews.count %></span> avis
     </p>
     <p>
-      <strong>Nombre de tickets crées:</strong> <%= @count %>
+      <strong>Nombre de tickets crées :</strong> <%= @count %>
     </p>
       <p>
-      <strong>Moyenne temps d'un ticket:</strong>
+      <strong>Temps moyen d'un ticket :</strong>
       <% moyenne = [] %>
       <% @tickets_closed.each do |ticket| %>
             <% moyenne << ticket.updated_at - ticket.created_at %>
