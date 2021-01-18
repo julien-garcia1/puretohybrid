@@ -73,6 +73,15 @@
  .content-homepage p {
   padding-top: 3vh;
   }
+
+  #survey-text {
+    color: white;
+    margin-top: 10%;
+  }
+
+  .white-survey #survey-text {
+    color: #008bd2 !important;
+  }
 }
 
 @media (min-width: 768px) {
