@@ -60,6 +60,21 @@
   color: #008bd2;
 }
 
+#review-btn {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+#review-btn .btn-primary {
+  min-width: 120px;
+}
+
+#temporary-survey {
+  position: absolute;
+  bottom: 10px;
+  right: 4px;
+}
+
 @media (max-width: 767px) {
   #action {
     margin-top: 10px;

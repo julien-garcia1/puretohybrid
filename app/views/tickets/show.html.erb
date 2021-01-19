@@ -82,15 +82,15 @@
                 <i id="<%= index + 1 %>" class="review-rating far fa-star"></i>
               <% end %>
             </div>
-            <%= f.button :submit, "Valider", class: "btn btn-primary" %>
+            <div id='review-btn'>
+              <%= f.button :submit, "Valider", class: "btn btn-primary" %>
+              <%= link_to 'Ne pas noter', root_path, class: 'btn btn-primary' %>
+            </div>
           <% end %>
         </div>
       </div>
-      <div class="white-survey">
-        <a href="https://www.anphibia.com"><i class="far fa-hand-point-right" id="survey-text"> Revenez à l'acceuil directement <br>ou</i></a>
-      </div>
-      <div class="white-survey">
-        <a href="https://fr.surveymonkey.com/r/QZFFVSW"><i class="fas fa-praying-hands" id="survey-text"> Donnez votre avis sur l'application !</i></a>
+      <div id="temporary-survey">
+        <p>Une fois sur la page d'accueil pensez à remplir notre questionnaire !</p>
       </div>
       </div>
     </div>
