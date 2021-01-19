@@ -97,26 +97,17 @@
 <% if user_signed_in? %>
 <script>
   if(document.querySelector('.notification') != null) {
-    if (Notification.permission !== "denied" && Notification.permission !== "granted") {
       Notification.requestPermission()
-    }
-    const redirectURL = "https://www.anphibia.com/tickets"
-    const yourNotification = new Notification(`👋 Magasin Alltricks de Bron
-Un client a besoin de vous ! Si vous êtes disponible positionnez-vous dessus`)
-    yourNotification.onclick = () => {
-      window.open(redirectURL)
-    };
-  }
-      <%# Notification.requestPermission()
         .then(permisssion => {
             if (permisssion === 'granted') {
                 navigator.serviceWorker.ready;
             }
+            var data = 'https://google.com/';
         }).then(() => navigator.serviceWorker.register('service-worker.js'))
         .then(registration => registration.showNotification('👋 magasin Alltricks de Bron', {
             body: 'Un client a besoin de vous, si vous êtes disponible, allez sur l interface vendeur pour vous y positionner',
         }));
-        console.log("je suis dans le script") %>
+}
 </script>
 <% end %>
 
