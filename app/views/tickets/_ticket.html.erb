@@ -1,5 +1,5 @@
 <tr class="ticket <%= 'new' if new %>" id="ticket-<%= ticket.id %>">
-  <td class="notification"><%= ticket.client_firstname %></td>
+  <td class="notification"><%= ticket.client_identifier %></td>
   <td><%= ticket.section %></td>
   <td><%= ticket.created_at.strftime("%Hh%M") %></td>
   <td>
