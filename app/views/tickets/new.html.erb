@@ -10,7 +10,7 @@
         <%= f.error_notification %>
         <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
         <div class="form client-firstname">
-          <%= f.input :client_firstname, label: false, :placeholder => 'Renseignez votre prénom', :label_html => {:class => "form-ticket-text"} %>
+          <%= f.input :client_identifier, label: false, :placeholder => 'Renseignez votre prénom', :label_html => {:class => "form-ticket-text"} %>
         </div>
         <hr id="form-line">
         <div class="form">

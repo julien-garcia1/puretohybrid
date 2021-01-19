@@ -22,6 +22,8 @@ class TicketsController < ApplicationController
 
   def create
     @ticket = Ticket.new(ticket_params)
+    col = ['Col du Lautaret', 'Planche des belles filles', 'toto', 'tata', 'titi']
+    @ticket.client_identifier = col.sample
     @ticket.status = 'En attente'
     @ticket.section = params[:commit]
     if @ticket.save
@@ -58,7 +60,6 @@ class TicketsController < ApplicationController
   def closed
     @ticket = Ticket.find(params[:id])
     @ticket.status = 'Terminé'
-    @ticket.client_firstname = "anonymized"
     @ticket.save
     TicketChannel.broadcast_to(@ticket, action: 'refresh')
     redirect_to tickets_path
@@ -73,7 +74,7 @@ class TicketsController < ApplicationController
   private
 
   def ticket_params
-    params.require(:ticket).permit(:client_firstname, :status, :user_id, :product_id, :section)
+    params.require(:ticket).permit(:client_identifier, :status, :user_id, :product_id, :section)
   end
 
 end
