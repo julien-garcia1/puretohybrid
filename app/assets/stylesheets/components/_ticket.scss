@@ -59,17 +59,23 @@
   }
 }
 
+
+
+.content-t h1 {
+  font-size: 150%;
+}
+
 .content-t h2 {
   font-size: 150%;
 }
 
-.content-t h1 {
-  font-size: 200%;
+.content-t h3 {
+  font-size: 90%;
 }
 
 .loader {
   color: #008bd2;
-  font-size: 15vh;
+  font-size: 12vh;
   text-indent: -9999em;
   overflow: hidden;
   width: 1em;

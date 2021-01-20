@@ -3,7 +3,7 @@
   <% if @ticket.status == 'En attente' %>
     <div class="container ticket-response p-t">
       <div class="content-t">
-        <h1>Nous recherchons un vendeur disponible pour vous aider</h1>
+        <h1>Nous recherchons un <span style="color:#008bd2; font-weight: 900">vendeur disponible </span> pour vous aider </h1>
         <div class="loader">
           Loading...
         </div>
@@ -22,7 +22,7 @@
               display.textContent = minutes + ":" + seconds;
 
               if (--timer <= 0) {
-                document.getElementById('time').innerHTML = '<a href="tel:+33645517408">Appeler le Callcenter</a>';
+                document.getElementById('time').innerHTML = '<a href="tel:+33645517408" style= "color: #008bd2 ">Appeler le Callcenter</a>';
               }
             }, 1000);
           }
@@ -34,13 +34,16 @@
           };
         </script>
       </div>
+      <div class="content-t">
+        <h2>L'identifiant du ticket est : <span style="color:#008bd2; font-weight: 900"> <%= @ticket.client_identifier %> </span></h2>
+      </div>
       <div style="padding-top: 5vh">
         <%= link_to 'Annuler', ticket_path(@ticket), method: :delete, :class => 'btn btn-primary' %>
       </div>
     </div>
 
   <% elsif @ticket.status == 'En cours' %>
-    <div class="container ticket-response" style="padding-top: 27vh">
+    <div class="container ticket-response" style="padding-top: 20vh">
       <div class="content-t">
         <h2>
           Notre vendeur <span style="color:#008bd2; font-weight: 900">pédale</span> à votre rescousse vers le rayon <span style="color:#008bd2; font-weight: 900"> <%= @ticket.section %> </span>
@@ -48,11 +51,12 @@
         <div class="biking">
           <img src="https://media.giphy.com/media/l0IsHKjavEvd0ihG0/giphy.gif" alt="">
         </div>
+           <h2>L'identifiant du ticket est : <span style="color:#008bd2; font-weight: 900"> <%= @ticket.client_identifier %> </span></h2>
       </div>
     </div>
 
   <% elsif @ticket.status == 'Plus tard' %>
-    <div class="container ticket-response" style="padding-top: 27vh">
+    <div class="container ticket-response" style="padding-top: 20vh">
       <div class="content-t">
         <h2>
           Notre vendeur est en pleine <span style="color:#008bd2; font-weight: 900">étape</span> avec un autre client. Il se rendra vers vous dès qu'il arrivera au <span style="color:#008bd2; font-weight: 900">sommet</span>.
@@ -60,21 +64,19 @@
         <div class="biking">
           <img src="https://media.giphy.com/media/l0IsHKjavEvd0ihG0/giphy.gif" alt="">
         </div>
+           <h2>L'identifiant du ticket est : <span style="color:#008bd2; font-weight: 900"> <%= @ticket.client_identifier %> </span></h2>
       </div>
     </div>
 
   <% else %>
     <div class="container ticket-response" style="margin-top: 10vh">
       <div class="content-t">
-        <h2>Nous espérons avoir répondu à vos interrogations</h2>
-        <h1 style="margin-top: 5vh">Merci</h1>
+        <h1 style="font-size: 200%">Merci pour votre <span style="color:#008bd2; font-weight: 900 ">confiance </span></h1>
         <div class="heart" style="margin-top: 35vh"></div>
       </div>
       <div>
-        <div class="review" style="margin-top: 22vh">
-          <p class="desc" style="font-family: sans-serif; font-size:1.2rem">
-            Merci d'évaluer le conseil de votre <span style="color:#008bd2; font-weight:bold;font-size:1.5rem;text-transform: uppercase">vendeur</span>
-          </p>
+        <div class="review" style="margin-top: 30vh">
+          <h2>Votre <span style="color:#008bd2; font-weight:900">avis </span>compte ! <br> Comment s'est passé notre service ?</h2>
           <%= simple_form_for [@ticket, @review] do |f| %>
             <%= f.input :rating, as: :hidden  %>
             <div class="my-3">
@@ -83,14 +85,14 @@
               <% end %>
             </div>
             <div id='review-btn'>
+              <%= link_to 'Ne pas noter', root_path, class: 'btn btn-primary pasnoter' %>
               <%= f.button :submit, "Valider", class: "btn btn-primary" %>
-              <%= link_to 'Ne pas noter', root_path, class: 'btn btn-primary' %>
             </div>
           <% end %>
         </div>
       </div>
       <div id="temporary-survey">
-        <p>Une fois sur la page d'accueil pensez à remplir notre questionnaire !</p>
+        <p>Une fois sur la page d'accueil pensez à remplir notre questionnaire sur l'application !</p>
       </div>
       </div>
     </div>
