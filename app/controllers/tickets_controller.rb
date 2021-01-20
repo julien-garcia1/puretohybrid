@@ -22,7 +22,7 @@ class TicketsController < ApplicationController
 
   def create
     @ticket = Ticket.new(ticket_params)
-    @ticket.client_identifier = ['Lautaret', 'Planche des belles filles', 'Ventoux', 'Tourmalet', 'Galiber', "Alpe d'Huez", "Aravis", "Aspin","Croix de Fer","Izoard","Télégraphe","La Madeleine","Colombière", "Aubisque", "Soulor"].sample
+    @ticket.client_identifier = ['Lautaret', 'Planche des belles filles', 'Ventoux', 'Tourmalet', 'Galibier', "Alpe d'Huez", "Aravis", "Aspin", "Croix de Fer", "Izoard", "Télégraphe", "La Madeleine", "Colombière", "Aubisque", "Soulor"].sample
     @ticket.status = 'En attente'
     @ticket.section = params[:commit]
     if @ticket.save
