@@ -9,7 +9,7 @@
       <%= simple_form_for(@ticket) do |f| %>
         <%= f.input :client_identifier, :as => :hidden %>
         <div>
-          <p class="form-ticket-text" style="color: white !important">Veuillez indiquer votre rayon :</p>
+          <p class="form-ticket-text body" style="color: white !important">Veuillez indiquer votre rayon :</p>
           <%= f.submit "VTT", class: "btn btn-primary section" %>
           <%= f.submit "Route", class: "btn btn-primary section" %>
           <%= f.submit "Gravel", class: "btn btn-primary section" %>
