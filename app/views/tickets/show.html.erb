@@ -35,8 +35,26 @@
         </script>
       </div>
       <div class="content-t">
-        <h2>L'identifiant du ticket est : <span style="color:#008bd2; font-weight: 900"> <%= @ticket.client_identifier %> </span></h2>
+        <h2>
+          L'identifiant du ticket est :
+          <span class="popup" onclick="myFunction()" style="color:#008bd2"> <%= @ticket.client_identifier %>
+            <% if @ticket.client_identifier == 'Ventoux' %>
+              <span class="popuptext myPopup">C'est le Mont Ventoux</span>
+            <% else %>
+              <span class="popuptext myPopup">C'est un autre col</span>
+            <% end %>
+          </span>
+        </h2>
       </div>
+
+      <script>
+      // When the user clicks on <div>, open the popup
+      function myFunction() {
+        var popup = document.querySelector(".myPopup");
+        popup.classList.toggle("show");
+      }
+      </script>
+
       <div style="padding-top: 5vh">
         <%= link_to 'Annuler', ticket_path(@ticket), method: :delete, :class => 'btn btn-primary' %>
       </div>
