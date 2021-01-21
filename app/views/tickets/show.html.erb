@@ -1,9 +1,8 @@
 <div id="ticket-show" data-ticket-id="<%= @ticket.id %>">
-
   <% if @ticket.status == 'En attente' %>
     <div class="container ticket-response p-t">
       <div class="content-t">
-        <h1>Nous recherchons un <span style="color:#008bd2; font-weight: 900">vendeur disponible </span> pour vous aider </h1>
+        <h1>Nous recherchons un <span class="blue-span">vendeur disponible </span> pour vous aider </h1>
         <div class="loader">
           Loading...
         </div>
@@ -22,7 +21,7 @@
               display.textContent = minutes + ":" + seconds;
 
               if (--timer <= 0) {
-                document.getElementById('time').innerHTML = '<a href="tel:+33645517408" style= "color: #008bd2 ">Appeler le Callcenter</a>';
+                document.getElementById('time').innerHTML = '<a href="tel:+33645517408" class="blue-span">Appeler le Callcenter</a>';
               }
             }, 1000);
           }
@@ -35,10 +34,50 @@
         </script>
       </div>
       <div class="content-t">
-        <h2>L'identifiant du ticket est : <span style="color:#008bd2; font-weight: 900"> <%= @ticket.client_identifier %> </span></h2>
+        <h2>
+          L'identifiant du ticket est :
+          <span class="popup blue-span" onclick="popupFonction()"> <%= @ticket.client_identifier %>
+            <% if @ticket.client_identifier == 'Ventoux' %>
+              <span class="popuptext myPopup">
+                <div>
+                  <img src="https://d18dnr0ekxokj7.cloudfront.net/actualites-marseille/2020/07/mont-ventoux.jpg" class="popup-img" alt="">
+                </div>
+                Le mont Ventoux est un sommet situé dans le département français de Vaucluse en région Provence-Alpes-Côte d'Azur. Il culmine à 1 910 mètres et figure régulièrement au Tour de France.
+              </span>
+            <% elsif @ticket.client_identifier == 'Lautaret' %>
+              <span class="popuptext myPopup">Je suis le col du Lautaret</span>
+            <% elsif @ticket.client_identifier == 'Planche des belles filles' %>
+              <span class="popuptext myPopup">Je suis la Planche des belles filles</span>
+            <% elsif @ticket.client_identifier == 'Tourmalet' %>
+              <span class="popuptext myPopup">Je suis le col du Tourmalet</span>
+            <% elsif @ticket.client_identifier == 'Galibier' %>
+              <span class="popuptext myPopup">Je suis le col du Galibier</span>
+            <% elsif @ticket.client_identifier == "Alpe d'Huez" %>
+              <span class="popuptext myPopup">Je suis l'Alpe d'Huez</span>
+            <% elsif @ticket.client_identifier == 'Aravis' %>
+              <span class="popuptext myPopup">Je suis le col des Aravis</span>
+            <% elsif @ticket.client_identifier == 'Aspin' %>
+              <span class="popuptext myPopup">Je suis le col d'Aspin</span>
+            <% elsif @ticket.client_identifier == 'Croix de Fer' %>
+              <span class="popuptext myPopup">Je suis le col de la Croix de Fer</span>
+            <% elsif @ticket.client_identifier == 'Izoard' %>
+              <span class="popuptext myPopup">Je suis le col d'Izoard</span>
+            <% elsif @ticket.client_identifier == 'Télégraphe' %>
+              <span class="popuptext myPopup">Je suis le col du Télégraphe</span>
+            <% elsif @ticket.client_identifier == 'La Madeleine' %>
+              <span class="popuptext myPopup">Je suis le col de la Madeleine</span>
+            <% elsif @ticket.client_identifier == 'Colombière' %>
+              <span class="popuptext myPopup">Je suis le col de la Colombière</span>
+            <% elsif @ticket.client_identifier == 'Aubisque' %>
+              <span class="popuptext myPopup">Je suis le col d'Aubisque</span>
+            <% elsif @ticket.client_identifier == 'Soulor' %>
+              <span class="popuptext myPopup">Je suis le col du Soulor</span>
+            <% end %>
+          </span>
+        </h2>
       </div>
-      <div style="padding-top: 5vh">
-        <%= link_to 'Annuler', ticket_path(@ticket), method: :delete, :class => 'btn btn-primary' %>
+      <div>
+        <%= link_to 'Annuler', ticket_path(@ticket), method: :delete, :class => 'btn btn-primary cancel-btn' %>
       </div>
     </div>
 
@@ -46,12 +85,12 @@
     <div class="container ticket-response" style="padding-top: 20vh">
       <div class="content-t">
         <h2>
-          Notre vendeur <span style="color:#008bd2; font-weight: 900">pédale</span> à votre rescousse vers le rayon <span style="color:#008bd2; font-weight: 900"> <%= @ticket.section %> </span>
+          Notre vendeur <span class="blue-span">pédale</span> à votre rescousse vers le rayon <span class="blue-span"> <%= @ticket.section %> </span>
         </h2>
         <div class="biking">
           <img src="https://media.giphy.com/media/l0IsHKjavEvd0ihG0/giphy.gif" alt="">
         </div>
-           <h2>L'identifiant du ticket est : <span style="color:#008bd2; font-weight: 900"> <%= @ticket.client_identifier %> </span></h2>
+           <h2>L'identifiant du ticket est : <span class="blue-span"> <%= @ticket.client_identifier %> </span></h2>
       </div>
     </div>
 
@@ -59,24 +98,24 @@
     <div class="container ticket-response" style="padding-top: 20vh">
       <div class="content-t">
         <h2>
-          Notre vendeur est en pleine <span style="color:#008bd2; font-weight: 900">étape</span> avec un autre client. Il se rendra vers vous dès qu'il arrivera au <span style="color:#008bd2; font-weight: 900">sommet</span>.
+          Notre vendeur est en pleine <span class="blue-span">étape</span> avec un autre client. Il se rendra vers vous dès qu'il arrivera au <span class="blue-span">sommet</span>.
         </h2>
         <div class="biking">
           <img src="https://media.giphy.com/media/l0IsHKjavEvd0ihG0/giphy.gif" alt="">
         </div>
-           <h2>L'identifiant du ticket est : <span style="color:#008bd2; font-weight: 900"> <%= @ticket.client_identifier %> </span></h2>
+           <h2>L'identifiant du ticket est : <span class="blue-span"> <%= @ticket.client_identifier %> </span></h2>
       </div>
     </div>
 
   <% else %>
     <div class="container ticket-response" style="margin-top: 10vh">
       <div class="content-t">
-        <h1 style="font-size: 200%">Merci pour votre <span style="color:#008bd2; font-weight: 900 ">confiance </span></h1>
+        <h1 style="font-size: 200%">Merci pour votre <span class="blue-span">confiance </span></h1>
         <div class="heart" style="margin-top: 35vh"></div>
       </div>
       <div>
         <div class="review" style="margin-top: 30vh">
-          <h2>Votre <span style="color:#008bd2; font-weight:900">avis </span>compte ! <br> Comment s'est passé notre service ?</h2>
+          <h2>Votre <span class="blue-span">avis </span>compte ! <br> Comment s'est passé notre service ?</h2>
           <%= simple_form_for [@ticket, @review] do |f| %>
             <%= f.input :rating, as: :hidden  %>
             <div class="my-3">
@@ -94,10 +133,13 @@
       <div id="temporary-survey">
         <p>Une fois sur la page d'accueil pensez à remplir notre questionnaire sur l'application !</p>
       </div>
-      </div>
     </div>
   <% end %>
-
 </div>
 
-
+<script>
+  function popupFonction() {
+    var popup = document.querySelector(".myPopup");
+    popup.classList.toggle("show");
+  }
+</script>
