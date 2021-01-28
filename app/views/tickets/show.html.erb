@@ -36,9 +36,11 @@
       <div class="content-t">
         <h2>
           L'identifiant du ticket est :
-          <span class="popup blue-span" onclick="popupFonction()"> <%= @ticket.client_identifier %>
+          <span class="blue-span" id="myBtn"> <%= @ticket.client_identifier %>
             <% if @ticket.client_identifier == 'Ventoux' %>
-              <span class="popuptext myPopup">
+                <div id="blackOverlay" class="blackOverlay"></div>
+              <span id="myModal" class="overlay">
+                <span class="close">&times;</span>
                 <div>
                   <img src="https://d18dnr0ekxokj7.cloudfront.net/actualites-marseille/2020/07/mont-ventoux.jpg" class="popup-img" alt="">
                 </div>
@@ -138,8 +140,34 @@
 </div>
 
 <script>
-  function popupFonction() {
-    var popup = document.querySelector(".myPopup");
-    popup.classList.toggle("show");
+  // Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on the button, open the modal
+btn.onclick = function() {
+  modal.style.display = "block";
+  document.getElementById('blackOverlay').style.display = 'block';
+
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+  document.getElementById('blackOverlay').style.display = 'none';
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
   }
+}
+
+
 </script>

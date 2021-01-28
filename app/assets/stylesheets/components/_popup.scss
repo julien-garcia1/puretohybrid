@@ -1,56 +1,14 @@
-.popup {
-  position: relative;
-  display: inline-block;
-  cursor: pointer;
-}
-
-/* The actual popup (appears on top) */
-.popup .popuptext {
-  visibility: hidden;
-  width: 320px;
-  background-color: white;
-  box-shadow: 2px 2px 12px rgb(223, 223, 223);
-  color: black;;
-  border-radius: 6px;
-  padding: 20px;
-  position: absolute;
-  z-index: 1;
-  bottom: 110%;
-  left: 50%;
-  margin-left: -160px;
-  font-size: 17px;
-  text-align: left;
-}
-
-/* Popup arrow */
-.popup .popuptext::after {
-  content: "";
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  margin-left: -5px;
-  border-width: 5px;
-  border-style: solid;
-  border-color: #008bd2 transparent transparent transparent;
-}
-
-/* Toggle this class when clicking on the popup container (hide and show the popup) */
-.popup .show {
-  visibility: visible;
-  -webkit-animation: fadeIn 1s;
-  animation: fadeIn 1s
-}
-
-/* Add animation (fade in the popup) */
-@-webkit-keyframes fadeIn {
-  from {opacity: 0;}
-  to {opacity: 1;}
-}
-
-@keyframes fadeIn {
-  from {opacity: 0;}
-  to {opacity:1 ;}
-}
+// /* Popup arrow */
+// .popup .popuptext::after {
+//   content: "";
+//   position: absolute;
+//   top: 100%;
+//   left: 50%;
+//   margin-left: -5px;
+//   border-width: 5px;
+//   border-style: solid;
+//   border-color: #008bd2 transparent transparent transparent;
+// }
 
 .blue-span {
   color:#008bd2;
@@ -63,16 +21,52 @@
   margin-bottom: 20px;
 }
 
-#overlay {
+.overlay {
   position: fixed; /* Sit on top of the page content */
   display: none; /* Hidden by default */
-  width: 100%; /* Full width (cover the whole page) */
-  height: 100%; /* Full height (cover the whole page) */
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: red; /* Black background with opacity */
-  z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+  width: 320px;
+  height: 30%;
+  background-color: white;
+  box-shadow: 2px 2px 12px rgb(158, 158, 158);
+  z-index: 1; /* Specify a stack order in case you're using a different order for other elements */
+  font-size: 17px;
+  text-align: left;
+  color: black;
+  border-radius: 6px;
+  padding: 20px;
+  margin-left: 12px;
+  top: 31.7%;
   cursor: pointer; /* Add a pointer on hover */
+  animation-name: animatetop;
+  animation-duration: 0.8s
+}
+
+.blackOverlay {
+  display:none;
+  background:rgba(0,0,0, 0.6);
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  z-index:1;
+}
+
+@keyframes animatetop {
+  from {top: -300px; opacity: 0}
+  to {top: 31.7%; opacity: 1}
+}
+
+/* The Close Button */
+.close {
+  color: white;
+  float: right;
+  font-size: 28px;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
 }
