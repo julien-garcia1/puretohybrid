@@ -1,6 +1,7 @@
 <div id="ticket-show" data-ticket-id="<%= @ticket.id %>">
   <% if @ticket.status == 'En attente' %>
     <div class="container ticket-response p-t">
+      <div id="blackOverlay" class="blackOverlay"></div>
       <div class="content-t">
         <h1>Nous recherchons un <span class="blue-span">vendeur disponible </span> pour vous aider </h1>
         <div class="loader">
@@ -37,44 +38,43 @@
         <h2>
           L'identifiant du ticket est :
           <span class="blue-span" id="myBtn"> <%= @ticket.client_identifier %>
-            <% if @ticket.client_identifier == 'Ventoux' %>
-                <div id="blackOverlay" class="blackOverlay"></div>
-              <span id="myModal" class="overlay">
-                <span class="close">&times;</span>
+            <span id="myModal" class="popuptext overlay">
+              <span class="close"></span>
+              <% if @ticket.client_identifier == 'Ventoux' %>
                 <div>
                   <img src="https://d18dnr0ekxokj7.cloudfront.net/actualites-marseille/2020/07/mont-ventoux.jpg" class="popup-img" alt="">
                 </div>
                 Le mont Ventoux est un sommet situé dans le département français de Vaucluse en région Provence-Alpes-Côte d'Azur. Il culmine à 1 910 mètres et figure régulièrement au Tour de France.
-              </span>
-            <% elsif @ticket.client_identifier == 'Lautaret' %>
-              <span class="popuptext myPopup">Je suis le col du Lautaret</span>
-            <% elsif @ticket.client_identifier == 'Planche des belles filles' %>
-              <span class="popuptext myPopup">Je suis la Planche des belles filles</span>
-            <% elsif @ticket.client_identifier == 'Tourmalet' %>
-              <span class="popuptext myPopup">Je suis le col du Tourmalet</span>
-            <% elsif @ticket.client_identifier == 'Galibier' %>
-              <span class="popuptext myPopup">Je suis le col du Galibier</span>
-            <% elsif @ticket.client_identifier == "Alpe d'Huez" %>
-              <span class="popuptext myPopup">Je suis l'Alpe d'Huez</span>
-            <% elsif @ticket.client_identifier == 'Aravis' %>
-              <span class="popuptext myPopup">Je suis le col des Aravis</span>
-            <% elsif @ticket.client_identifier == 'Aspin' %>
-              <span class="popuptext myPopup">Je suis le col d'Aspin</span>
-            <% elsif @ticket.client_identifier == 'Croix de Fer' %>
-              <span class="popuptext myPopup">Je suis le col de la Croix de Fer</span>
-            <% elsif @ticket.client_identifier == 'Izoard' %>
-              <span class="popuptext myPopup">Je suis le col d'Izoard</span>
-            <% elsif @ticket.client_identifier == 'Télégraphe' %>
-              <span class="popuptext myPopup">Je suis le col du Télégraphe</span>
-            <% elsif @ticket.client_identifier == 'La Madeleine' %>
-              <span class="popuptext myPopup">Je suis le col de la Madeleine</span>
-            <% elsif @ticket.client_identifier == 'Colombière' %>
-              <span class="popuptext myPopup">Je suis le col de la Colombière</span>
-            <% elsif @ticket.client_identifier == 'Aubisque' %>
-              <span class="popuptext myPopup">Je suis le col d'Aubisque</span>
-            <% elsif @ticket.client_identifier == 'Soulor' %>
-              <span class="popuptext myPopup">Je suis le col du Soulor</span>
-            <% end %>
+              <% elsif @ticket.client_identifier == 'Lautaret' %>
+                <span class="popuptext myPopup">Je suis le col du Lautaret</span>
+              <% elsif @ticket.client_identifier == 'Planche des belles filles' %>
+                <span class="popuptext myPopup">Je suis la Planche des belles filles</span>
+              <% elsif @ticket.client_identifier == 'Tourmalet' %>
+                <span class="popuptext myPopup">Je suis le col du Tourmalet</span>
+              <% elsif @ticket.client_identifier == 'Galibier' %>
+                <span class="popuptext myPopup">Je suis le col du Galibier</span>
+              <% elsif @ticket.client_identifier == "Alpe d'Huez" %>
+                <span class="popuptext myPopup">Je suis l'Alpe d'Huez</span>
+              <% elsif @ticket.client_identifier == 'Aravis' %>
+                <span class="popuptext myPopup">Je suis le col des Aravis</span>
+              <% elsif @ticket.client_identifier == 'Aspin' %>
+                <span class="popuptext myPopup">Je suis le col d'Aspin</span>
+              <% elsif @ticket.client_identifier == 'Croix de Fer' %>
+                <span class="popuptext myPopup">Je suis le col de la Croix de Fer</span>
+              <% elsif @ticket.client_identifier == 'Izoard' %>
+                <span class="popuptext myPopup">Je suis le col d'Izoard</span>
+              <% elsif @ticket.client_identifier == 'Télégraphe' %>
+                <span class="popuptext myPopup">Je suis le col du Télégraphe</span>
+              <% elsif @ticket.client_identifier == 'La Madeleine' %>
+                <span class="popuptext myPopup">Je suis le col de la Madeleine</span>
+              <% elsif @ticket.client_identifier == 'Colombière' %>
+                <span class="popuptext myPopup">Je suis le col de la Colombière</span>
+              <% elsif @ticket.client_identifier == 'Aubisque' %>
+                <span class="popuptext myPopup">Je suis le col d'Aubisque</span>
+              <% elsif @ticket.client_identifier == 'Soulor' %>
+                <span class="popuptext myPopup">Je suis le col du Soulor</span>
+              <% end %>
+            </span>
           </span>
         </h2>
       </div>
@@ -149,23 +149,25 @@ var btn = document.getElementById("myBtn");
 // Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[0];
 
+var overlay = document.getElementById('blackOverlay');
+
 // When the user clicks on the button, open the modal
 btn.onclick = function() {
   modal.style.display = "block";
-  document.getElementById('blackOverlay').style.display = 'block';
-
+  overlay.style.display = 'block';
 }
 
 // When the user clicks on <span> (x), close the modal
 span.onclick = function() {
   modal.style.display = "none";
-  document.getElementById('blackOverlay').style.display = 'none';
+  overlay.style.display = 'none';
 }
 
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
   if (event.target == modal) {
     modal.style.display = "none";
+    overlay.style.display = 'none';
   }
 }
 
