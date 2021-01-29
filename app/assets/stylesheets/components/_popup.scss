@@ -25,7 +25,7 @@
   position: fixed; /* Sit on top of the page content */
   display: none; /* Hidden by default */
   width: 320px;
-  height: 30%;
+  min-height: 30%;
   background-color: white;
   box-shadow: 2px 2px 8px rgb(139, 139, 139);
   z-index: 1; /* Specify a stack order in case you're using a different order for other elements */
