@@ -1,11 +1,3 @@
-<head>
-<script type="text/javascript">
-    setTimeout(function(){
-      location = ''
-    }, 20 *1000) // durée en secondes avant le *
-  </script>
-</head>
-
 <div class="container">
   <div class="d-flex-lg">
     <div class="card card-ticket">
@@ -93,20 +85,19 @@
   </div>
 </div>
 
-
 <% if user_signed_in? %>
-<script>
-  if(document.querySelector('.notification') != null) {
+  <script>
+    if(document.querySelector('.notification') != null) {
       Notification.requestPermission()
         .then(permisssion => {
-            if (permisssion === 'granted') {
-                navigator.serviceWorker.ready;
-            }
+          if (permisssion === 'granted') {
+            navigator.serviceWorker.ready;
+          }
             var data = 'https://google.com/';
         }).then(() => navigator.serviceWorker.register('service-worker.js'))
-        .then(registration => registration.showNotification('👋 magasin Alltricks de Bron', {
+          .then(registration => registration.showNotification('👋 magasin Alltricks de Bron', {
             body: 'Un client a besoin de vous, si vous êtes disponible, allez sur l interface vendeur pour vous y positionner',
-        }));
-}
-</script>
+          }));
+    }
+  </script>
 <% end %>
