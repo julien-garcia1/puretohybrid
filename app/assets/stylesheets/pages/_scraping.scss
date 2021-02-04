@@ -20,7 +20,7 @@
 
 .price-field h2 {
   font-size: 120%;
-} 
+}
 
 
 .price h2{
@@ -28,18 +28,14 @@
   font-size: 120%;
 }
 
-.img-product .fa-angle-left {
+.img-product .barcode-icon {
   position: absolute;
-  top: 15px;
   left: 15px;
-  font-size: 20px;
-  background-color: #2f2f37;
-  height: 35px;
-  width: 35px;
-  border-radius: 50%;
+  background-color: #008bd2;
+  border-radius: 10%;
+  height: 45px;
+  width: 60px;
   text-align: center;
-  padding-top: 7px;
-  padding-right: 2px;
   color: white;
 }
 
