@@ -11,7 +11,6 @@ puts "DB seed start"
 Review.destroy_all
 Ticket.destroy_all
 User.destroy_all
-Product.destroy_all
 Store.destroy_all
 
 store = Store.create(name:"AllTricks Bron", address:"322 Avenue Général de Gaulle, 69500 Bron")
